@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPrompt NEE · MEP Costa Rica</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ══ LOADING SCREEN ══ -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-spinner"></div>
+  <span class="loading-text" id="loadingText">Cargando currículo MEP...</span>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="logo">
+    <div class="logo-mark">✦</div>
+    <span>Edu<em>Prompt</em></span>
+  </div>
+  <div class="header-right">
+    <select id="sel_materia_header" onchange="cambiarMateria()" title="Seleccionar materia"></select>
+    <span class="header-badge">NEE · MEP Costa Rica</span>
+  </div>
+</header>
+
+<!-- ══ APP ══ -->
+<main class="app">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-pill">✦ Motor de actividades con adecuación curricular</div>
+    <h1>Genera actividades<br><em>inclusivas</em> en segundos</h1>
+    <p>Conecta el currículo MEP oficial, configura las necesidades educativas especiales y obtén un prompt listo para cualquier IA.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PASOS
+  ══════════════════════════════════════════ -->
+  <div class="steps">
+
+    <!-- ══ PASO 1: CURRÍCULO ══ -->
+    <div class="step open active" id="step1">
+      <div class="step-header" onclick="toggleStep('step1')">
+        <div class="step-num" id="num1">1</div>
+        <div>
+          <div class="step-title">Currículo MEP</div>
+          <div class="step-subtitle">Selecciona ciclo, nivel, área y habilidad</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <div class="form-grid cols-3">
+          <div class="form-group">
+            <label>Ciclo educativo</label>
+            <select id="sel_ciclo" class="fc" onchange="updateNiveles()" disabled>
+              <option value="">— Cargando... —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nivel / Grado</label>
+            <select id="sel_nivel" class="fc" onchange="updateAreas()" disabled>
+              <option value="">— Elige ciclo —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Área matemática</label>
+            <select id="sel_area" class="fc" onchange="updateHabilidades()" disabled>
+              <option value="">— Elige nivel —</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:.9rem">
+          <label>Habilidad específica del MEP</label>
+          <select id="sel_habilidad" class="fc" onchange="updateIndicadores()" disabled>
+            <option value="">— Elige área —</option>
+          </select>
+        </div>
+
+        <!-- Cuadro informativo autocargado -->
+        <div class="info-box" id="infoBox">
+          <div class="ib-tag">✦ Datos MEP autocargados</div>
+          <div id="infoContent"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ PASO 2: NEE ══ -->
+    <div class="step" id="step2">
+      <div class="step-header" onclick="toggleStep('step2')">
+        <div class="step-num" id="num2">2</div>
+        <div>
+          <div class="step-title">Necesidades Educativas Especiales</div>
+          <div class="step-subtitle">Elige las adecuaciones a incluir (puedes seleccionar varias)</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <div class="form-group" style="margin-bottom:.9rem">
+          <label>Tipo de adecuación curricular (MEP)</label>
+          <select id="sel_adecuacion" class="fc">
+            <option value="">Sin adecuación curricular específica</option>
+            <option value="Adecuación significativa">Adecuación significativa</option>
+            <option value="Adecuación no significativa">Adecuación no significativa</option>
+            <option value="Adecuación de acceso al currículo">Adecuación de acceso al currículo</option>
+          </select>
+        </div>
+
+        <label>Necesidades específicas (selecciona las que apliquen)</label>
+        <div class="nee-chips" id="neeChips">
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Discapacidad auditiva">
+            <span>👂</span> Auditiva
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Discapacidad visual">
+            <span>👁️</span> Visual
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="TDAH / Déficit de atención">
+            <span>⚡</span> TDAH
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Dislexia o discalculia">
+            <span>📖</span> Dislexia / Discalculia
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Discapacidad intelectual leve">
+            <span>🧩</span> D. Intelectual leve
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Trastorno del espectro autista (TEA)">
+            <span>🌈</span> TEA
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Dificultades del lenguaje">
+            <span>💬</span> Lenguaje
+          </div>
+          <div class="nee-chip" onclick="toggleNEE(this)" data-nee="Altas capacidades">
+            <span>⭐</span> Altas capacidades
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:.9rem">
+          <label>Observaciones del grupo (opcional)</label>
+          <textarea id="obs_grupo" class="fc" placeholder="Ej: grupo de 28 estudiantes, 2 con TEA, 1 con discapacidad visual parcial..."></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ PASO 3: PLANTILLA ══ -->
+    <div class="step" id="step3">
+      <div class="step-header" onclick="toggleStep('step3')">
+        <div class="step-num" id="num3">3</div>
+        <div>
+          <div class="step-title">Tipo de actividad</div>
+          <div class="step-subtitle">Elige la plantilla pedagógica y configura los parámetros</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <label>Plantilla pedagógica</label>
+        <div class="template-grid" id="templateGrid">
+          <!-- Generado por templateRegistry.js + app.js -->
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Duración</label>
+            <select id="sel_duracion" class="fc">
+              <option>30 minutos</option>
+              <option selected>45 minutos</option>
+              <option>60 minutos</option>
+              <option>90 minutos</option>
+              <option>2 lecciones (90 min)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Organización del grupo</label>
+            <select id="sel_grupo" class="fc">
+              <option>Individual</option>
+              <option>Parejas</option>
+              <option selected>Pequeños grupos (3-4)</option>
+              <option>Plenaria</option>
+              <option>Mixta</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Recursos disponibles</label>
+            <select id="sel_recursos" class="fc">
+              <option>Material básico (papel, lápiz)</option>
+              <option selected>Material concreto + impreso</option>
+              <option>Tecnología (tablets / computadoras)</option>
+              <option>Pizarra digital</option>
+              <option>Materiales manipulativos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Detalle del prompt</label>
+            <select id="sel_complejidad" class="fc">
+              <option>Básico (prompt corto)</option>
+              <option selected>Estándar (balanceado)</option>
+              <option>Detallado (máximo detalle)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:.9rem">
+          <label>Contexto adicional para la IA (opcional)</label>
+          <textarea id="ctx_adicional" class="fc" placeholder="Ej: los estudiantes ya conocen fracciones, el aula tiene 30 pupitres, es la primera clase del tema..."></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ PASO 4: GENERAR ══ -->
+    <div class="step" id="step4">
+      <div class="step-header" onclick="toggleStep('step4')">
+        <div class="step-num" id="num4">4</div>
+        <div>
+          <div class="step-title">Generar prompt</div>
+          <div class="step-subtitle">Ensambla y copia el prompt para enviarlo a cualquier IA</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1rem">
+          <button class="btn btn-teal" onclick="generatePrompt()">
+            ✦ Generar prompt MEP + NEE
+          </button>
+          <button class="btn btn-ghost" onclick="copyPrompt()" id="btnCopy" style="display:none">
+            📋 Copiar prompt
+          </button>
+          <button class="btn btn-ghost" onclick="clearPrompt()" id="btnClear" style="display:none">
+            🗑 Limpiar
+          </button>
+        </div>
+
+        <div class="prompt-output" id="promptOutput">
+          <div class="prompt-toolbar">
+            <span class="prompt-toolbar-label">prompt generado · listo para copiar</span>
+            <span id="promptStats" style="font-family:'DM Mono',monospace;font-size:.72rem;color:var(--text-muted)"></span>
+          </div>
+          <textarea class="prompt-text" id="promptText" readonly></textarea>
+        </div>
+
+        <div class="hint" id="hintMsg" style="display:none"></div>
+
+      </div>
+    </div>
+
+  </div><!-- /steps -->
+
+
+  <!-- ══════════════════════════════════════════
+       PANEL DE DESARROLLO
+  ══════════════════════════════════════════ -->
+  <div class="dev-panel" id="devPanel">
+    <div class="dev-header" onclick="toggleDev()">
+      <span style="font-size:1.1rem">🔧</span>
+      <h3>// NOTAS DE DESARROLLO · Hoja de ruta del proyecto</h3>
+      <span id="devToggle" style="color:var(--amber)">▼</span>
+    </div>
+    <div class="dev-body">
+
+      <div class="dev-section">
+        <h4>Estado actual (v2)</h4>
+        <div class="code-block">✅ Estructura modular (HTML + CSS + JS separados)
+✅ curriculo_matematica.json cargado desde data/
+✅ MetaPromptEngine — núcleo de prompts (js/metaPromptEngine.js)
+✅ Motor de plantillas con 7 tipos (js/templateRegistry.js)
+✅ Selector de materia en header (listo para más materias)
+✅ Sistema NEE con chips seleccionables
+✅ Panel de desarrollo con hoja de ruta
+✅ Listo para GitHub Pages
+⏳ Más materias (Ciencias, Español) — requiere extractor Python
+⏳ Conexión directa a API de IA (código listo, comentado en app.js)
+⏳ Persistencia localStorage (código listo, comentado en app.js)
+⏳ Módulo de actividades múltiples</div>
+      </div>
+
+      <div class="dev-section">
+        <h4>Puntos de conexión</h4>
+
+        <div class="connection-point">
+          <span class="cp-icon">📦</span>
+          <div class="cp-text">
+            <b>Agregar nueva plantilla → js/templateRegistry.js</b>
+            Agrega un objeto {id, icon, nombre, desc, estructura} al registro.
+            Se renderiza automáticamente, sin tocar nada más.
+          </div>
+        </div>
+
+        <div class="connection-point">
+          <span class="cp-icon">🗺️</span>
+          <div class="cp-text">
+            <b>Agregar nueva materia → js/app.js (MATERIAS_CONFIG)</b>
+            Genera el JSON con el extractor Python, colócalo en data/,
+            y descomenta la entrada en MATERIAS_CONFIG. Aparece en el selector del header.
+          </div>
+        </div>
+
+        <div class="connection-point">
+          <span class="cp-icon">🤖</span>
+          <div class="cp-text">
+            <b>Conectar a API de IA → js/app.js (sendToAPI)</b>
+            El código está escrito y comentado. Solo descomenta,
+            agrega tu API key y cambia el botón "Generar" por "Generar y enviar".
+          </div>
+        </div>
+
+        <div class="connection-point">
+          <span class="cp-icon">💾</span>
+          <div class="cp-text">
+            <b>Persistencia → js/app.js (EduStorage)</b>
+            Código listo y comentado. Descomenta EduStorage para guardar
+            selecciones y prompts entre sesiones del navegador.
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-section">
+        <h4>Estructura del proyecto</h4>
+        <div class="code-block">eduprompt-nee/
+├── index.html                  ← esta página
+├── css/
+│   └── styles.css              ← todo el diseño
+├── js/
+│   ├── metaPromptEngine.js     ← núcleo de prompts (Motor)
+│   ├── templateRegistry.js     ← plantillas pedagógicas
+│   └── app.js                  ← lógica de la aplicación
+└── data/
+    ├── curriculo_matematica.json   ← 854 habilidades MEP ✅
+    ├── curriculo_ciencias.json     ← pendiente extractor
+    └── curriculo_espanol.json      ← pendiente extractor</div>
+      </div>
+
+      <div class="dev-section">
+        <h4>Prompt para continuar con Claude</h4>
+        <div class="code-block">Hola Claude. Continuamos el proyecto EduPrompt NEE
+del Profesor Carlos Elizondo Castillo (MEP Costa Rica).
+
+CONTEXTO:
+- Tenemos eduprompt-nee/ con estructura modular lista para GitHub Pages
+- curriculo_matematica.json (854 habilidades, 3 ciclos)
+- MetaPromptEngine en js/metaPromptEngine.js
+- Motor de plantillas en js/templateRegistry.js (7 plantillas)
+- Lógica principal en js/app.js
+
+PRÓXIMO PASO ELEGIDO:
+[A] Agregar módulo de actividades múltiples
+[B] Activar conexión con API de IA (código ya está comentado en app.js)
+[C] Activar persistencia localStorage (código ya está en app.js)
+[D] Mapear nuevo plan de estudios con el extractor Python
+[E] Mejorar el extractor Python (indicadores MEP pendientes)
+
+Adjunto el ZIP del proyecto. Continúa desde aquí.</div>
+        <button class="btn btn-ghost btn-sm" style="margin-top:.6rem" onclick="copyDevPrompt()">
+          📋 Copiar este prompt
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <b>EduPrompt NEE v2</b> · MEP Costa Rica · Matemáticas 2014 ·
+  Desarrollado con el Profesor Carlos Elizondo Castillo
+</footer>
+
+<!-- ══ SCRIPTS (orden importante) ══ -->
+<script src="js/templateRegistry.js"></script>
+<script src="js/metaPromptEngine.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

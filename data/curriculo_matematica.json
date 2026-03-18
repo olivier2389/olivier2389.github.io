@@ -1,0 +1,3222 @@
+{
+  "metadata": {
+    "version": "2014",
+    "materia": "Matematicas",
+    "pais": "Costa Rica",
+    "pipeline_version": "v3",
+    "generado": "2026-03-17T22:02:10.371054",
+    "total_habilidades": 618
+  },
+  "cycles": [
+    {
+      "ciclo": "PRIMER_CICLO",
+      "niveles": [
+        {
+          "nivel": "1-3",
+          "areas": [
+            {
+              "nombre": "Numeros",
+              "habilidades": [
+                {
+                  "id": "MAT-PC-1-NUM-H001",
+                  "descripcion": "Comparar de acuerdo con el tamaño: más grande que, más pequeño que, tan grande como, tan pequeño como e igual que.",
+                  "pagina_pdf": 79
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H002",
+                  "descripcion": "Ordenar según el tamaño objetos del entorno o trazados.",
+                  "pagina_pdf": 79
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H003",
+                  "descripcion": "Comparar objetos o trazos según su longitud o anchura o espesor.",
+                  "pagina_pdf": 80
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H004",
+                  "descripcion": "Ordenar objetos según su longitud, anchura o espesor.",
+                  "pagina_pdf": 80
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H005",
+                  "descripcion": "Determinar la posición lativa entre objetos (adelante, atrás, arriba, debajo, dentro, fuera, derecha, quierda, junto a, en medio de, al lado).",
+                  "pagina_pdf": 80
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H006",
+                  "descripcion": "Comparar la posición de objetos, cosas o personas según la distancia a que encuentran a partir de una posición dada (lejos, cerca, más lejos, más cerca, tan lejos como, tan cerca como).",
+                  "pagina_pdf": 80
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H007",
+                  "descripcion": "Ordenar objetos según su distancia a un punto dado.",
+                  "pagina_pdf": 80
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H008",
+                  "descripcion": "Realizar comparaciones de cantidad utilizando las nociones de mucho, poco, igual cantidad, uno, ninguno, todos, alguno, tantos como, más que, menos que.",
+                  "pagina_pdf": 81
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H009",
+                  "descripcion": "Establecer correspondencias uno a uno entre colecciones de objetos o dibujos. metodológicas propuestas para este del entorno como de conceptos o el desarrollo de las de las nociones de objetos con los que las niñas el aula o la institución. las nociones relacionadas mediante juegos que permitan de evaluación establecidas para los cotidiano. noción de tamaño es determinar cuál es más grande organizar colecciones de se puede pedir que las barras de la más Imagen con",
+                  "pagina_pdf": 81
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H010",
+                  "descripcion": "Utilizar el conteo para asociar conjuntos de objetos con su respectiva cardinalidad.",
+                  "pagina_pdf": 84
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H011",
+                  "descripcion": "Trazar los números del 0",
+                  "pagina_pdf": 84
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H012",
+                  "descripcion": "Utilizar el conteo en la elaboración de agrupamientos.",
+                  "pagina_pdf": 84
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H013",
+                  "descripcion": "Identificar y aportar ejemplos de representaciones distintas de un número.",
+                  "pagina_pdf": 84
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H014",
+                  "descripcion": "Establecer correspondencias entre las diferentes formas de representación de un número natural menor que 100 aplicando los conceptos de unidad y decena.",
+                  "pagina_pdf": 84
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H015",
+                  "descripcion": "Comparar números menores que 100 utilizando las relaciones de orden (sin utilizar símbolos >,<, =). Describir la posición de 8. orden en objetos y personas utilizando los números ordinales hasta el décimo.",
+                  "pagina_pdf": 85
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H016",
+                  "descripcion": "Identificar la suma de números naturales como combinación y agregación de elementos u objetos.",
+                  "pagina_pdf": 85
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H017",
+                  "descripcion": "Identificar la resta de números naturales como sustraer, quitar y completar.",
+                  "pagina_pdf": 86
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H018",
+                  "descripcion": "Establecer la relación de las operaciones suma y resta.",
+                  "pagina_pdf": 86
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H019",
+                  "descripcion": "Identificar el doble de un número menor que 10.",
+                  "pagina_pdf": 86
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H020",
+                  "descripcion": "Identificar la mitad de un número par menor o igual a 20.",
+                  "pagina_pdf": 86
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H021",
+                  "descripcion": "Resolver problemas y operaciones con sumas y restas de números naturales cuyos resultados sean menores que 100.",
+                  "pagina_pdf": 87
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H022",
+                  "descripcion": "Utilizar correctamente los símbolos =, + y –.",
+                  "pagina_pdf": 87
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H023",
+                  "descripcion": "Representar en forma literal números menores que 100.",
+                  "pagina_pdf": 87
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H024",
+                  "descripcion": "Representar números menores que 100 mediante composición y descomposición aditiva.",
+                  "pagina_pdf": 87
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H025",
+                  "descripcion": "Calcular mentalmente sumas o restas mediante diversas estrategias.",
+                  "pagina_pdf": 88
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H026",
+                  "descripcion": "Realizar estimaciones de una cantidad dada de objetos.",
+                  "pagina_pdf": 88
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H027",
+                  "descripcion": "Utilizar el conteo en la elaboración de agrupamientos de 1 en 1, 2 en 2, 3 en 3, 4 en 4, 5 en 5, de 10 en 10, 50 en 50 y de 100 en 100 elementos.",
+                  "pagina_pdf": 89
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H028",
+                  "descripcion": "Representar números menores que 1000 aplicando los conceptos de centena, decena, unidades y sus relaciones.",
+                  "pagina_pdf": 89
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H029",
+                  "descripcion": "Identificar el valor posicional de los dígitos de un número menor que 1000.",
+                  "pagina_pdf": 89
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H030",
+                  "descripcion": "Escribir sucesiones de números de 10 en 10 o de 100 en 100.",
+                  "pagina_pdf": 90
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H031",
+                  "descripcion": "Comparar números menores que 1000 utilizando los símbolos <, > o =.",
+                  "pagina_pdf": 90
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H032",
+                  "descripcion": "Representar números en la recta numérica.",
+                  "pagina_pdf": 90
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H033",
+                  "descripcion": "Identificar el antecesor y el sucesor de un número mayor o igual a cero y menor que 1000.",
+                  "pagina_pdf": 91
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H034",
+                  "descripcion": "Determinar el doble de un número natural y la mitad de números pares menores que 100.",
+                  "pagina_pdf": 91
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H035",
+                  "descripcion": "Identificar el lugar que ocupan objetos o personas en un orden definido utilizando números ordinales hasta el vigésimo.",
+                  "pagina_pdf": 91
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H036",
+                  "descripcion": "Aplicar la relación entre las operaciones suma y resta para la verificación de respuestas o resultados.",
+                  "pagina_pdf": 92
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H037",
+                  "descripcion": "Efectuar sumas y restas columnas.",
+                  "pagina_pdf": 92
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H038",
+                  "descripcion": "Identificar la multiplicación como la adición repetida de grupos de igual tamaño.",
+                  "pagina_pdf": 92
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H039",
+                  "descripcion": "Aplicar diversas estrategias para conocer los resultados de las tablas del 1, 2, 3, 4 y 5.",
+                  "pagina_pdf": 93
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H040",
+                  "descripcion": "Resolver problemas y operaciones con sumas y restas de números naturales menores que 1000.",
+                  "pagina_pdf": 93
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H041",
+                  "descripcion": "Resolver problemas y operaciones que involucren cálculo de multiplicaciones de números naturales.",
+                  "pagina_pdf": 94
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H042",
+                  "descripcion": "Dividir por 2 números pares menores que 100.",
+                  "pagina_pdf": 94
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H043",
+                  "descripcion": "Calcular sumas con números naturales aplicando como estrategia las propiedades asociativa y conmutativa.",
+                  "pagina_pdf": 94
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H044",
+                  "descripcion": "Calcular sumas, restas y multiplicaciones utilizando diversas estrategias de cálculo mental y estimación.",
+                  "pagina_pdf": 95
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H045",
+                  "descripcion": "Representar números menores que 100 000 aplicando los conceptos de decena de millar y unidad de millar.",
+                  "pagina_pdf": 96
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H046",
+                  "descripcion": "Identificar el valor posicional de los dígitos de un número menor a 100 000.",
+                  "pagina_pdf": 96
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H047",
+                  "descripcion": "Escribir sucesiones de números de 10 en 10, de 100 en 100 o de 1000 en 1000.",
+                  "pagina_pdf": 96
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H048",
+                  "descripcion": "Comparar números menores que 100 000 utilizando los símbolos <, > o =.",
+                  "pagina_pdf": 96
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H049",
+                  "descripcion": "Identificar los números ordinales hasta el centésimo como la unión de vocablos asociados.",
+                  "pagina_pdf": 97
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H050",
+                  "descripcion": "Determinar el resultado de las tablas del 1 al 10 aplicando diversas estrategias.",
+                  "pagina_pdf": 97
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H051",
+                  "descripcion": "Efectuar multiplicaciones en columna donde el segundo factor sea de uno dos dígitos agrupando y sin agrupar y donde el resultado sea un número menor que 100 000.",
+                  "pagina_pdf": 97
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H052",
+                  "descripcion": "Efectuar multiplicaciones en línea donde uno de sus factores es 10, 100 o 1000.",
+                  "pagina_pdf": 98
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H053",
+                  "descripcion": "Identificar la división como reparto equitativo o como agrupamiento.",
+                  "pagina_pdf": 98
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H054",
+                  "descripcion": "Resolver y plantear problemas en los que se utilicen las operaciones suma, resta, multiplicación y división.",
+                  "pagina_pdf": 98
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H055",
+                  "descripcion": "Determinar el triple o el quíntuple de números menores que 100.",
+                  "pagina_pdf": 99
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H056",
+                  "descripcion": "Calcular sumas, restas, multiplicaciones y divisiones aplicando diversas estrategias de cálculo mental y estimación.",
+                  "pagina_pdf": 99
+                },
+                {
+                  "id": "MAT-PC-1-NUM-H057",
+                  "descripcion": "Seleccionar métodos y herramientas adecuados para la resolución de cálculos, según el problema dado. metodológicas ciclo los nombres de los noticias apropiadas para actividades lúdicas constituye permite fomentar una para exponer la estrategia establecimiento de relaciones recursos: objetos del entorno, y revistas y algunos al tema de valor posicional, números sin tener conciencia materiales como el papel importante para comprender operaciones básicas. de problemas que involucre contextos reales que se medio periodo?, ¿cuántos recursos tecnológicos puede numérico y el cálculo de desarrollar actividades como",
+                  "pagina_pdf": 100
+                }
+              ]
+            },
+            {
+              "nombre": "Geometria",
+              "habilidades": [
+                {
+                  "id": "MAT-PC-1-GEO-H001",
+                  "descripcion": "Identificar y trazar líneas rectas, curvas, quebradas y mixtas.",
+                  "pagina_pdf": 110
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H002",
+                  "descripcion": "Distinguir el interior, el exterior y el borde referidos a líneas cerradas tanto en el entorno como en dibujos y trazos elaborados por sí mismo y por otros.",
+                  "pagina_pdf": 110
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H003",
+                  "descripcion": "Identificar figuras planas en cuerpos sólidos.",
+                  "pagina_pdf": 110
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H004",
+                  "descripcion": "Trazar figuras planas de diversos tipos como triángulos, cuadriláteros, polígonos, utilizando regla, escuadra, papel cuadriculado.",
+                  "pagina_pdf": 111
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H005",
+                  "descripcion": "Clasificar figuras planas de acuerdo con su forma (triángulos, cuadriláteros, polígonos).",
+                  "pagina_pdf": 111
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H006",
+                  "descripcion": "Identificar objetos que tengan forma de caja.",
+                  "pagina_pdf": 111
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H007",
+                  "descripcion": "Clasificar objetos según tengan forma de caja o no tengan dicha forma.",
+                  "pagina_pdf": 111
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H008",
+                  "descripcion": "Identificar en dibujos y en el entorno posiciones de líneas rectas: horizontal, vertical, oblicua.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H009",
+                  "descripcion": "Trazar líneas rectas en posiciones horizontal, vertical y oblicua.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H010",
+                  "descripcion": "Reconocer triángulos y cuadriláteros.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H011",
+                  "descripcion": "Trazar triángulos y cuadriláteros utilizando intrumentos geométricos.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H012",
+                  "descripcion": "Reconocer si un cuadrilátero es un rectángulo.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H013",
+                  "descripcion": "Reconocer si un rectángulo es un cuadrado.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H014",
+                  "descripcion": "Identificar elementos de una figura plana (vértice, lado).",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H015",
+                  "descripcion": "Identificar semejanzas y diferencias en triángulos, cuadrados, rectángulos y cuadriláteros en general.",
+                  "pagina_pdf": 112
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H016",
+                  "descripcion": "Identificar objetos que tengan forma de caja o forma esférica.",
+                  "pagina_pdf": 113
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H017",
+                  "descripcion": "Clasificar objetos según forma: cajas, esferas, otros (los que no son ni cajas esferas).",
+                  "pagina_pdf": 113
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H018",
+                  "descripcion": "Reconocer ángulos en dibujos y objetos del entorno.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H019",
+                  "descripcion": "Trazar ángulos y reconocer sus elementos (lado, vértice).",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H020",
+                  "descripcion": "Estimar la medida de ángulos en objetos del entorno.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H021",
+                  "descripcion": "Clasificar ángulos de acuerdo con su medida (agudo, recto, obtuso).",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H022",
+                  "descripcion": "Estimar por observación (en dibujos y objetos del entorno) si un ángulo es recto, agudo u obtuso.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H023",
+                  "descripcion": "Medir ángulos con el transportador.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H024",
+                  "descripcion": "Plantear y resolver problemas que involucren los conceptos de lado, vértice, ángulo recto, ángulo obtuso, ángulo agudo.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H025",
+                  "descripcion": "Reconocer rectas y segmentos paralelos en dibujos y objetos del entorno.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H026",
+                  "descripcion": "Reconocer rectas y segmentos perpendiculares en dibujos y objetos del entorno.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H027",
+                  "descripcion": "Trazar segmentos paralelos y perpendiculares.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H028",
+                  "descripcion": "Ubicar personas u objetos a partir de un punto de referencia.",
+                  "pagina_pdf": 114
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H029",
+                  "descripcion": "Clasificar polígonos según el número de sus lados (triángulo, cuadrilátero, pentágono, hexágono).",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H030",
+                  "descripcion": "Trazar polígonos de diferente número de lados utilizando regla y compás.",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H031",
+                  "descripcion": "Identificar y trazar circunferencias.",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H032",
+                  "descripcion": "Reconocer el radio y el diámetro de circunferencias.",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H033",
+                  "descripcion": "Reconocer el radio y diámetro de esferas.",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H034",
+                  "descripcion": "Reconocer cuáles cajas corresponden a cubos.",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H035",
+                  "descripcion": "Reconocer los elementos de cajas y cubos (caras y aristas).",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H036",
+                  "descripcion": "Reconocer diferencias y semejanzas entre cajas y cubos.",
+                  "pagina_pdf": 115
+                },
+                {
+                  "id": "MAT-PC-1-GEO-H037",
+                  "descripcion": "Plantear problemas con base en imágenes de cuerpos sólidos.",
+                  "pagina_pdf": 115
+                }
+              ]
+            },
+            {
+              "nombre": "Medidas",
+              "habilidades": [
+                {
+                  "id": "MAT-PC-1-MED-H001",
+                  "descripcion": "Estimar medidas utilizando unidades de medidas arbitrarias como la cuarta o unidades definidas por las y los estudiantes.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H002",
+                  "descripcion": "Estimar medidas utilizando el metro o el centímetro como unidades de medida convencionales.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H003",
+                  "descripcion": "Construir el conocimiento de unidad monetaria.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H004",
+                  "descripcion": "Reconocer el colón como la unidad monetaria de Costa Rica.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H005",
+                  "descripcion": "Identificar la relación entre las monedas de denominaciones hasta ₡100.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H006",
+                  "descripcion": "Estimar el peso de objetos utilizando unidades arbitrarias.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H007",
+                  "descripcion": "Comparar los pesos de diversos objetos en forma intuitiva.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H008",
+                  "descripcion": "Identificar la necesidad de medir el tiempo.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H009",
+                  "descripcion": "Utilizar la noción de tiempo (día, noche, sema-na, mes, año, antes, ahora, después, ayer, hoy, mañana, pasado, presen-te, futuro) en situaciones de la vida cotidiana o imaginarias.",
+                  "pagina_pdf": 124
+                },
+                {
+                  "id": "MAT-PC-1-MED-H010",
+                  "descripcion": "Estimar el intervalo de tiempo transcurrido entre dos eventos.",
+                  "pagina_pdf": 125
+                },
+                {
+                  "id": "MAT-PC-1-MED-H011",
+                  "descripcion": "Estimar la capacidad de diversos recipientes utilizando unidades de capacidad arbitrarias.",
+                  "pagina_pdf": 125
+                },
+                {
+                  "id": "MAT-PC-1-MED-H012",
+                  "descripcion": "Comparar las capacidades de diversos recipientes en forma intuitiva.",
+                  "pagina_pdf": 125
+                },
+                {
+                  "id": "MAT-PC-1-MED-H013",
+                  "descripcion": "Comparar longitudes sin usar la regla.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H014",
+                  "descripcion": "Realizar mediciones utilizando el metro y el centímetro.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H015",
+                  "descripcion": "Establecer relaciones entre metro y centímetro.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H016",
+                  "descripcion": "Reconocer los símbolos para metro y centímetro.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H017",
+                  "descripcion": "Establecer relación entre las monedas de denominaciones hasta ₡ 500.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H018",
+                  "descripcion": "Estimar cantidades monetarias.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H019",
+                  "descripcion": "Comparar cantidades monetarias.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H020",
+                  "descripcion": "Utilizar el kilogramo como unidad de masa.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H021",
+                  "descripcion": "Reconocer el símbolo para kilogramos.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H022",
+                  "descripcion": "Estimar medidas de peso.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H023",
+                  "descripcion": "Comparar medidas de peso.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H024",
+                  "descripcion": "Medir intervalos de tiempo utilizando horas, minutos y lapsos de 15, 30 o 45 minutos.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H025",
+                  "descripcion": "Comparar intervalos de tiempo medidos en minutos.",
+                  "pagina_pdf": 126
+                },
+                {
+                  "id": "MAT-PC-1-MED-H026",
+                  "descripcion": "Leer el reloj analógico.",
+                  "pagina_pdf": 127
+                },
+                {
+                  "id": "MAT-PC-1-MED-H027",
+                  "descripcion": "Estimar la capacidad de diversos recipientes utilizando el litro como unidad de capacidad.",
+                  "pagina_pdf": 127
+                },
+                {
+                  "id": "MAT-PC-1-MED-H028",
+                  "descripcion": "Comparar mediciones de capacidad.",
+                  "pagina_pdf": 127
+                },
+                {
+                  "id": "MAT-PC-1-MED-H029",
+                  "descripcion": "Plantear y resolver problemas que involucren diferentes medidas.",
+                  "pagina_pdf": 127
+                },
+                {
+                  "id": "MAT-PC-1-MED-H030",
+                  "descripcion": "Estimar mediciones.",
+                  "pagina_pdf": 128
+                },
+                {
+                  "id": "MAT-PC-1-MED-H031",
+                  "descripcion": "Realizar mediciones utilizando el metro, sus múltiplos y submúltiplos.",
+                  "pagina_pdf": 128
+                },
+                {
+                  "id": "MAT-PC-1-MED-H032",
+                  "descripcion": "Realizar conversiones de medida entre el metro, sus múltiplos y submúltiplos.",
+                  "pagina_pdf": 128
+                },
+                {
+                  "id": "MAT-PC-1-MED-H033",
+                  "descripcion": "Establecer la relación entre las monedas de denominaciones hasta ₡500 y billetes de hasta ₡ 10 000 para utilizarlas en situaciones prácticas.",
+                  "pagina_pdf": 128
+                },
+                {
+                  "id": "MAT-PC-1-MED-H034",
+                  "descripcion": "Estimar y comparar cantidades monetarias.",
+                  "pagina_pdf": 128
+                },
+                {
+                  "id": "MAT-PC-1-MED-H035",
+                  "descripcion": "Medir pesos utilizando el kilogramo y sus divisiones en ¼, ½ y ¾ de kg.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H036",
+                  "descripcion": "Estimar pesos utilizando el kilogramo y sus divisiones en ¼, ½ y ¾ de kg.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H037",
+                  "descripcion": "Estimar y comparar medidas de peso.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H038",
+                  "descripcion": "Estimar el tiempo.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H039",
+                  "descripcion": "Medir el tiempo utilizando año, meses, semanas, horas, minutos y segundos.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H040",
+                  "descripcion": "Realizar conversiones entre estas medidas.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H041",
+                  "descripcion": "Estimar y medir la capacidad de diversos recipientes utilizando el litro, sus múltiplos y submúltiplos.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H042",
+                  "descripcion": "Realizar conversiones entre el litro, sus múltiplos y submúltiplos.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H043",
+                  "descripcion": "Resolver problemas que involucren diferentes medidas.",
+                  "pagina_pdf": 129
+                },
+                {
+                  "id": "MAT-PC-1-MED-H044",
+                  "descripcion": "Plantear problemas que utilicen diferentes tipos de medidas.",
+                  "pagina_pdf": 130
+                }
+              ]
+            },
+            {
+              "nombre": "Algebra",
+              "habilidades": [
+                {
+                  "id": "MAT-PC-1-ALG-H001",
+                  "descripcion": "Identificar patrones o regularidades en sucesiones con números menores que 100, con figuras o con representaciones geométricas",
+                  "pagina_pdf": 136
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H002",
+                  "descripcion": "Construir sucesiones con figuras o con números naturales menores que 100 que obedecen a una ley dada de formación o patrón.",
+                  "pagina_pdf": 136
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H003",
+                  "descripcion": "Identificar dos expresiones matemáticas que son iguales.",
+                  "pagina_pdf": 137
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H004",
+                  "descripcion": "Reconocer el significado de “ = ”.",
+                  "pagina_pdf": 137
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H005",
+                  "descripcion": "Representar cantidades en situaciones diversas utilizando la escritura de expresiones matemáticas.",
+                  "pagina_pdf": 137
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H006",
+                  "descripcion": "Plantear y resolver problemas contextualizados aplicando la representación de cantidades.",
+                  "pagina_pdf": 137
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H007",
+                  "descripcion": "Construir sucesiones con figuras o con números naturales menores a 1000 que obedecen un patrón dado de formación.",
+                  "pagina_pdf": 138
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H008",
+                  "descripcion": "Identificar patrones o regularidades en sucesiones o en tablas de números naturales menores que 1000, con figuras o con representaciones geométricas.",
+                  "pagina_pdf": 138
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H009",
+                  "descripcion": "Ordenar números ascendente o descendentemente.",
+                  "pagina_pdf": 139
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H010",
+                  "descripcion": "Identificar y construir sucesiones ascendentes o descendentes. Habilidades específicas",
+                  "pagina_pdf": 139
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H011",
+                  "descripcion": "Identificar y construir sucesiones con figuras, representaciones geométricas o con números naturales menores a 100 000 que obedecen a un patrón dado de formación.",
+                  "pagina_pdf": 139
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H012",
+                  "descripcion": "Ordenar números ascendente o descendentemente.",
+                  "pagina_pdf": 140
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H013",
+                  "descripcion": "Identificar y construir sucesiones ascendentes o descendentes.",
+                  "pagina_pdf": 140
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H014",
+                  "descripcion": "Plantear y resolver problemas aplicando sucesiones y patrones.",
+                  "pagina_pdf": 140
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H015",
+                  "descripcion": "Representar tabularmente relaciones entre números y operaciones.",
+                  "pagina_pdf": 140
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H016",
+                  "descripcion": "Identificar el número que falta en una tabla.",
+                  "pagina_pdf": 140
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H017",
+                  "descripcion": "Plantear y resolver problemas que involucran valores faltantes en una tabla o expresión matemática.",
+                  "pagina_pdf": 141
+                },
+                {
+                  "id": "MAT-PC-1-ALG-H018",
+                  "descripcion": "Representar sumas y restas en la recta numérica.",
+                  "pagina_pdf": 141
+                }
+              ]
+            },
+            {
+              "nombre": "Estadistica",
+              "habilidades": [
+                {
+                  "id": "MAT-PC-1-EST-H001",
+                  "descripcion": "Identificar datos dentro del contexto estudiantil (aula, escuela, hogar, comunidad, etc.).",
+                  "pagina_pdf": 148
+                },
+                {
+                  "id": "MAT-PC-1-EST-H002",
+                  "descripcion": "Clasificar datos en cuantitativos o cualitativos.",
+                  "pagina_pdf": 148
+                },
+                {
+                  "id": "MAT-PC-1-EST-H003",
+                  "descripcion": "Valorar la importancia de variabilidad para el análisis de datos.",
+                  "pagina_pdf": 148
+                },
+                {
+                  "id": "MAT-PC-1-EST-H004",
+                  "descripcion": "Emplear la frecuencia de los datos repetidos para agruparlos.",
+                  "pagina_pdf": 149
+                },
+                {
+                  "id": "MAT-PC-1-EST-H005",
+                  "descripcion": "Identificar diferencias entre situaciones cuyo resultado sea aleatorio de aquellas cuyo resultado es conocido o seguro.",
+                  "pagina_pdf": 150
+                },
+                {
+                  "id": "MAT-PC-1-EST-H006",
+                  "descripcion": "Identificar datos cuantitativos y cualitativos en diferentes contextos.",
+                  "pagina_pdf": 151
+                },
+                {
+                  "id": "MAT-PC-1-EST-H007",
+                  "descripcion": "Interpretar información que ha sido resumida en dibujos, diagramas, cuadros y gráficos.",
+                  "pagina_pdf": 151
+                },
+                {
+                  "id": "MAT-PC-1-EST-H008",
+                  "descripcion": "Identificar la variabilidad los datos como componente básico dentro de los análisis de la información.",
+                  "pagina_pdf": 151
+                },
+                {
+                  "id": "MAT-PC-1-EST-H009",
+                  "descripcion": "Resumir los datos por medio de cuadros que incluyan frecuencias absolutas.",
+                  "pagina_pdf": 153
+                },
+                {
+                  "id": "MAT-PC-1-EST-H010",
+                  "descripcion": "Utilizar la moda de un grupo de datos para resumir e interpretar información.",
+                  "pagina_pdf": 153
+                },
+                {
+                  "id": "MAT-PC-1-EST-H011",
+                  "descripcion": "Utilizar los análisis estadísticos para comunicar y argumentar respuestas interrogantes que surgen de los problemas planteados.",
+                  "pagina_pdf": 153
+                },
+                {
+                  "id": "MAT-PC-1-EST-H012",
+                  "descripcion": "Identificar diferencias entre situaciones cuyo resultado sea incierto de aquellas cuyo resultado es conocido o seguro.",
+                  "pagina_pdf": 154
+                },
+                {
+                  "id": "MAT-PC-1-EST-H013",
+                  "descripcion": "Identificar resultados seguros, probables o imposibles según corresponda a una situación particular.",
+                  "pagina_pdf": 154
+                },
+                {
+                  "id": "MAT-PC-1-EST-H014",
+                  "descripcion": "Identificar resultados o eventos más probables o menos probables en situaciones aleatorias pertenecientes a diferentes contextos.",
+                  "pagina_pdf": 154
+                },
+                {
+                  "id": "MAT-PC-1-EST-H015",
+                  "descripcion": "Identificar datos cuantitativos y cualitativos en diferentes contextos.",
+                  "pagina_pdf": 156
+                },
+                {
+                  "id": "MAT-PC-1-EST-H016",
+                  "descripcion": "Interpretar información que ha sido resumida en textos, dibujos, diagramas, cuadros y gráficos.",
+                  "pagina_pdf": 156
+                },
+                {
+                  "id": "MAT-PC-1-EST-H017",
+                  "descripcion": "Plantear problemas del contexto estudiantil que puedan abordarse por medio de recolección y análisis de datos.",
+                  "pagina_pdf": 156
+                },
+                {
+                  "id": "MAT-PC-1-EST-H018",
+                  "descripcion": "Resolver problemas del contexto estudiantil utilizando la técnica de interrogación para la recolección de datos.",
+                  "pagina_pdf": 156
+                },
+                {
+                  "id": "MAT-PC-1-EST-H019",
+                  "descripcion": "Resumir los datos por medio de cuadros que incluyan frecuencias absolutas o gráficos de barras.",
+                  "pagina_pdf": 156
+                },
+                {
+                  "id": "MAT-PC-1-EST-H020",
+                  "descripcion": "Resumir e interpretar información utilizando la moda, el máximo y el mínimo de un grupo de datos.",
+                  "pagina_pdf": 156
+                },
+                {
+                  "id": "MAT-PC-1-EST-H021",
+                  "descripcion": "Utilizar los análisis estadísticos para comunicar en forma verbal y escrita los argumentos que dan respuestas a los problemas contextuales.",
+                  "pagina_pdf": 157
+                },
+                {
+                  "id": "MAT-PC-1-EST-H022",
+                  "descripcion": "Identificar todos los posibles resultados al realizar experimentos simples.",
+                  "pagina_pdf": 159
+                },
+                {
+                  "id": "MAT-PC-1-EST-H023",
+                  "descripcion": "Representar los posibles resultados de un experimento o situación aleatoria simple por enumeración o mediante diagramas.",
+                  "pagina_pdf": 159
+                },
+                {
+                  "id": "MAT-PC-1-EST-H024",
+                  "descripcion": "Describir eventos seguros, probables o imposibles según corresponda a una situación particular.",
+                  "pagina_pdf": 159
+                },
+                {
+                  "id": "MAT-PC-1-EST-H025",
+                  "descripcion": "Interpretar los conceptos de eventos más probables, igualmente probables o menos probables.",
+                  "pagina_pdf": 159
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ciclo": "TERCER_CICLO",
+      "niveles": [
+        {
+          "nivel": "7-9",
+          "areas": [
+            {
+              "nombre": "Numeros",
+              "habilidades": [
+                {
+                  "id": "MAT-TC-7-NUM-H001",
+                  "descripcion": "Leer y escribir números naturales menores que un millón.",
+                  "pagina_pdf": 174
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H002",
+                  "descripcion": "Comparar números naturales menores que un millón utilizando los símbolos <, > o =.",
+                  "pagina_pdf": 174
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H003",
+                  "descripcion": "Reconocer números pares e impares.",
+                  "pagina_pdf": 174
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H004",
+                  "descripcion": "Reconocer los múltiplos de un número.",
+                  "pagina_pdf": 174
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H005",
+                  "descripcion": "Resolver problemas utilizando el algoritmo de la división de números naturales.",
+                  "pagina_pdf": 175
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H006",
+                  "descripcion": "Identificar las fracciones como parte de la unidad parte de una colección de objetos.",
+                  "pagina_pdf": 175
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H007",
+                  "descripcion": "Analizar las fracciones propias.",
+                  "pagina_pdf": 176
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H008",
+                  "descripcion": "Comparar las fracciones propias utilizando los símbolos <, > o =.",
+                  "pagina_pdf": 176
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H009",
+                  "descripcion": "Plantear y resolver problemas que involucren fracciones propias.",
+                  "pagina_pdf": 177
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H010",
+                  "descripcion": "Leer y escribir números en su representación decimal hasta la milésima.",
+                  "pagina_pdf": 177
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H011",
+                  "descripcion": "Establecer entre cuáles números naturales consecutivos se encuentra un número decimal al localizarlo en la recta numérica.",
+                  "pagina_pdf": 177
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H012",
+                  "descripcion": "Comparar y ordenar números en su representación decimal.",
+                  "pagina_pdf": 178
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H013",
+                  "descripcion": "Resolver y plantear problemas donde se requiera el uso de la suma, la resta, la multiplicación y la división de números naturales.",
+                  "pagina_pdf": 178
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H014",
+                  "descripcion": "Resolver y plantear problemas donde se requiera el uso de la suma, la resta y la multiplicación de números con decimales.",
+                  "pagina_pdf": 178
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H015",
+                  "descripcion": "Multiplicar un número con o sin expansión de-cimal por 10, 100 y por 1000.",
+                  "pagina_pdf": 179
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H016",
+                  "descripcion": "Utilizar la calculadora para resolver problemas operaciones numéricas con cálculos complejos.",
+                  "pagina_pdf": 179
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H017",
+                  "descripcion": "Seleccionar los métodos y las herramientas más adecuados para la resolución de cálculos.",
+                  "pagina_pdf": 180
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H018",
+                  "descripcion": "Calcular mentalmente los resultados de sumas, restas, multiplicaciones y divisiones.",
+                  "pagina_pdf": 180
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H019",
+                  "descripcion": "Resolver problemas y operaciones donde se requiera el uso de la combinación de operaciones suma, resta, multiplicación y división de números naturales.",
+                  "pagina_pdf": 182
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H020",
+                  "descripcion": "Plantear y resolver problemas utilizando la propiedad distributiva de la multiplicación respecto a suma.",
+                  "pagina_pdf": 182
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H021",
+                  "descripcion": "Aplicar los conceptos de múltiplo de un número natural, números pares e impares en la resolución de problemas.",
+                  "pagina_pdf": 182
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H022",
+                  "descripcion": "Identificar divisores de un número natural.",
+                  "pagina_pdf": 182
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H023",
+                  "descripcion": "Deducir las reglas de divisibilidad del 2, 3, 5 y 10.",
+                  "pagina_pdf": 182
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H024",
+                  "descripcion": "Establecer si un número natural es divisible por 2, 5 o 10 aplicando las reglas de divisibilidad.",
+                  "pagina_pdf": 182
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H025",
+                  "descripcion": "Identificar fracciones impropias. Representar una fracción 9. impropia como la suma de un número natural y una fracción propia.",
+                  "pagina_pdf": 183
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H026",
+                  "descripcion": "Identificar fracciones homogéneas y heterogéneas.",
+                  "pagina_pdf": 184
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H027",
+                  "descripcion": "Comparar fracciones utilizando los símbolos <, o =.",
+                  "pagina_pdf": 184
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H028",
+                  "descripcion": "Ubicar fracciones en la recta numérica.",
+                  "pagina_pdf": 184
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H029",
+                  "descripcion": "Determinar fracciones entre dos números naturales consecutivos.",
+                  "pagina_pdf": 185
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H030",
+                  "descripcion": "Leer y escribir números en su representación decimal hasta la diezmilésima.",
+                  "pagina_pdf": 185
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H031",
+                  "descripcion": "Establecer la correspondencia entre fracción decimal y número decimal.",
+                  "pagina_pdf": 185
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H032",
+                  "descripcion": "Representar fracciones mediante un número con expansión decimal finita y viceversa.",
+                  "pagina_pdf": 185
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H033",
+                  "descripcion": "Representar un número decimal en su notación desarrollada.",
+                  "pagina_pdf": 185
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H034",
+                  "descripcion": "Redondear un número decimal.",
+                  "pagina_pdf": 186
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H035",
+                  "descripcion": "Multiplicar y dividir un número con o sin expansión decimal por 10, 100, 1000 y 10 000.",
+                  "pagina_pdf": 186
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H036",
+                  "descripcion": "Analizar el resultado de multiplicar y dividir por números mayores o menores que uno.",
+                  "pagina_pdf": 186
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H037",
+                  "descripcion": "Resolver y plantear problemas donde se requiera el uso de la suma, la resta, la multiplicación y división de números naturales y con decimales.",
+                  "pagina_pdf": 186
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H038",
+                  "descripcion": "Utilizar la calculadora para resolver problemas que involucran operaciones con cálculos complejos.",
+                  "pagina_pdf": 186
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H039",
+                  "descripcion": "Seleccionar métodos y herramientas adecuados para la resolución de cálculos. Habilidades específicas",
+                  "pagina_pdf": 187
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H040",
+                  "descripcion": "Aplicar los conceptos de divisibilidad, divisor, factor y múltiplo de un número natural en la resolución de problemas.",
+                  "pagina_pdf": 187
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H041",
+                  "descripcion": "Identificar números primos compuestos.",
+                  "pagina_pdf": 187
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H042",
+                  "descripcion": "Representar productos con factores iguales como potencia y viceversa.",
+                  "pagina_pdf": 188
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H043",
+                  "descripcion": "Calcular potencias cuya base y exponente sean números naturales no iguales a cero simultáneamente.",
+                  "pagina_pdf": 188
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H044",
+                  "descripcion": "Identificar cuadrados y cubos perfectos de números naturales.",
+                  "pagina_pdf": 188
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H045",
+                  "descripcion": "Identificar fracciones equivalentes.",
+                  "pagina_pdf": 189
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H046",
+                  "descripcion": "Simplificar y amplificar fracciones.",
+                  "pagina_pdf": 189
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H047",
+                  "descripcion": "Multiplicar y dividir fracciones.",
+                  "pagina_pdf": 190
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H048",
+                  "descripcion": "Identificar el inverso multiplicativo de un número natural y/o fraccionario.",
+                  "pagina_pdf": 190
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H049",
+                  "descripcion": "Sumar y restar fracciones homogéneas y heterogéneas.",
+                  "pagina_pdf": 190
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H050",
+                  "descripcion": "Resolver problemas donde se requiera el uso de la combinación de operaciones suma, resta, multiplicación y división de números naturales y con decimales.",
+                  "pagina_pdf": 191
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H051",
+                  "descripcion": "Resolver y plantear problemas donde se requiera el uso de la suma, la resta, la multiplicación y la división de fracciones y números con decimales.",
+                  "pagina_pdf": 191
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H052",
+                  "descripcion": "Calcular mentalmente potencias mediante diferentes estrategias.",
+                  "pagina_pdf": 191
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H053",
+                  "descripcion": "Aplicar el cálculo mental los resultados de sumas, restas, multiplicaciones divisiones.",
+                  "pagina_pdf": 191
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H054",
+                  "descripcion": "Determinar el resultado de operaciones con fracciones mediante el cálculo mental utilizando diferentes estrategias.",
+                  "pagina_pdf": 192
+                },
+                {
+                  "id": "MAT-TC-7-NUM-H055",
+                  "descripcion": "Utilizar la calculadora para resolver problemas y ejercicios numéricos con cálculos complejos. metodológicas el ciclo seguir la generalización naturales trabajados durante operaciones. No se pretende sino que ambos vayan de la en equipo resulta beneficioso, estudiante manifieste las de las personas de enriquecedoras y llamativas para juegos de mesa realizados aprovechar para repasar las",
+                  "pagina_pdf": 192
+                }
+              ]
+            },
+            {
+              "nombre": "Geometria",
+              "habilidades": [
+                {
+                  "id": "MAT-TC-7-GEO-H001",
+                  "descripcion": "Identificar diversos elementos de los triángulos (lado, vértice, ángulo, base, altura).",
+                  "pagina_pdf": 202
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H002",
+                  "descripcion": "Clasificar triángulos de acuerdo con las medidas de sus ángulos.",
+                  "pagina_pdf": 202
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H003",
+                  "descripcion": "Clasificar triángulos de acuerdo con las medidas de sus lados.",
+                  "pagina_pdf": 202
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H004",
+                  "descripcion": "Estimar, por observación, si un triángulo es acutángulo, rectángulo u obtusángulo.",
+                  "pagina_pdf": 202
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H005",
+                  "descripcion": "Estimar, por observación, si un triángulo es equilátero, isósceles o escaleno.",
+                  "pagina_pdf": 202
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H006",
+                  "descripcion": "Trazar triángulos utilizando instrumentos tales como regla, compás, transportador.",
+                  "pagina_pdf": 202
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H007",
+                  "descripcion": "Identificar diversos elementos de los cuadriláteros (lado, vértice, ángulo, base, altura, diagonal).",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H008",
+                  "descripcion": "Clasificar cuadriláteros en paralelogramos y no paralelogramos.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H009",
+                  "descripcion": "Clasificar paralelogramos en cuadrado, rectángulo, rombo y romboide.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H010",
+                  "descripcion": "Trazar cuadriláteros que cumplan características dadas.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H011",
+                  "descripcion": "Reconocer propiedades de cuadriláteros referidas a los lados, los ángulos y las diagonales.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H012",
+                  "descripcion": "Clasificar los cuadriláteros no paralelogramos en trapecios y trapezoides.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H013",
+                  "descripcion": "Identificar estas figuras y sus elementos (vértices, lados, ángulos) en objetos del entorno.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H014",
+                  "descripcion": "Resolver problemas que involucren el trazado de diversos tipos de cuadrilátero.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H015",
+                  "descripcion": "Reconocer en dibujos u objetos del entorno si una línea corresponde o no a un polígono.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H016",
+                  "descripcion": "Reconocer en dibujos u objetos del entorno polígonos regulares e irregulares.",
+                  "pagina_pdf": 203
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H017",
+                  "descripcion": "Identificar cubos y prismas rectangulares en objetos del entorno.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H018",
+                  "descripcion": "Identificar segmentos paralelos y perpendiculares en conexión con prismas rectangulares.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H019",
+                  "descripcion": "Identificar planos en conexión con las caras de los prismas rectangulares.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H020",
+                  "descripcion": "Aplicar el concepto de paralelismo y perpendicularidad de planos en conexión con prismas rectangulares.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H021",
+                  "descripcion": "Identificar diversos cuadriláteros en conexión con cubos y prismas en general.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H022",
+                  "descripcion": "Identificar los ejes de simetría de una figura.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H023",
+                  "descripcion": "Ubicar un punto homólogo a otro respecto a una recta.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H024",
+                  "descripcion": "Trazar una figura simétrica a otra respecto a una recta.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H025",
+                  "descripcion": "Estimar la distancia de un punto al eje de simetría.",
+                  "pagina_pdf": 204
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H026",
+                  "descripcion": "Estimar perímetros y áreas de figuras en conexión con objetos del entorno.",
+                  "pagina_pdf": 205
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H027",
+                  "descripcion": "Calcular, utilizando fórmulas, el perímetro y el área de triángulos, cuadrados, rectángulos, paralelogramos y trapecios.",
+                  "pagina_pdf": 205
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H028",
+                  "descripcion": "Reconocer figuras simples dentro de una más compleja.",
+                  "pagina_pdf": 205
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H029",
+                  "descripcion": "Calcular perímetros y áreas de figuras planas compuestas por triángulos, cuadrados, rectángulos, paralelogramos y trapecios.",
+                  "pagina_pdf": 205
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H030",
+                  "descripcion": "Resolver problemas que involucren el cálculo de perímetros y áreas de triángulos y cuadriláteros.",
+                  "pagina_pdf": 205
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H031",
+                  "descripcion": "Plantear problemas utilizando los conocimientos adquiridos de áreas y perímetros de figuras.",
+                  "pagina_pdf": 207
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H032",
+                  "descripcion": "Representar puntos y figuras utilizando coordenadas en el primer cuadrante.",
+                  "pagina_pdf": 207
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H033",
+                  "descripcion": "Reconocer figuras que se obtienen mediante traslación de otras.",
+                  "pagina_pdf": 208
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H034",
+                  "descripcion": "Reconocer prismas y algunos de sus elementos y propiedades (caras, bases, altura).",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H035",
+                  "descripcion": "Reconocer cilindros y algunos de sus elementos y propiedades (bases, superficie lateral, eje, altura, radio y diámetro de la base). Habilidades específicas",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H036",
+                  "descripcion": "Resolver problemas que involucren el cálculo de perímetros y áreas de diversas figuras.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H037",
+                  "descripcion": "Identificar circunferencias en dibujos y objetos del entorno.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H038",
+                  "descripcion": "Identificar elementos de una circunferencia (diámetro, radio, centro, cuerda, ángulo central, cuadrante).",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H039",
+                  "descripcion": "Estimar la medida de la circunferencia conociendo su diámetro.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H040",
+                  "descripcion": "Identificar π como la razón entre la longitud de la circunferencia y su diámetro.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H041",
+                  "descripcion": "Utilizar el número  para calcular la medida de circunferencias.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H042",
+                  "descripcion": "Calcular el área de círculos.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H043",
+                  "descripcion": "Calcular el área de figuras compuestas por círculos, triángulos y cuadriláteros.",
+                  "pagina_pdf": 209
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H044",
+                  "descripcion": "Identificar diversos elementos en un polígono regular.",
+                  "pagina_pdf": 210
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H045",
+                  "descripcion": "Trazar polígonos regulares utilizando regla, compás, transportador.",
+                  "pagina_pdf": 210
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H046",
+                  "descripcion": "Identificar elementos de un polígono inscrito en una circunferencia (ángulos centrales, radio, apotema).",
+                  "pagina_pdf": 211
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H047",
+                  "descripcion": "Calcular el perímetro de polígonos regulares.",
+                  "pagina_pdf": 211
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H048",
+                  "descripcion": "Resolver problemas que involucren el cálculo de perímetros y áreas de diversas figuras relacionadas con polígonos y circunferencias.",
+                  "pagina_pdf": 211
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H049",
+                  "descripcion": "Clasificar cuerpos sólidos por su forma.",
+                  "pagina_pdf": 211
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H050",
+                  "descripcion": "Calcular el volumen de los cuerpos sólidos simples: cubo, prisma, cilindro, cono, pirámide y esfera.",
+                  "pagina_pdf": 212
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H051",
+                  "descripcion": "Reconocer, reproducir y trazar figuras simétricas.",
+                  "pagina_pdf": 214
+                },
+                {
+                  "id": "MAT-TC-7-GEO-H052",
+                  "descripcion": "Plantear problemas referidos a la simetría de figuras y a su reproducción.",
+                  "pagina_pdf": 214
+                }
+              ]
+            },
+            {
+              "nombre": "Medidas",
+              "habilidades": [
+                {
+                  "id": "MAT-TC-7-MED-H001",
+                  "descripcion": "Estimar áreas utilizando el metro cuadrado, sus múltiplos y submúltiplos.",
+                  "pagina_pdf": 223
+                },
+                {
+                  "id": "MAT-TC-7-MED-H002",
+                  "descripcion": "Realizar conversiones entre este tipo de medidas.",
+                  "pagina_pdf": 223
+                },
+                {
+                  "id": "MAT-TC-7-MED-H003",
+                  "descripcion": "Establecer la relación bancaria entre las monedas y billetes de todas las denominaciones.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H004",
+                  "descripcion": "Aplicar el uso de cantidades monetarias en diversas situaciones reales o ficticias.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H005",
+                  "descripcion": "Medir temperaturas en las escalas Celsius y Fahrenheit utilizando instrumentos apropiados.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H006",
+                  "descripcion": "Realizar conversiones mediciones de temperatura entre estas dos escalas.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H007",
+                  "descripcion": "Aplicar la medición de temperatura a situaciones reales o ficticias.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H008",
+                  "descripcion": "Estimar el tiempo utilizando años, meses, semanas, horas, minutos y segundos.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H009",
+                  "descripcion": "Medir el tiempo utilizando años, meses, semanas, horas, minutos y segundos.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H010",
+                  "descripcion": "Realizar conversiones entre estas medidas.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H011",
+                  "descripcion": "Aplicar el sistema métrico decimal en situaciones reales o ficticias.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H012",
+                  "descripcion": "Realizar conversiones entre diversas unidades de medida.",
+                  "pagina_pdf": 224
+                },
+                {
+                  "id": "MAT-TC-7-MED-H013",
+                  "descripcion": "Resolver problemas que involucren diversas medidas.",
+                  "pagina_pdf": 225
+                },
+                {
+                  "id": "MAT-TC-7-MED-H014",
+                  "descripcion": "Comparar ángulos a simple vista, usando un modelo.",
+                  "pagina_pdf": 225
+                },
+                {
+                  "id": "MAT-TC-7-MED-H015",
+                  "descripcion": "Medir ángulos en grados.",
+                  "pagina_pdf": 225
+                },
+                {
+                  "id": "MAT-TC-7-MED-H016",
+                  "descripcion": "Resolver problemas en los que se utilice la medición en grados. Habilidades específicas",
+                  "pagina_pdf": 225
+                },
+                {
+                  "id": "MAT-TC-7-MED-H017",
+                  "descripcion": "Aplicar el uso del sistema monetario nacional en tuaciones ficticias o del entorno.",
+                  "pagina_pdf": 225
+                },
+                {
+                  "id": "MAT-TC-7-MED-H018",
+                  "descripcion": "Aplicar las diversas medidas en la resolución de problemas que se presenten en situaciones ficticias y del entorno.",
+                  "pagina_pdf": 225
+                },
+                {
+                  "id": "MAT-TC-7-MED-H019",
+                  "descripcion": "Realizar estimaciones de diversas medidas. Habilidades específicas",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H020",
+                  "descripcion": "Utilizar el metro cúbico, sus múltiplos y submúltiplos en diversas situaciones ficticias o del entorno.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H021",
+                  "descripcion": "Realizar conversiones de unidades cúbicas.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H022",
+                  "descripcion": "Establecer relaciones entre el decímetro cúbico y el litro, así como múltiplos y submúltiplos de ellos.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H023",
+                  "descripcion": "Aplicar esas relaciones en situaciones ficticias o del entorno.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H024",
+                  "descripcion": "Aplicar las diversas medidas en la resolución de problemas dados en situaciones ficticias o del entorno.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H025",
+                  "descripcion": "Realizar estimaciones de diversas medidas.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H026",
+                  "descripcion": "Realizar conversiones monetarias: colones a dólares, colones a euros y viceversa.",
+                  "pagina_pdf": 226
+                },
+                {
+                  "id": "MAT-TC-7-MED-H027",
+                  "descripcion": "Plantear problemas contextualizados que involucren, para su solución, diversos tipos de medidas y sus respectivas conversiones. metodológicas el ciclo que se utilizan en este complejidad de las actividades. se pretende retomar el es necesario proponer que el educador o (unidad de medida) y que este útil para evidenciar el pueden realizarse en el en la casa. Por ejemplo, datos de peso, temperatura, investigar qué unidades",
+                  "pagina_pdf": 227
+                }
+              ]
+            },
+            {
+              "nombre": "Algebra",
+              "habilidades": [
+                {
+                  "id": "MAT-TC-7-ALG-H001",
+                  "descripcion": "Analizar patrones en sucesiones con figuras, representaciones geométricas y en tablas números naturales menores que 1 000 000.",
+                  "pagina_pdf": 232
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H002",
+                  "descripcion": "Aplicar sucesiones y patrones para resolver problemas contextualizados.",
+                  "pagina_pdf": 233
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H003",
+                  "descripcion": "Representar una expresión matemática dada en forma verbal utilizando números y letras.",
+                  "pagina_pdf": 233
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H004",
+                  "descripcion": "Construir tablas que cumplan las especificaciones dadas en forma verbal.",
+                  "pagina_pdf": 233
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H005",
+                  "descripcion": "Plantear y resolver problemas formulados verbalmente.",
+                  "pagina_pdf": 233
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H006",
+                  "descripcion": "Identificar el número que falta en una expresión matemática, una figura en una tabla.",
+                  "pagina_pdf": 234
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H007",
+                  "descripcion": "Resolver problemas aplicando las propiedades de conmutatividad asociatividad de la suma y la multiplicación y la propiedad distributiva la multiplicación con respecto a la suma. Habilidades específicas",
+                  "pagina_pdf": 234
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H008",
+                  "descripcion": "Distinguir entre cantidades variables y constantes.",
+                  "pagina_pdf": 234
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H009",
+                  "descripcion": "Identificar y aplicar relaciones entre dos cantidades variables una expresión matemática.",
+                  "pagina_pdf": 235
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H010",
+                  "descripcion": "Determinar el valor desconocido en una ecuación matemática dada.",
+                  "pagina_pdf": 235
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H011",
+                  "descripcion": "Analizar gráficas de figuras con escala.",
+                  "pagina_pdf": 235
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H012",
+                  "descripcion": "Determinar relaciones de dependencia entre cantidades.",
+                  "pagina_pdf": 236
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H013",
+                  "descripcion": "Representar mediante tablas relaciones entre dos cantidades que varían simultáneamente.",
+                  "pagina_pdf": 236
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H014",
+                  "descripcion": "Representar una expresión matemática dada en forma verbal utilizando números y letras. Habilidades específicas",
+                  "pagina_pdf": 237
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H015",
+                  "descripcion": "Analizar la proporción entre cantidades numéricas.",
+                  "pagina_pdf": 237
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H016",
+                  "descripcion": "Plantear y resolver problemas aplicando porcentajes y regla de tres.",
+                  "pagina_pdf": 237
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H017",
+                  "descripcion": "Plantear y resolver problemas aplicando proporcionalidad directa.",
+                  "pagina_pdf": 238
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H018",
+                  "descripcion": "Analizar sucesiones y patrones con números, figuras y representaciones geométricas.",
+                  "pagina_pdf": 239
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H019",
+                  "descripcion": "Plantear y resolver problemas aplicando sucesiones y patrones.",
+                  "pagina_pdf": 240
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H020",
+                  "descripcion": "Representar algebraicamente una expresión matemática dada verbalmente.",
+                  "pagina_pdf": 240
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H021",
+                  "descripcion": "Identificar y representar en un plano de coordenadas puntos que satisfacen una relación entre dos cantidades que varían simultáneamente.",
+                  "pagina_pdf": 240
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H022",
+                  "descripcion": "Identificar si un número es solución de una ecuación dada.",
+                  "pagina_pdf": 240
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H023",
+                  "descripcion": "Plantear y resolver problemas aplicando ecuaciones de primer grado.",
+                  "pagina_pdf": 240
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H024",
+                  "descripcion": "Identificar si un número solución de una inecuación dada.",
+                  "pagina_pdf": 241
+                },
+                {
+                  "id": "MAT-TC-7-ALG-H025",
+                  "descripcion": "Plantear y resolver problemas aplicando inecuaciones de primer grado. metodológicas el ciclo repasar los conocimientos se relacionen con los dar tiempo para que identificar, conjeturar, utilizar que cada estudiante utilice de +, -, , , =, <, >, al",
+                  "pagina_pdf": 241
+                }
+              ]
+            },
+            {
+              "nombre": "Estadistica",
+              "habilidades": [
+                {
+                  "id": "MAT-TC-7-EST-H001",
+                  "descripcion": "Interpretar información que ha sido resumida en dibujos, diagramas, cuadros y gráficos en diferentes contextos.",
+                  "pagina_pdf": 248
+                },
+                {
+                  "id": "MAT-TC-7-EST-H002",
+                  "descripcion": "Identificar diferencias entre datos cuantitativos, según las estrategias de recolección de información: por conteo o por medición.",
+                  "pagina_pdf": 248
+                },
+                {
+                  "id": "MAT-TC-7-EST-H003",
+                  "descripcion": "Identificar posibles errores en los datos recolectados.",
+                  "pagina_pdf": 248
+                },
+                {
+                  "id": "MAT-TC-7-EST-H004",
+                  "descripcion": "Emplear los diagramas de puntos para representar grupos de datos cuantitativos.",
+                  "pagina_pdf": 249
+                },
+                {
+                  "id": "MAT-TC-7-EST-H005",
+                  "descripcion": "Resumir un grupo de datos mediante el empleo de la moda, la media aritmética (o promedio), el máximo y el mínimo de un grupo de datos e interpretar estas medidas en relación con la información recabada.",
+                  "pagina_pdf": 249
+                },
+                {
+                  "id": "MAT-TC-7-EST-H006",
+                  "descripcion": "Identificar el recorrido de un grupo de datos como la diferencia entre el máximo y el mínimo.",
+                  "pagina_pdf": 249
+                },
+                {
+                  "id": "MAT-TC-7-EST-H007",
+                  "descripcion": "Reconocer situaciones aleatorias en diferentes situaciones del contexto.",
+                  "pagina_pdf": 251
+                },
+                {
+                  "id": "MAT-TC-7-EST-H008",
+                  "descripcion": "Identificar los distintos resultados simples de un experimento aleatorio.",
+                  "pagina_pdf": 251
+                },
+                {
+                  "id": "MAT-TC-7-EST-H009",
+                  "descripcion": "Identificar los resultados a favor de la ocurrencia de un evento.",
+                  "pagina_pdf": 251
+                },
+                {
+                  "id": "MAT-TC-7-EST-H010",
+                  "descripcion": "Representar eventos mediante la identificación de sus resultados simples.",
+                  "pagina_pdf": 251
+                },
+                {
+                  "id": "MAT-TC-7-EST-H011",
+                  "descripcion": "Determinar eventos más probables, igualmente probables y menos probables de acuerdo con la frecuencia de sus resultados simples.",
+                  "pagina_pdf": 251
+                },
+                {
+                  "id": "MAT-TC-7-EST-H012",
+                  "descripcion": "Valorar la importancia de estadística en la historia",
+                  "pagina_pdf": 253
+                },
+                {
+                  "id": "MAT-TC-7-EST-H013",
+                  "descripcion": "Identificar los conceptos de población y muestra.",
+                  "pagina_pdf": 253
+                },
+                {
+                  "id": "MAT-TC-7-EST-H014",
+                  "descripcion": "Reconocer la importancia del muestreo en el análisis de datos.",
+                  "pagina_pdf": 253
+                },
+                {
+                  "id": "MAT-TC-7-EST-H015",
+                  "descripcion": "Reconocer la importancia del cuestionario en los procesos de selección de información.",
+                  "pagina_pdf": 254
+                },
+                {
+                  "id": "MAT-TC-7-EST-H016",
+                  "descripcion": "Identificar fuentes potenciales de errores en la recopilación de datos por medio del cuestionario.",
+                  "pagina_pdf": 254
+                },
+                {
+                  "id": "MAT-TC-7-EST-H017",
+                  "descripcion": "Analizar la información recolectada por medio de un cuestionario mediante la elaboración de cuadros, gráficos con frecuencias absolutas y el cálculo de medidas de posición y de variabilidad.",
+                  "pagina_pdf": 254
+                },
+                {
+                  "id": "MAT-TC-7-EST-H018",
+                  "descripcion": "Identificar el número de resultados favorables de un evento dado.",
+                  "pagina_pdf": 256
+                },
+                {
+                  "id": "MAT-TC-7-EST-H019",
+                  "descripcion": "Determinar eventos seguros, probables o imposibles en situaciones aleatorias particulares.",
+                  "pagina_pdf": 256
+                },
+                {
+                  "id": "MAT-TC-7-EST-H020",
+                  "descripcion": "Interpretar los conceptos de eventos más probables, igualmente probables y menos probables de acuerdo con la frecuencia de sus resultados simples.",
+                  "pagina_pdf": 256
+                },
+                {
+                  "id": "MAT-TC-7-EST-H021",
+                  "descripcion": "Resumir y clasificar grupos de datos utilizando la frecuencia porcentual.",
+                  "pagina_pdf": 257
+                },
+                {
+                  "id": "MAT-TC-7-EST-H022",
+                  "descripcion": "Identificar la frecuencia porcentual como herramienta fundamental para los análisis comparativos entre dos o más grupos de datos.",
+                  "pagina_pdf": 257
+                },
+                {
+                  "id": "MAT-TC-7-EST-H023",
+                  "descripcion": "Utilizar diagramas lineales para representar tendencias en series de tiempo.",
+                  "pagina_pdf": 258
+                },
+                {
+                  "id": "MAT-TC-7-EST-H024",
+                  "descripcion": "Plantear y resolver problemas vinculados con diferentes contextos utilizando análisis estadísticos.",
+                  "pagina_pdf": 259
+                },
+                {
+                  "id": "MAT-TC-7-EST-H025",
+                  "descripcion": "Determinar la probabilidad de un evento como la proporción de resultados favorables del evento entre el total de resultados.",
+                  "pagina_pdf": 260
+                },
+                {
+                  "id": "MAT-TC-7-EST-H026",
+                  "descripcion": "Deducir mediante situaciones concretas los valores que puede tomar la probabilidad de un evento cualquiera, de un evento seguro y de un evento imposible.",
+                  "pagina_pdf": 261
+                },
+                {
+                  "id": "MAT-TC-7-EST-H027",
+                  "descripcion": "Utilizar probabilidades para favorecer la toma de decisiones.",
+                  "pagina_pdf": 261
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ciclo": "CICLO_DIVERSIFICADO",
+      "niveles": [
+        {
+          "nivel": "10",
+          "areas": [
+            {
+              "nombre": "Numeros",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-10-NUM-H001",
+                  "descripcion": "Calcular expresiones numéricas aplicando el concepto de potencia y la notación exponencial.",
+                  "pagina_pdf": 276
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H002",
+                  "descripcion": "Resolver una combinación de operaciones que involucre o no el uso de paréntesis.",
+                  "pagina_pdf": 276
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H003",
+                  "descripcion": "Aplicar el algoritmo de la división en la resolución de problemas.",
+                  "pagina_pdf": 277
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H004",
+                  "descripcion": "Aplicar los conceptos de divisibilidad, divisor, factor y múltiplo de un número natural en la resolución de problemas en diferentes contextos.",
+                  "pagina_pdf": 278
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H005",
+                  "descripcion": "Identificar números primos y compuestos.",
+                  "pagina_pdf": 279
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H006",
+                  "descripcion": "Obtener el Mínimo Común Múltiplo de dos números aplicando el algoritmo correspondiente.",
+                  "pagina_pdf": 279
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H007",
+                  "descripcion": "Obtener el Máximo Común Divisor de dos números aplicando el algoritmo correspondiente.",
+                  "pagina_pdf": 279
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H008",
+                  "descripcion": "Plantear y resolver problemas donde se utilice el Mínimo Común Múltiplo y el Máximo Común Divisor.",
+                  "pagina_pdf": 280
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H009",
+                  "descripcion": "Identificar números enteros negativos en contextos reales.",
+                  "pagina_pdf": 280
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H010",
+                  "descripcion": "Plantear y resolver operaciones y problemas utilizando las relaciones de orden en los números enteros.",
+                  "pagina_pdf": 281
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H011",
+                  "descripcion": "Ubicar números enteros en la recta numérica.",
+                  "pagina_pdf": 281
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H012",
+                  "descripcion": "Determinar el opuesto y el valor absoluto de un número entero.",
+                  "pagina_pdf": 282
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H013",
+                  "descripcion": "Resolver problemas aplicando sumas, restas, multiplicaciones y divisiones de números enteros.",
+                  "pagina_pdf": 282
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H014",
+                  "descripcion": "Simplificar cálculos mediante el uso de las propiedades de conmutatividad y asociatividad de la adición y multiplicación.",
+                  "pagina_pdf": 283
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H015",
+                  "descripcion": "Calcular potencias cuya base sea un número entero y el exponente sea un número natural.",
+                  "pagina_pdf": 283
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H016",
+                  "descripcion": "Utilizar las propiedades de potencias para representar el resultado de operaciones con potencias de igual base.",
+                  "pagina_pdf": 283
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H017",
+                  "descripcion": "Identificar la relación entre potencias y raíces como operaciones inversas.",
+                  "pagina_pdf": 284
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H018",
+                  "descripcion": "Calcular la raíz de un número entero cuyo resultado sea entero.",
+                  "pagina_pdf": 284
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H019",
+                  "descripcion": "Calcular resultados de operaciones con números enteros en expresiones que incorporen la combinación de operaciones con paréntesis o sin ellos.",
+                  "pagina_pdf": 284
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H020",
+                  "descripcion": "Resolver problemas en los que se apliquen las operaciones con números enteros. Habilidades específicas",
+                  "pagina_pdf": 285
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H021",
+                  "descripcion": "Identificar números racionales en diversos contextos.",
+                  "pagina_pdf": 285
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H022",
+                  "descripcion": "Realizar aproximaciones decimales de números racionales.",
+                  "pagina_pdf": 286
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H023",
+                  "descripcion": "Identificar los números racionales representados con expansión decimal exacta y con expansión decimal periódica.",
+                  "pagina_pdf": 286
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H024",
+                  "descripcion": "Identificar y aportar ejemplos de representaciones distintas de un mismo número racional.",
+                  "pagina_pdf": 286
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H025",
+                  "descripcion": "Comparar y ordenar números racionales en notación decimal, fraccionaria y mixta.",
+                  "pagina_pdf": 287
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H026",
+                  "descripcion": "Representar números racionales en la recta numérica, en cualquiera de sus representaciones.",
+                  "pagina_pdf": 287
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H027",
+                  "descripcion": "Aplicar la suma y resta de números racionales en diversos contextos.",
+                  "pagina_pdf": 287
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H028",
+                  "descripcion": "Aplicar la multiplicación y división de números racionales en diversos contextos.",
+                  "pagina_pdf": 287
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H029",
+                  "descripcion": "Utilizar las propiedades de conmutatividad y asociatividad de la suma y multiplicación para simplificar cálculos con números racionales.",
+                  "pagina_pdf": 287
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H030",
+                  "descripcion": "Calcular el resultado de sumas, restas, multiplicaciones y divisiones de números racionales en cualquiera de sus representaciones.",
+                  "pagina_pdf": 288
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H031",
+                  "descripcion": "Efectuar operaciones con potencias de base racional y exponente entero.",
+                  "pagina_pdf": 288
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H032",
+                  "descripcion": "Calcular raíces n-ésimas de un número racional.",
+                  "pagina_pdf": 288
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H033",
+                  "descripcion": "Calcular resultados de operaciones con números racionales de expresiones donde haya combinación de ellas con paréntesis o sin ellos.",
+                  "pagina_pdf": 288
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H034",
+                  "descripcion": "Desarrollar estrategias para el cálculo mental de resultados de operaciones con racionales.",
+                  "pagina_pdf": 289
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H035",
+                  "descripcion": "Seleccionar métodos y herramientas adecuados para la resolución de cálculos, según el problema dado.",
+                  "pagina_pdf": 289
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H036",
+                  "descripcion": "Plantear y resolver problemas en los que se requiera de la aplicación de operaciones con números racionales.",
+                  "pagina_pdf": 289
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H037",
+                  "descripcion": "Identificar números irracionales en diversos contextos.",
+                  "pagina_pdf": 290
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H038",
+                  "descripcion": "Identificar números con expansión decimal infinita no periódica.",
+                  "pagina_pdf": 290
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H039",
+                  "descripcion": "Realizar aproximaciones decimales de números irracionales.",
+                  "pagina_pdf": 291
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H040",
+                  "descripcion": "Reconocer números irracionales en notación decimal, en notación radical y otras notaciones particulares.",
+                  "pagina_pdf": 291
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H041",
+                  "descripcion": "Comparar y ordenar números irracionales representados en notación decimal y radical.",
+                  "pagina_pdf": 291
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H042",
+                  "descripcion": "Identificar números reales (racionales e irracionales) y no reales en cualquiera de sus representaciones y en diversos contextos.",
+                  "pagina_pdf": 291
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H043",
+                  "descripcion": "Representar números reales en la recta numérica, con aproximaciones apropiadas.",
+                  "pagina_pdf": 292
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H044",
+                  "descripcion": "Estimar el valor de la raíz de un número entero.",
+                  "pagina_pdf": 292
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H045",
+                  "descripcion": "Determinar números irracionales con representación radical entre dos números enteros consecutivos.",
+                  "pagina_pdf": 292
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H046",
+                  "descripcion": "Utilizar la calculadora para resolver operaciones con radicales.",
+                  "pagina_pdf": 292
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H047",
+                  "descripcion": "Utilizar los prefijos del Sistema Internacional de Medidas para representar cantidades muy grandes muy pequeñas.",
+                  "pagina_pdf": 293
+                },
+                {
+                  "id": "MAT-CD-10-NUM-H048",
+                  "descripcion": "Utilizar la calculadora o software de cálculo simbólico como recurso en la resolución de problemas que involucren las unidades.",
+                  "pagina_pdf": 293
+                }
+              ]
+            },
+            {
+              "nombre": "Geometria",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-10-GEO-H001",
+                  "descripcion": "Identificar en dibujos y objetos del entorno puntos, segmentos, rectas, semirrectas, rayos, planos, puntos colineales y no colineales, puntos coplanares y coplanares.",
+                  "pagina_pdf": 302
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H002",
+                  "descripcion": "Identificar y localizar el punto medio de un segmento.",
+                  "pagina_pdf": 302
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H003",
+                  "descripcion": "Identificar y trazar rectas paralelas, perpendiculares, concurrentes en diferentes contextos.",
+                  "pagina_pdf": 302
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H004",
+                  "descripcion": "Utilizar la notación simbólica de cada concepto estableciendo relación con su representación gráfica.",
+                  "pagina_pdf": 302
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H005",
+                  "descripcion": "Reconocer en figuras tridimensionales diversos elementos como caras, aristas, vértices.",
+                  "pagina_pdf": 303
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H006",
+                  "descripcion": "Establecer relaciones entre los diversos elementos de figuras tridimensionales: vértices, caras y aristas, rectas y segmentos paralelos perpendiculares, planos paralelos y perpendiculares.",
+                  "pagina_pdf": 303
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H007",
+                  "descripcion": "Reconocer en diferentes contextos ángulos llanos, adyacentes, los que forman par lineal y los opuestos por el vértice.",
+                  "pagina_pdf": 303
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H008",
+                  "descripcion": "Identificar ángulos congruentes, complementarios, suplementarios en diferentes contextos.",
+                  "pagina_pdf": 303
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H009",
+                  "descripcion": "Determinar medidas de ángulos sabiendo que son congruentes, complementarios o suplementarios con otros ángulos dados.",
+                  "pagina_pdf": 303
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H010",
+                  "descripcion": "Aplicar la relación entre las medidas de ángulos determinados por tres rectas coplanares dadas.",
+                  "pagina_pdf": 303
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H011",
+                  "descripcion": "Obtener y aplicar medidas de ángulos determinados por dos rectas paralelas y una transversal a ellas, conociendo la medida de uno de ellos.",
+                  "pagina_pdf": 304
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H012",
+                  "descripcion": "Aplicar la desigualdad triangular.",
+                  "pagina_pdf": 304
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H013",
+                  "descripcion": "Aplicar la propiedad de la suma de las medidas de los ángulos internos de un triángulo.",
+                  "pagina_pdf": 304
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H014",
+                  "descripcion": "Determinar medidas de ángulos internos y externos de un triángulo, conociendo medidas de los otros ángulos.",
+                  "pagina_pdf": 304
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H015",
+                  "descripcion": "Aplicar la propiedad de la suma de los ángulos internos de un cuadrilátero convexo.",
+                  "pagina_pdf": 305
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H016",
+                  "descripcion": "Aplicar la propiedad de la suma de los ángulos externos de un cuadrilátero convexo.",
+                  "pagina_pdf": 305
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H017",
+                  "descripcion": "Resolver problemas que involucren ángulos, triángulos, cuadriláteros, sus propiedades y cálculo de áreas.",
+                  "pagina_pdf": 305
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H018",
+                  "descripcion": "Utilizar software de geometría dinámica para la visualización y la verificación de propiedades geométricas.",
+                  "pagina_pdf": 306
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H019",
+                  "descripcion": "Representar puntos y figuras geométricas en un plano con un sistema de ejes cartesianos.",
+                  "pagina_pdf": 306
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H020",
+                  "descripcion": "Determinar algebraicamente el punto medio de un segmento.",
+                  "pagina_pdf": 306
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H021",
+                  "descripcion": "Ubicar puntos en el interior y en el exterior de figuras cerradas en un plano con un sistema de ejes cartesianos.",
+                  "pagina_pdf": 306
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H022",
+                  "descripcion": "Trazar en un plano cartesiano la figura que se obtiene al someter un polígono dado a una homotecia.",
+                  "pagina_pdf": 308
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H023",
+                  "descripcion": "Reconocer puntos, ángulos y lados homólogos de un polígono y el polígono que resulta al aplicar una homotecia.",
+                  "pagina_pdf": 308
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H024",
+                  "descripcion": "Reconocer pares de figuras homotécicas en el plano de coordenadas.",
+                  "pagina_pdf": 310
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H025",
+                  "descripcion": "Construir una figura semejante a una figura dada sometiéndola a una homotecia de razón menor o mayor que 1.",
+                  "pagina_pdf": 310
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H026",
+                  "descripcion": "Construir una figura congruente a una figura dada sometiéndola a una homotecia de razón igual",
+                  "pagina_pdf": 310
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H027",
+                  "descripcion": "Identificar figuras semejantes en diferentes contextos.",
+                  "pagina_pdf": 310
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H028",
+                  "descripcion": "Identificar figuras congruentes en diferentes contextos.",
+                  "pagina_pdf": 311
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H029",
+                  "descripcion": "Aplicar los criterios de semejanza: lado lado lado, lado ángulo lado y ángulo ángulo ángulo para determinar y probar la semejanza de triángulos.",
+                  "pagina_pdf": 311
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H030",
+                  "descripcion": "Aplicar los criterios de congruencia: lado lado lado, lado ángulo lado y ángulo lado ángulo, para determinar y probar la congruencia de triángulos.",
+                  "pagina_pdf": 311
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H031",
+                  "descripcion": "Resolver problemas que involucren la semejanza y congruencia de triángulos.",
+                  "pagina_pdf": 311
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H032",
+                  "descripcion": "Utilizar software de geometría dinámica para visualizar propiedades relacionadas con la congruencia y semejanza de triángulos.",
+                  "pagina_pdf": 311
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H033",
+                  "descripcion": "Aplicar el teorema de Thales en la resolución de problemas en diversos contextos.",
+                  "pagina_pdf": 313
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H034",
+                  "descripcion": "Identificar la base, las caras laterales, la altura, las apotemas y el ápice o cúspide de una pirámide.",
+                  "pagina_pdf": 314
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H035",
+                  "descripcion": "Identificar las caras laterales, las bases y la altura un prisma recto.",
+                  "pagina_pdf": 314
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H036",
+                  "descripcion": "Determinar qué figuras se obtienen mediante secciones planas de una pirámide recta de base cuadrada, rectangular o triangular.",
+                  "pagina_pdf": 314
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H037",
+                  "descripcion": "Determinar qué figuras se obtienen mediante secciones planas de un prisma recto de base cuadrada, rectangular o triangular. Habilidades específicas",
+                  "pagina_pdf": 315
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H038",
+                  "descripcion": "Aplicar el teorema de Pitágoras en la resolución de problemas en diferentes contextos.",
+                  "pagina_pdf": 315
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H039",
+                  "descripcion": "Encontrar la distancia entre dos puntos en el plano cartesiano, aplicando el teorema de Pitágoras.",
+                  "pagina_pdf": 315
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H040",
+                  "descripcion": "Convertir medidas angulares de grados a radianes viceversa.",
+                  "pagina_pdf": 317
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H041",
+                  "descripcion": "Aplicar las razones trigonométricas básicas (seno, coseno, tangente) en diversos contextos.",
+                  "pagina_pdf": 317
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H042",
+                  "descripcion": "Aplicar las relaciones entre tangente, seno y coseno.",
+                  "pagina_pdf": 317
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H043",
+                  "descripcion": "Aplicar seno, coseno y tangente de ángulos complementarios.",
+                  "pagina_pdf": 317
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H044",
+                  "descripcion": "Aplicar los conceptos de ángulos de elevación y depresión en diferentes contextos.",
+                  "pagina_pdf": 317
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H045",
+                  "descripcion": "Aplicar que la suma de los cuadrados del seno y coseno de un ángulo es 1.",
+                  "pagina_pdf": 318
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H046",
+                  "descripcion": "Aplicar la ley de senos en diversos contextos.",
+                  "pagina_pdf": 318
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H047",
+                  "descripcion": "Resolver problemas que involucren las razones trigonométricas, sus propiedades y ángulos de elevación y de depresión.",
+                  "pagina_pdf": 318
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H048",
+                  "descripcion": "Plantear problemas contextualizados que utilicen razones trigonométricas para su solución.",
+                  "pagina_pdf": 318
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H049",
+                  "descripcion": "Identificar y calcular la apotema de pirámides rectas cuya base sea un cuadrado o un triángulo equilátero.",
+                  "pagina_pdf": 319
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H050",
+                  "descripcion": "Calcular el área lateral y el área total de una pirámide recta de base cuadrada, rectangular o triangular.",
+                  "pagina_pdf": 319
+                },
+                {
+                  "id": "MAT-CD-10-GEO-H051",
+                  "descripcion": "Calcular el área lateral y el área total de un prisma recto de base cuadrada, rectangular o triangular. metodológicas el ciclo se pretende un aprendizaje de rigor propio de la notación. ciclo es necesario que las y Matemáticas, esto se irá se harán demostraciones propiedades de las figuras es primordial el papel de en una primera etapa, a completamente claro pero que no demuestra la una segunda etapa) y las conjeturas que se Si alguien hace una que permitan desechar o un papel didáctico y visualizar mejores oportunidades se puede ayuda en la adquisición de software de geometría en la pizarra, ésta es con sólo “arrastrar” o mover sea enriquecedora y figuras siguientes fueron los puntos medios de observan. Arrastrando los vértices",
+                  "pagina_pdf": 319
+                }
+              ]
+            },
+            {
+              "nombre": "Algebra",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-10-ALG-H001",
+                  "descripcion": "Identificar la ley de formación de una sucesión utilizando lenguaje natural, lar y algebraico.",
+                  "pagina_pdf": 328
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H002",
+                  "descripcion": "Plantear y resolver problemas relacionados con sucesiones y patrones.",
+                  "pagina_pdf": 328
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H003",
+                  "descripcion": "Identificar relaciones de proporcionalidad inversa diversos contextos reales.",
+                  "pagina_pdf": 329
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H004",
+                  "descripcion": "Analizar relaciones de proporcionalidad directa e inversa de forma verbal, bular, gráfica y algebraica.",
+                  "pagina_pdf": 330
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H005",
+                  "descripcion": "Identificar situaciones dadas que pueden ser expresadas algebraicamente en la forma y = ax + b.",
+                  "pagina_pdf": 331
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H006",
+                  "descripcion": "Representar de forma tabular, algebraica y gráficamente una función lineal.",
+                  "pagina_pdf": 332
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H007",
+                  "descripcion": "Identificar una expresión algebraica.",
+                  "pagina_pdf": 333
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H008",
+                  "descripcion": "Utilizar leyes de potencias para la simplificación de expresiones algebraicas.",
+                  "pagina_pdf": 333
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H009",
+                  "descripcion": "Determinar el valor numérico de una expresión algebraica.",
+                  "pagina_pdf": 333
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H010",
+                  "descripcion": "Reconocer monomios semejantes.",
+                  "pagina_pdf": 334
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H011",
+                  "descripcion": "Efectuar operaciones con monomios: suma, resta, multiplicación y división.",
+                  "pagina_pdf": 334
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H012",
+                  "descripcion": "Clasificar expresiones en monomios, binomios, trinomios y polinomios de más de tres términos.",
+                  "pagina_pdf": 334
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H013",
+                  "descripcion": "Sumar, restar y multiplicar polinomios.",
+                  "pagina_pdf": 334
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H014",
+                  "descripcion": "Utilizar productos notables para desarrollar expresiones algebraicas.",
+                  "pagina_pdf": 334
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H015",
+                  "descripcion": "Identificar la diferencia entre una expresión algebraica y una ecuación.",
+                  "pagina_pdf": 335
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H016",
+                  "descripcion": "Plantear y resolver problemas en contextos reales, utilizando ecuaciones de primer grado con una incógnita.",
+                  "pagina_pdf": 335
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H017",
+                  "descripcion": "Relacionar una ecuación de primer grado con una incógnita de la forma ax+ b = c con la función lineal cuya representación algebraica es y = ax + b.",
+                  "pagina_pdf": 336
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H018",
+                  "descripcion": "Resolver ecuaciones de primer grado con una incógnita.",
+                  "pagina_pdf": 336
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H019",
+                  "descripcion": "Resolver ecuaciones algebraicas fraccionarias que se reducen a ecuaciones del primer grado con una incógnita.",
+                  "pagina_pdf": 336
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H020",
+                  "descripcion": "Resolver ecuaciones literales para una de las letras.",
+                  "pagina_pdf": 336
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H021",
+                  "descripcion": "Identificar situaciones dadas que pueden ser expresadas algebraicamente ax2+bx+c. en la forma y =",
+                  "pagina_pdf": 337
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H022",
+                  "descripcion": "Representar tabular, algebraica y gráficamente una función cuadrática.",
+                  "pagina_pdf": 337
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H023",
+                  "descripcion": "Factorizar y simplificar expresiones algebraicas.",
+                  "pagina_pdf": 338
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H024",
+                  "descripcion": "Efectuar división de polinomios.",
+                  "pagina_pdf": 338
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H025",
+                  "descripcion": "Efectuar operaciones con expresiones algebraicas fraccionarias.",
+                  "pagina_pdf": 338
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H026",
+                  "descripcion": "Plantear y resolver problemas utilizando ecuaciones de segundo grado con una incógnita",
+                  "pagina_pdf": 340
+                },
+                {
+                  "id": "MAT-CD-10-ALG-H027",
+                  "descripcion": "Resolver ecuaciones que se reducen a ecuaciones de segundo grado con una incógnita.",
+                  "pagina_pdf": 340
+                }
+              ]
+            },
+            {
+              "nombre": "Estadistica",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-10-EST-H001",
+                  "descripcion": "Reconocer la Estadística como una herramienta imprescindible para el análisis de datos dentro de diferentes contextos y áreas científicas.",
+                  "pagina_pdf": 352
+                },
+                {
+                  "id": "MAT-CD-10-EST-H002",
+                  "descripcion": "Analizar el desarrollo histórico de la disciplina.",
+                  "pagina_pdf": 352
+                },
+                {
+                  "id": "MAT-CD-10-EST-H003",
+                  "descripcion": "Analizar información estadística que ha sido resumida y presentada en cuadros, gráficas u otras representaciones vinculadas con diversas áreas.",
+                  "pagina_pdf": 352
+                },
+                {
+                  "id": "MAT-CD-10-EST-H004",
+                  "descripcion": "Identificar los conceptos: unidad estadística, características o variables, observaciones o datos, población y muestra, para problemas estadísticos vinculados con diferentes contextos.",
+                  "pagina_pdf": 354
+                },
+                {
+                  "id": "MAT-CD-10-EST-H005",
+                  "descripcion": "Identificar el tipo de dato cuantitativo o cualitativo correspondiente a una característica o variable.",
+                  "pagina_pdf": 354
+                },
+                {
+                  "id": "MAT-CD-10-EST-H006",
+                  "descripcion": "Identificar la importancia de la variabilidad para el análisis de datos.",
+                  "pagina_pdf": 354
+                },
+                {
+                  "id": "MAT-CD-10-EST-H007",
+                  "descripcion": "Utilizar representaciones tabulares para resumir un conjunto de datos.",
+                  "pagina_pdf": 355
+                },
+                {
+                  "id": "MAT-CD-10-EST-H008",
+                  "descripcion": "Determinar medidas estadísticas de resumen: moda, media aritmética, máximo, mínimo y recorrido, para caracterizar un grupo de datos.",
+                  "pagina_pdf": 355
+                },
+                {
+                  "id": "MAT-CD-10-EST-H009",
+                  "descripcion": "Utilizar representaciones tabulares o gráficas con frecuencias absolutas o porcentuales, simples o comparativas.",
+                  "pagina_pdf": 356
+                },
+                {
+                  "id": "MAT-CD-10-EST-H010",
+                  "descripcion": "Utilizar un software especializado o una hoja de cálculo para favorecer la construcción de cuadros y gráficos.",
+                  "pagina_pdf": 356
+                },
+                {
+                  "id": "MAT-CD-10-EST-H011",
+                  "descripcion": "Identificar la presencia del azar en situaciones aleatorias.",
+                  "pagina_pdf": 358
+                },
+                {
+                  "id": "MAT-CD-10-EST-H012",
+                  "descripcion": "Identificar diferencias entre situaciones aleatorias y deterministas.",
+                  "pagina_pdf": 358
+                },
+                {
+                  "id": "MAT-CD-10-EST-H013",
+                  "descripcion": "Identificar el espacio muestral y sus puntos muestrales como resultados simples en una situación o experimento aleatorio y representarlos por medio de la numeración de sus elementos o de diagramas.",
+                  "pagina_pdf": 358
+                },
+                {
+                  "id": "MAT-CD-10-EST-H014",
+                  "descripcion": "Determinar eventos y sus resultados a favor dentro de una situación aleatoria.",
+                  "pagina_pdf": 359
+                },
+                {
+                  "id": "MAT-CD-10-EST-H015",
+                  "descripcion": "Clasificar eventos en simples o compuestos.",
+                  "pagina_pdf": 359
+                },
+                {
+                  "id": "MAT-CD-10-EST-H016",
+                  "descripcion": "Identificar eventos seguros, probables e imposibles en una situación aleatoria determinada.",
+                  "pagina_pdf": 359
+                },
+                {
+                  "id": "MAT-CD-10-EST-H017",
+                  "descripcion": "Determinar la probabilidad de un evento como la razón entre el número de resultados favorables entre el número total de resultados.",
+                  "pagina_pdf": 359
+                },
+                {
+                  "id": "MAT-CD-10-EST-H018",
+                  "descripcion": "Valorar la importancia de historia en el desarrollo de la teoría de probabilidad.",
+                  "pagina_pdf": 359
+                },
+                {
+                  "id": "MAT-CD-10-EST-H019",
+                  "descripcion": "Deducir las propiedades las probabilidades que están vinculadas con valores que puede tomar la probabilidad para evento seguro, probable e imposible.",
+                  "pagina_pdf": 361
+                },
+                {
+                  "id": "MAT-CD-10-EST-H020",
+                  "descripcion": "Plantear y resolver problemas vinculados con el cálculo de probabilidades.",
+                  "pagina_pdf": 361
+                },
+                {
+                  "id": "MAT-CD-10-EST-H021",
+                  "descripcion": "Utilizar probabilidades para favorecer la toma de decisiones en problemas vinculados con fenómenos aleatorios.",
+                  "pagina_pdf": 361
+                },
+                {
+                  "id": "MAT-CD-10-EST-H022",
+                  "descripcion": "Establecer diferencias entre variables cuantitativas: discretas y continuas.",
+                  "pagina_pdf": 362
+                },
+                {
+                  "id": "MAT-CD-10-EST-H023",
+                  "descripcion": "Clasificar variables cuantitativas en discretas o continuas.",
+                  "pagina_pdf": 362
+                },
+                {
+                  "id": "MAT-CD-10-EST-H024",
+                  "descripcion": "Reconocer la importancia de agrupar datos cuantitativos en clases o intervalos.",
+                  "pagina_pdf": 363
+                },
+                {
+                  "id": "MAT-CD-10-EST-H025",
+                  "descripcion": "Resumir un grupo de datos cuantitativos por medio de la elaboración de un cuadro de distribuciones de frecuencia absoluta y relativa (o porcentual).",
+                  "pagina_pdf": 363
+                },
+                {
+                  "id": "MAT-CD-10-EST-H026",
+                  "descripcion": "Interpretar la información que proporciona un cuadro de distribución de frecuencias al resumir un grupo de datos cuantitativos.",
+                  "pagina_pdf": 363
+                },
+                {
+                  "id": "MAT-CD-10-EST-H027",
+                  "descripcion": "Resumir la información proporcionada por una distribución de frecuencias mediante un histograma o un polígono de frecuencias (absolutas o relativas), e interpretar la información que proporcionan estas representaciones gráficas.",
+                  "pagina_pdf": 363
+                },
+                {
+                  "id": "MAT-CD-10-EST-H028",
+                  "descripcion": "Utilizar algún software especializado o una hoja de cálculo para apoyar la construcción de las distribuciones de frecuencia y sus representaciones gráficas.",
+                  "pagina_pdf": 363
+                },
+                {
+                  "id": "MAT-CD-10-EST-H029",
+                  "descripcion": "Identificar la importancia del azar en los procesos de muestreo estadístico.",
+                  "pagina_pdf": 364
+                },
+                {
+                  "id": "MAT-CD-10-EST-H030",
+                  "descripcion": "Identificar eventos para los cuales su probabilidad no puede ser determinada empleando el concepto clásico.",
+                  "pagina_pdf": 365
+                },
+                {
+                  "id": "MAT-CD-10-EST-H031",
+                  "descripcion": "Utilizar el concepto de frecuencia relativa como una aproximación al concepto de Probabilidad, en eventos en los cuales el espacio muestral es infinito o indeterminado.",
+                  "pagina_pdf": 365
+                },
+                {
+                  "id": "MAT-CD-10-EST-H032",
+                  "descripcion": "Identificar que las propiedades de las probabilidades que están vinculadas con evento seguro, probable e imposible también son válidas para la definición frecuencial.",
+                  "pagina_pdf": 365
+                },
+                {
+                  "id": "MAT-CD-10-EST-H033",
+                  "descripcion": "Identificar que, para un evento particular, su frecuencia relativa de ocurrencia se aproxima hacia la probabilidad clásica conforme el número de observaciones aumenta.",
+                  "pagina_pdf": 366
+                },
+                {
+                  "id": "MAT-CD-10-EST-H034",
+                  "descripcion": "Resolver problemas vinculados con fenómenos aleatorios dentro del contexto estudiantil.",
+                  "pagina_pdf": 366
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nivel": "11",
+          "areas": [
+            {
+              "nombre": "Geometria",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-11-GEO-H001",
+                  "descripcion": "Representar gráficamente una circunferencia dado centro y su radio.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H002",
+                  "descripcion": "Representar algebraicamente una circunferencia dado su centro y su radio.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H003",
+                  "descripcion": "Aplicar traslaciones a una circunferencia.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H004",
+                  "descripcion": "Resolver problemas relacionados con la circunferencia y sus representaciones.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H005",
+                  "descripcion": "Determinar gráfica y algebraicamente si un punto se ubica en el interior en el exterior de una circunferencia.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H006",
+                  "descripcion": "Determinar si una recta da es secante, tangente exterior a una circunferencia.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H007",
+                  "descripcion": "Representar gráfica y algebraicamente rectas secantes, tangentes y exteriores a una circunferencia.",
+                  "pagina_pdf": 386
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H008",
+                  "descripcion": "Analizar geométrica y algebraicamente la posición relativa entre rectas en el plano desde el punto de vista del paralelismo la perpendicularidad.",
+                  "pagina_pdf": 388
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H009",
+                  "descripcion": "Aplicar la propiedad que establece que una recta tangente a una circunferencia es perpendicular radio de la circunferencia en el punto de tangencia.",
+                  "pagina_pdf": 388
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H010",
+                  "descripcion": "Utilizar software para representar circunferencias con condiciones dadas, representar traslaciones circunferencias y clasificar rectas en secantes, tangentes y exteriores a la circunferencia.",
+                  "pagina_pdf": 389
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H011",
+                  "descripcion": "Determinar la medida de perímetros y áreas de polígonos en diferentes contextos.",
+                  "pagina_pdf": 389
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H012",
+                  "descripcion": "Determinar las medidas los ángulos internos y externos de polígonos en diversos contextos.",
+                  "pagina_pdf": 389
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H013",
+                  "descripcion": "Determinar la medida de apotema y el radio de polígonos regulares y aplicarlo en diferentes contextos.",
+                  "pagina_pdf": 389
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H014",
+                  "descripcion": "Calcular perímetros y áreas de polígonos no regulares utilizando un sistema de coordenadas rectangulares.",
+                  "pagina_pdf": 389
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H015",
+                  "descripcion": "Resolver problemas que involucren polígonos y sus diversos elementos.",
+                  "pagina_pdf": 389
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H016",
+                  "descripcion": "Estimar perímetros y áreas de figuras planas no poligonales utilizando un sistema de coordenadas rectangulares.",
+                  "pagina_pdf": 391
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H017",
+                  "descripcion": "Utilizar software de geometría dinámica para estudiar propiedades y realizar conjeturas sobre las figuras geométricas.",
+                  "pagina_pdf": 392
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H018",
+                  "descripcion": "Identificar el radio y el diámetro de una esfera.",
+                  "pagina_pdf": 392
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H019",
+                  "descripcion": "Identificar la superficie lateral, las bases, la altura, el radio y el diámetro de cilindro circular recto.",
+                  "pagina_pdf": 392
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H020",
+                  "descripcion": "Determinar qué figuras se obtienen mediante secciones planas de una esfera un cilindro y características métricas de ellas.",
+                  "pagina_pdf": 393
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H021",
+                  "descripcion": "Reconocer elipses en diferentes contextos.",
+                  "pagina_pdf": 393
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H022",
+                  "descripcion": "Determinar ejes de simetría en figuras simétricas.",
+                  "pagina_pdf": 394
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H023",
+                  "descripcion": "Identificar elementos homólogos en figuras que presentan simetría axial.",
+                  "pagina_pdf": 394
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H024",
+                  "descripcion": "Trazar figuras simétricas utilizando un sistema de ejes coordenados en el plano.",
+                  "pagina_pdf": 394
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H025",
+                  "descripcion": "Resolver problemas relacionados con la simetría axial.",
+                  "pagina_pdf": 394
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H026",
+                  "descripcion": "Aplicar el concepto de traslación, homotecia, reflexión y rotación para determinar qué figuras se tienen a partir de figuras dadas.",
+                  "pagina_pdf": 395
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H027",
+                  "descripcion": "Identificar elementos de las figuras geométricas que aparecen invariantes bajo reflexiones o rotaciones.",
+                  "pagina_pdf": 395
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H028",
+                  "descripcion": "Trazar la imagen reflejada de una figura dada con respecto a una recta.",
+                  "pagina_pdf": 395
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H029",
+                  "descripcion": "Trazar la imagen de una figura dada si se la somete a una rotación.",
+                  "pagina_pdf": 395
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H030",
+                  "descripcion": "Trazar en un plano cartesiano la figura que se obtiene al someter una figura a una traslación, rotación u homotecia o combinaciones de ellas.",
+                  "pagina_pdf": 395
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H031",
+                  "descripcion": "Determinar el punto imagen de puntos dados mediante una transformación.",
+                  "pagina_pdf": 396
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H032",
+                  "descripcion": "Resolver problemas relacionados con diversas transformaciones en el plano.",
+                  "pagina_pdf": 396
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H033",
+                  "descripcion": "Utilizar software de geometría dinámica para el análisis de las propiedades de las traslaciones, homotecias y reflexiones.",
+                  "pagina_pdf": 398
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H034",
+                  "descripcion": "Plantear ejercicios o problemas que involucren alguna transformación o transformaciones de figuras en el plano.",
+                  "pagina_pdf": 398
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H035",
+                  "descripcion": "Identificar la superficie lateral, la base, la altura, radio y el diámetro de la base y el vértice de un cono circular recto.",
+                  "pagina_pdf": 399
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H036",
+                  "descripcion": "Determinar qué figuras se obtienen mediante secciones planas de un cono circular recto y características métricas de ellas.",
+                  "pagina_pdf": 399
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H037",
+                  "descripcion": "Reconocer elipses, parábolas e hipérbolas en diferentes contextos.",
+                  "pagina_pdf": 399
+                },
+                {
+                  "id": "MAT-CD-11-GEO-H038",
+                  "descripcion": "Plantear y resolver problemas que involucren secciones de un cono mediante planos paralelos a la base.",
+                  "pagina_pdf": 399
+                }
+              ]
+            },
+            {
+              "nombre": "Algebra",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-11-ALG-H001",
+                  "descripcion": "Analizar subconjuntos de los números reales.",
+                  "pagina_pdf": 406
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H002",
+                  "descripcion": "Utilizar correctamente los símbolos de pertenencia y de subconjunto.",
+                  "pagina_pdf": 406
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H003",
+                  "descripcion": "Representar intervalos numéricos en forma gráfica, simbólica y por comprensión.",
+                  "pagina_pdf": 406
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H004",
+                  "descripcion": "Determinar la unión y la intersección de conjuntos numéricos.",
+                  "pagina_pdf": 406
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H005",
+                  "descripcion": "Determinar el complemento de un conjunto numérico dado.",
+                  "pagina_pdf": 406
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H006",
+                  "descripcion": "Identificar si una relación dada en forma tabular, simbólica o gráfica corresponde a una función.",
+                  "pagina_pdf": 406
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H007",
+                  "descripcion": "Analizar una función a partir de sus representaciones.",
+                  "pagina_pdf": 408
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H008",
+                  "descripcion": "Calcular la composición de dos funciones.",
+                  "pagina_pdf": 408
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H009",
+                  "descripcion": "Representar gráficamente una función lineal.",
+                  "pagina_pdf": 410
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H010",
+                  "descripcion": "Determinar la pendiente, intersección con el eje de las ordenadas y de las abscisas de una recta dada, en forma gráfica o algebraica.",
+                  "pagina_pdf": 410
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H011",
+                  "descripcion": "Determinar la ecuación de una recta utilizando datos relacionados con ella.",
+                  "pagina_pdf": 410
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H012",
+                  "descripcion": "Analizar gráfica y algebraicamente la función cuadráax2 tica con criterio f(x)= + a 0. bx + c,",
+                  "pagina_pdf": 411
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H013",
+                  "descripcion": "Plantear y resolver problemas en contextos reales utilizando las funciones estudiadas.",
+                  "pagina_pdf": 412
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H014",
+                  "descripcion": "Relacionar la representación gráfica con la algebraica.",
+                  "pagina_pdf": 412
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H015",
+                  "descripcion": "Analizar sistemas de dos ecuaciones lineales con dos incógnitas.",
+                  "pagina_pdf": 412
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H016",
+                  "descripcion": "Plantear y resolver problemas en contextos reales, utilizando sistemas de dos ecuaciones con dos incógnitas.",
+                  "pagina_pdf": 412
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H017",
+                  "descripcion": "Identificar las condiciones para que una función tenga inversa.",
+                  "pagina_pdf": 413
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H018",
+                  "descripcion": "Relacionar la gráfica de una función con la gráfica de su inversa.",
+                  "pagina_pdf": 413
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H019",
+                  "descripcion": "Determinar intervalos en los cuales una función representada gráficamente tiene inversa.",
+                  "pagina_pdf": 413
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H020",
+                  "descripcion": "Determinar y graficar la función inversa de f(x) = mx + b, m  0.",
+                  "pagina_pdf": 413
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H021",
+                  "descripcion": "Analizar gráfica y algebraicamente la función con criterio dado por f ( x )  a x  b  c .",
+                  "pagina_pdf": 413
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H022",
+                  "descripcion": "Analizar gráfica, tabular y algebraicamente las funciones exponenciales.",
+                  "pagina_pdf": 414
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H023",
+                  "descripcion": "Plantear y resolver problemas en contextos reales utilizando ecuaciones exponenciales.",
+                  "pagina_pdf": 415
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H024",
+                  "descripcion": "Identificar y aplicar modelos matemáticos que involucran las funciones exponenciales.",
+                  "pagina_pdf": 415
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H025",
+                  "descripcion": "Identificar la función logarítmica como la inversa de la función exponencial.",
+                  "pagina_pdf": 415
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H026",
+                  "descripcion": "Analizar gráfica y algebraicamente las funciones logarítmicas.",
+                  "pagina_pdf": 415
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H027",
+                  "descripcion": "Aplicar propiedades de los logaritmos para simplificar expresiones algebraicas.",
+                  "pagina_pdf": 417
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H028",
+                  "descripcion": "Resolver problemas en contextos reales utilizando ecuaciones logarítmicas.",
+                  "pagina_pdf": 417
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H029",
+                  "descripcion": "Utilizar logaritmos para resolver ecuaciones exponenciales de la forma af(x) = bg(x), a, b números reales positivos y distintos de 1, f, g polinomios de grado menor que 3.",
+                  "pagina_pdf": 417
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H030",
+                  "descripcion": "Identificar y aplicar modelos matemáticos que involucran las funciones logarítmicas.",
+                  "pagina_pdf": 417
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H031",
+                  "descripcion": "Utilizar las funciones estudiadas para plantear resolver problemas a partir de una situación dada.",
+                  "pagina_pdf": 417
+                },
+                {
+                  "id": "MAT-CD-11-ALG-H032",
+                  "descripcion": "Analizar el tipo de función que sirva de modelo para una situación dada.",
+                  "pagina_pdf": 417
+                }
+              ]
+            },
+            {
+              "nombre": "Estadistica",
+              "habilidades": [
+                {
+                  "id": "MAT-CD-11-EST-H001",
+                  "descripcion": "Utilizar diferentes tipos de representaciones gráficas o tabulares para el análisis de datos cualitativos y favorecer la resolución de problemas vinculados con diversas áreas.",
+                  "pagina_pdf": 432
+                },
+                {
+                  "id": "MAT-CD-11-EST-H002",
+                  "descripcion": "Resumir un grupo de datos mediante el uso de la moda, la media aritmética, la mediana, los cuartiles, el máximo y el mínimo, e interpretar la información que proporcionan dichas medidas.",
+                  "pagina_pdf": 432
+                },
+                {
+                  "id": "MAT-CD-11-EST-H003",
+                  "descripcion": "Identificar la ubicación aproximada de las medidas de posición de acuerdo con el tipo de asimetría de la distribución de los datos.",
+                  "pagina_pdf": 432
+                },
+                {
+                  "id": "MAT-CD-11-EST-H004",
+                  "descripcion": "Utilizar la calculadora o la computadora para calcular las medidas estadísticas correspondientes de un grupo de datos.",
+                  "pagina_pdf": 432
+                },
+                {
+                  "id": "MAT-CD-11-EST-H005",
+                  "descripcion": "Determinar la media aritmética en grupos de datos que tienen pesos relativos (o ponderación) diferentes entre sí.",
+                  "pagina_pdf": 434
+                },
+                {
+                  "id": "MAT-CD-11-EST-H006",
+                  "descripcion": "Utilizar la media aritmética ponderada para determinar el promedio cuando los datos se encuentran agrupados en una distribución de frecuencias.",
+                  "pagina_pdf": 434
+                },
+                {
+                  "id": "MAT-CD-11-EST-H007",
+                  "descripcion": "Describir relaciones entre dos o más eventos de acuerdo con sus puntos muestrales, utilizando para ello las operaciones: unión “”, intersección “” y “complemento” e interpretar el significado dentro de una situación o experimento aleatorio.",
+                  "pagina_pdf": 435
+                },
+                {
+                  "id": "MAT-CD-11-EST-H008",
+                  "descripcion": "Representar mediante diagramas de Venn las operaciones entre eventos.",
+                  "pagina_pdf": 435
+                },
+                {
+                  "id": "MAT-CD-11-EST-H009",
+                  "descripcion": "Reconocer eventos mutuamente excluyentes en situaciones aleatorias particulares.",
+                  "pagina_pdf": 435
+                },
+                {
+                  "id": "MAT-CD-11-EST-H010",
+                  "descripcion": "Deducir mediante situaciones concretas las reglas básicas (axiomas) de las probabilidades.",
+                  "pagina_pdf": 436
+                },
+                {
+                  "id": "MAT-CD-11-EST-H011",
+                  "descripcion": "Deducir las propiedades relacionadas con la probabilidad de la unión y del complemento.",
+                  "pagina_pdf": 436
+                },
+                {
+                  "id": "MAT-CD-11-EST-H012",
+                  "descripcion": "Aplicar los axiomas y propiedades básicas de probabilidades en la resolución de problemas e interpretar los resultados generados.",
+                  "pagina_pdf": 436
+                },
+                {
+                  "id": "MAT-CD-11-EST-H013",
+                  "descripcion": "Utilizar probabilidades para favorecer la toma de decisiones en problemas vinculados con fenómenos aleatorios.",
+                  "pagina_pdf": 436
+                },
+                {
+                  "id": "MAT-CD-11-EST-H014",
+                  "descripcion": "Identificar la importancia la variabilidad para el análisis de datos.",
+                  "pagina_pdf": 438
+                },
+                {
+                  "id": "MAT-CD-11-EST-H015",
+                  "descripcion": "Reconocer la importancia de la variabilidad de los datos dentro de los análisis estadísticos y la necesidad de cuantificarla.",
+                  "pagina_pdf": 438
+                },
+                {
+                  "id": "MAT-CD-11-EST-H016",
+                  "descripcion": "Resumir la variabilidad de un grupo de datos mediante el uso del recorrido, el recorrido intercuartílico, la variancia o la desviación estándar e interpretar la información que proporcionan.",
+                  "pagina_pdf": 438
+                },
+                {
+                  "id": "MAT-CD-11-EST-H017",
+                  "descripcion": "Utilizar diagramas de cajas para comparar la posición la variabilidad de dos grupos de datos.",
+                  "pagina_pdf": 438
+                },
+                {
+                  "id": "MAT-CD-11-EST-H018",
+                  "descripcion": "Emplear la calculadora o computadora para simplificar los cálculos matemáticos en la determinación de las medidas de variabilidad.",
+                  "pagina_pdf": 438
+                },
+                {
+                  "id": "MAT-CD-11-EST-H019",
+                  "descripcion": "Resolver problemas del contexto estudiantil que involucren el análisis de medidas de variabilidad.",
+                  "pagina_pdf": 438
+                },
+                {
+                  "id": "MAT-CD-11-EST-H020",
+                  "descripcion": "Reconocer la importancia de emplear medidas relativas al comparar la posición o la variabilidad entre dos más grupos de datos.",
+                  "pagina_pdf": 439
+                },
+                {
+                  "id": "MAT-CD-11-EST-H021",
+                  "descripcion": "Aplicar estandarización y coeficiente de variación para comparar la posición y variabilidad de dos o más grupos de datos.",
+                  "pagina_pdf": 439
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
