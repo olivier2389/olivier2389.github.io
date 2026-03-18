@@ -1,24 +1,8 @@
 /**
- * ═══════════════════════════════════════════════════════════
  * APP.JS — Lógica principal de EduPrompt NEE
- * v3.0 · MEP Costa Rica
- * ═══════════════════════════════════════════════════════════
- * CAMBIOS v3.0:
- *   - Compatible con JSON v8 (curriculo_web.json)
- *   - Compatible con JSON v7 (estructura antigua) — retrocompatible
- *   - BUG 1 corregido: texto truncado respeta palabras completas
- *   - BUG 2 corregido: solo muestra habilidades reales (no notas)
- *
- * 🔌 PUNTOS DE CONEXIÓN PARA EXPANSIÓN:
- *   1. AGREGAR MATERIA → MATERIAS_CONFIG
- *   2. CONECTAR API   → sendToAPI() al final
- *   3. PERSISTENCIA   → EduStorage al final
- * ═══════════════════════════════════════════════════════════
+ * v3.1 · MEP Costa Rica
  */
 
-/* ═══════════════════════════════════════════════
-   CONFIGURACIÓN DE MATERIAS
-═══════════════════════════════════════════════ */
 const MATERIAS_CONFIG = {
   matematica: {
     id:      'matematica',
@@ -27,19 +11,8 @@ const MATERIAS_CONFIG = {
     loaded:  false,
     data:    null
   },
-  // ── FUTURAS MATERIAS ──
-  // ciencias: {
-  //   id:      'ciencias',
-  //   nombre:  '🔬 Ciencias',
-  //   archivo: 'data/curriculo_ciencias.json',
-  //   loaded:  false,
-  //   data:    null
-  // },
 };
 
-/* ═══════════════════════════════════════════════
-   ESTADO GLOBAL
-═══════════════════════════════════════════════ */
 const AppState = {
   materiaActual:    'matematica',
   curriculumData:   null,
@@ -47,59 +20,35 @@ const AppState = {
   selectedTemplate: 'indagacion',
 };
 
-/* ═══════════════════════════════════════════════
-   ADAPTADOR DE ESTRUCTURA JSON
-   Soporta v7 (campo .name) y v8 (campos .ciclo/.nivel/.nombre)
-═══════════════════════════════════════════════ */
 const Adapter = {
-
-  // Obtiene los ciclos del JSON (v7 o v8)
   getCycles(data) {
     return data?.cycles || [];
   },
-
-  // Nombre del ciclo
   cycleName(cycle) {
     return cycle.name || cycle.ciclo || '';
   },
-
-  // Niveles dentro de un ciclo
   getLevels(cycle) {
     return cycle.levels || cycle.niveles || [];
   },
-
-  // Nombre del nivel
   levelName(level) {
     return level.name || level.nivel || '';
   },
-
-  // Áreas dentro de un nivel
   getAreas(level) {
     return level.areas || [];
   },
-
-  // Nombre del área
   areaName(area) {
     return area.name || area.nombre || '';
   },
-
-  // Habilidades de un área — SOLO habilidades reales (no notas)
-  // BUG 2 FIX: filtra el tipo y excluye todo lo que no sea habilidad
   getHabilidades(area) {
-    // Estructura v8: area.habilidades[]
     if (Array.isArray(area.habilidades) && area.habilidades.length > 0) {
       return area.habilidades.filter(h => {
         const tipo = h.tipo || 'habilidad';
         return tipo === 'habilidad';
       });
     }
-
-    // Estructura v7: area.core_concepts[].skills[] o area.skills[]
     const skills = area.core_concepts?.flatMap(cc => cc.skills || [])
                    || area.skills
                    || [];
-
-    // Filtrar solo habilidades reales (BUG 2)
     return skills.filter(sk => {
       const desc = sk.description || sk.descripcion || '';
       return (
@@ -109,26 +58,18 @@ const Adapter = {
       );
     });
   },
-
-  // Descripción de una habilidad
   skillDesc(skill) {
     return skill.descripcion || skill.description || '';
   },
-
-  // Código / ID de una habilidad
   skillCode(skill) {
     return skill.id || skill.id_global || skill.code || '';
   },
-
-  // Indicadores de una habilidad
   skillIndicators(skill) {
-    // v8: indicadores_logro[]
     if (Array.isArray(skill.indicadores_logro)) {
       return skill.indicadores_logro.map(i =>
         typeof i === 'string' ? i : (i.descripcion || i.description || '')
       );
     }
-    // v7: indicators[]
     if (Array.isArray(skill.indicators)) {
       return skill.indicators.map(i =>
         typeof i === 'string' ? i : (i.description || '')
@@ -136,18 +77,11 @@ const Adapter = {
     }
     return [];
   },
-
-  // Ejes curriculares de una habilidad
   skillEjes(skill) {
     return skill.ejes_curriculares || skill.ejes || [];
   },
 };
 
-/* ═══════════════════════════════════════════════
-   BUG 2 — DETECTOR DE NOTAS (no habilidades)
-   Filtra textos que son orientaciones/sugerencias
-   del docente, no habilidades del estudiante.
-═══════════════════════════════════════════════ */
 const _PATRONES_NOTA = [
   /^Es importante/i,
   /^Con respecto a/i,
@@ -171,27 +105,18 @@ function _esNotaDocente(desc) {
   return _PATRONES_NOTA.some(re => re.test(desc));
 }
 
-/* ═══════════════════════════════════════════════
-   BUG 1 — TRUNCAR RESPETANDO PALABRAS COMPLETAS
-═══════════════════════════════════════════════ */
 function truncarTexto(texto, limite = 80) {
   if (!texto || texto.length <= limite) return texto;
   const corte = texto.lastIndexOf(' ', limite);
   return texto.substring(0, corte > 0 ? corte : limite) + '…';
 }
 
-/* ═══════════════════════════════════════════════
-   INICIALIZACIÓN
-═══════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   renderMaterias();
   renderTemplates();
   loadMateria('matematica');
 });
 
-/* ═══════════════════════════════════════════════
-   CARGA DE MATERIAS
-═══════════════════════════════════════════════ */
 function renderMaterias() {
   const sel = document.getElementById('sel_materia_header');
   if (!sel) return;
@@ -235,7 +160,6 @@ async function loadMateria(materiaId) {
     hideLoading();
     populateCiclos();
 
-    // Estadísticas — compatible v7 y v8
     const stats = data.extraction_stats || data.metadata || {};
     const total = stats.total_habilidades || stats.total_habilidades_reales || stats.total_skills || '—';
     console.log(`✅ ${materia.nombre} cargada: ${total} habilidades`);
@@ -247,9 +171,6 @@ async function loadMateria(materiaId) {
   }
 }
 
-/* ═══════════════════════════════════════════════
-   LOADING / ERROR UI
-═══════════════════════════════════════════════ */
 function showLoading(msg) {
   const el  = document.getElementById('loadingScreen');
   const txt = document.getElementById('loadingText');
@@ -268,9 +189,6 @@ function showError(msg) {
   else alert(msg);
 }
 
-/* ═══════════════════════════════════════════════
-   SELECTORES CURRICULARES
-═══════════════════════════════════════════════ */
 function populateCiclos() {
   const sel = document.getElementById('sel_ciclo');
   if (!sel || !AppState.curriculumData) return;
@@ -278,7 +196,7 @@ function populateCiclos() {
   sel.innerHTML = '<option value="">— Elige un ciclo —</option>';
 
   const names = {
-    'PRIMER_CICLO':        '📚 Primer Ciclo (1° – 6°)',
+    'PRIMER_CICLO':        '📚 Primer Ciclo (1° – 3°)',
     'TERCER_CICLO':        '📚 Tercer Ciclo (7° – 9°)',
     'CICLO_DIVERSIFICADO': '📚 Ciclo Diversificado (10° – 11°)',
   };
@@ -307,13 +225,21 @@ function updateNiveles() {
   const cycle  = cycles.find(c => Adapter.cycleName(c) === cicloName);
   if (!cycle) return;
 
+  const levelLabels = {
+    '1':'1° año','2':'2° año','3':'3° año',
+    '4':'4° año','5':'5° año','6':'6° año',
+    '7':'7° año','8':'8° año','9':'9° año',
+    '10':'10° año','11':'11° año',
+    '1-3':'1°, 2° y 3° año (todos)',
+    '7-9':'7°, 8° y 9° año (todos)',
+  };
+
   [...Adapter.getLevels(cycle)]
-    .sort((a, b) => parseInt(Adapter.levelName(a)) - parseInt(Adapter.levelName(b)))
     .forEach(level => {
       const n   = Adapter.levelName(level);
       const opt = document.createElement('option');
       opt.value       = n;
-      opt.textContent = `${n}° año`;
+      opt.textContent = levelLabels[n] || `${n}° año`;
       sel.appendChild(opt);
     });
 
@@ -364,7 +290,6 @@ function updateHabilidades() {
   const area   = areas.find(a => Adapter.areaName(a) === areaName);
   if (!area) return;
 
-  // BUG 2 FIX: solo habilidades reales via Adapter
   const habilidades = Adapter.getHabilidades(area);
 
   if (habilidades.length === 0) {
@@ -378,23 +303,18 @@ function updateHabilidades() {
   }
 
   habilidades.forEach((skill, i) => {
-    const desc    = Adapter.skillDesc(skill);
-    const code    = Adapter.skillCode(skill);
-    const opt     = document.createElement('option');
-    opt.value     = i;
-
-    // BUG 1 FIX: truncar respetando palabras completas
-    const label   = code ? `${code}. ${truncarTexto(desc, 75)}` : truncarTexto(desc, 80);
+    const desc = Adapter.skillDesc(skill);
+    const code = Adapter.skillCode(skill);
+    const opt  = document.createElement('option');
+    opt.value  = i;
+    const label = code ? `${code}. ${truncarTexto(desc, 75)}` : truncarTexto(desc, 80);
     opt.textContent = label;
-
-    // Guardar datos completos en dataset para uso posterior
     opt.dataset.skill = JSON.stringify({
       code:        code,
       description: desc,
       indicators:  Adapter.skillIndicators(skill),
       ejes:        Adapter.skillEjes(skill),
     });
-
     sel.appendChild(opt);
   });
 
@@ -402,9 +322,6 @@ function updateHabilidades() {
   document.getElementById('infoBox')?.classList.remove('visible');
 }
 
-/* ═══════════════════════════════════════════════
-   INFO BOX — muestra detalles de la habilidad
-═══════════════════════════════════════════════ */
 function showSkillInfo() {
   const sel     = document.getElementById('sel_habilidad');
   const opt     = sel?.options[sel.selectedIndex];
@@ -422,9 +339,7 @@ function showSkillInfo() {
 
   if (ejes.length > 0) {
     html += `<div class="ib-tag" style="margin-top:.5rem">🎯 Ejes curriculares</div>`;
-    html += ejes.map(e =>
-      `<div class="ib-ind">${e.replace(/_/g, ' ')}</div>`
-    ).join('');
+    html += ejes.map(e => `<div class="ib-ind">${e.replace(/_/g, ' ')}</div>`).join('');
   }
 
   html += `<div class="ib-tag" style="margin-top:.5rem">📋 Indicadores de logro</div>`;
@@ -450,9 +365,6 @@ function resetSelectores(ids) {
   });
 }
 
-/* ═══════════════════════════════════════════════
-   NEE
-═══════════════════════════════════════════════ */
 function toggleNEE(chip) {
   chip.classList.toggle('selected');
   const nee = chip.dataset.nee;
@@ -463,13 +375,9 @@ function toggleNEE(chip) {
   }
 }
 
-/* ═══════════════════════════════════════════════
-   PLANTILLAS
-═══════════════════════════════════════════════ */
 function renderTemplates() {
   const grid = document.getElementById('templateGrid');
   if (!grid) return;
-
   grid.innerHTML = '';
   Object.values(TEMPLATE_REGISTRY).forEach(tpl => {
     const card       = document.createElement('div');
@@ -492,9 +400,6 @@ function selectTemplate(id) {
   });
 }
 
-/* ═══════════════════════════════════════════════
-   GENERACIÓN DEL PROMPT
-═══════════════════════════════════════════════ */
 function generatePrompt() {
   const cicloName   = document.getElementById('sel_ciclo').value;
   const nivelName   = document.getElementById('sel_nivel').value;
@@ -529,12 +434,13 @@ function generatePrompt() {
   const levelLabels = {
     '1':'1er año','2':'2do año','3':'3er año','4':'4to año',
     '5':'5to año','6':'6to año','7':'7mo año','8':'8vo año',
-    '9':'9no año','10':'10mo año','11':'11mo año'
+    '9':'9no año','10':'10mo año','11':'11mo año',
+    '1-3':'1°, 2° y 3° año','7-9':'7°, 8° y 9° año',
   };
   const cicloLabels = {
-    'PRIMER_CICLO':        'Primer y Segundo Ciclo (I-II Ciclo)',
+    'PRIMER_CICLO':        'Primer Ciclo',
     'TERCER_CICLO':        'Tercer Ciclo (Educación General Básica)',
-    'CICLO_DIVERSIFICADO': 'Ciclo Diversificado'
+    'CICLO_DIVERSIFICADO': 'Ciclo Diversificado',
   };
 
   const materia = MATERIAS_CONFIG[AppState.materiaActual];
@@ -579,9 +485,6 @@ function generatePrompt() {
   output?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-/* ═══════════════════════════════════════════════
-   ACCIONES DEL PROMPT
-═══════════════════════════════════════════════ */
 function copyPrompt() {
   const text = document.getElementById('promptText')?.value;
   if (!text) return;
@@ -611,9 +514,6 @@ function copyDevPrompt() {
   });
 }
 
-/* ═══════════════════════════════════════════════
-   UI HELPERS
-═══════════════════════════════════════════════ */
 function toggleStep(id) {
   document.getElementById(id)?.classList.toggle('open');
 }
@@ -630,38 +530,5 @@ function markStepDone(numId) {
   if (el) { el.classList.add('done'); el.textContent = '✓'; }
 }
 
-/* ═══════════════════════════════════════════════
-   🔌 CONEXIÓN A API DE IA (pendiente activar)
-═══════════════════════════════════════════════ */
-// async function sendToAPI(prompt) {
-//   const response = await fetch('https://api.anthropic.com/v1/messages', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'x-api-key': 'TU_API_KEY',
-//       'anthropic-version': '2023-06-01'
-//     },
-//     body: JSON.stringify({
-//       model: 'claude-sonnet-4-20250514',
-//       max_tokens: 2000,
-//       messages: [{ role: 'user', content: prompt }]
-//     })
-//   });
-//   const data = await response.json();
-//   return data.content[0].text;
-// }
-
-/* ═══════════════════════════════════════════════
-   🔌 PERSISTENCIA (pendiente activar)
-═══════════════════════════════════════════════ */
-// const EduStorage = {
-//   save(key, data) {
-//     try { localStorage.setItem(`eduprompt_${key}`, JSON.stringify(data)); } catch(e) {}
-//   },
-//   load(key) {
-//     try { return JSON.parse(localStorage.getItem(`eduprompt_${key}`)); } catch { return null; }
-//   },
-//   clear() {
-//     Object.keys(localStorage).filter(k => k.startsWith('eduprompt_')).forEach(k => localStorage.removeItem(k));
-//   }
-// };
+// async function sendToAPI(prompt) { ... }
+// const EduStorage = { ... }
