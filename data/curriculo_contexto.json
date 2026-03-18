@@ -1,0 +1,358 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "descripcion": "Contexto pedagógico por ciclo y área. Complementa curriculo_matematica.json. Generado por pipeline_v3.py desde matematica.pdf (MEP 2014).",
+    "llave_union": "ciclo + area deben coincidir exactamente con curriculo_matematica.json",
+    "fecha_generacion": "YYYY-MM-DD",
+    "pipeline": "pipeline_v3.py"
+  },
+
+  "areas": [
+
+    {
+      "ciclo": "PRIMER_CICLO",
+      "ciclo_niveles": "1-3",
+      "area": "Números",
+      "area_id": "NUM",
+      "paginas_pdf": { "inicio": 83, "fin": 108 },
+
+      "introduccion": "Texto limpio extraído del PDF. Describe el rol del área en el ciclo.",
+
+      "proposito": "Texto limpio del propósito de enseñanza del área en este ciclo.",
+
+      "habilidades_generales": [
+        "Habilidad general 1 del ciclo para esta área.",
+        "Habilidad general 2 del ciclo para esta área."
+      ],
+
+      "metodologicas": {
+        "generales": [
+          "Párrafo 1 de indicaciones generales para todo el ciclo.",
+          "Párrafo 2 de indicaciones generales para todo el ciclo."
+        ],
+        "por_anio": {
+          "1": ["Indicación metodológica específica para 1° año, párrafo 1."],
+          "2": ["Indicación metodológica específica para 2° año, párrafo 1."],
+          "3": ["Indicación metodológica específica para 3° año, párrafo 1."]
+        }
+      },
+
+      "evaluacion": [
+        "Párrafo 1 de indicaciones de evaluación.",
+        "Párrafo 2 de indicaciones de evaluación."
+      ],
+
+      "tecnologias": {
+        "recomendadas": [],
+        "notas": ""
+      },
+
+      "dua_sugerencias": {
+        "representacion": [
+          "Sugerencia de representación concreta para esta área/ciclo."
+        ],
+        "accion_expresion": [
+          "Sugerencia de formas de expresión para esta área/ciclo."
+        ],
+        "motivacion": [
+          "Sugerencia de motivación contextualizada para esta área/ciclo."
+        ]
+      }
+    },
+
+    {
+      "ciclo": "PRIMER_CICLO",
+      "ciclo_niveles": "1-3",
+      "area": "Geometría",
+      "area_id": "GEO",
+      "paginas_pdf": { "inicio": 109, "fin": 122 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "1": [], "2": [], "3": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "PRIMER_CICLO",
+      "ciclo_niveles": "1-3",
+      "area": "Medidas",
+      "area_id": "MED",
+      "paginas_pdf": { "inicio": 123, "fin": 134 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "1": [], "2": [], "3": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "PRIMER_CICLO",
+      "ciclo_niveles": "1-3",
+      "area": "Relaciones y Álgebra",
+      "area_id": "ALG",
+      "paginas_pdf": { "inicio": 135, "fin": 146 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "1": [], "2": [], "3": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "PRIMER_CICLO",
+      "ciclo_niveles": "1-3",
+      "area": "Estadística y Probabilidad",
+      "area_id": "EST",
+      "paginas_pdf": { "inicio": 147, "fin": 170 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "1": [], "2": [], "3": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "SEGUNDO_CICLO",
+      "ciclo_niveles": "4-6",
+      "area": "Números",
+      "area_id": "NUM",
+      "paginas_pdf": { "inicio": 173, "fin": 200 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "4": [], "5": [], "6": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "SEGUNDO_CICLO",
+      "ciclo_niveles": "4-6",
+      "area": "Geometría",
+      "area_id": "GEO",
+      "paginas_pdf": { "inicio": 201, "fin": 222 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "4": [], "5": [], "6": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "SEGUNDO_CICLO",
+      "ciclo_niveles": "4-6",
+      "area": "Medidas",
+      "area_id": "MED",
+      "paginas_pdf": { "inicio": 223, "fin": 230 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "4": [], "5": [], "6": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "SEGUNDO_CICLO",
+      "ciclo_niveles": "4-6",
+      "area": "Relaciones y Álgebra",
+      "area_id": "ALG",
+      "paginas_pdf": { "inicio": 231, "fin": 246 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "4": [], "5": [], "6": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "SEGUNDO_CICLO",
+      "ciclo_niveles": "4-6",
+      "area": "Estadística y Probabilidad",
+      "area_id": "EST",
+      "paginas_pdf": { "inicio": 247, "fin": 272 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "4": [], "5": [], "6": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "TERCER_CICLO",
+      "ciclo_niveles": "7-9",
+      "area": "Números",
+      "area_id": "NUM",
+      "paginas_pdf": { "inicio": 275, "fin": 300 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "7": [], "8": [], "9": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "TERCER_CICLO",
+      "ciclo_niveles": "7-9",
+      "area": "Geometría",
+      "area_id": "GEO",
+      "paginas_pdf": { "inicio": 301, "fin": 326 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "7": [], "8": [], "9": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": {
+        "recomendadas": ["GeoGebra"],
+        "notas": "El programa recomienda uso de software de geometría dinámica para representar y conjeturar propiedades."
+      },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "TERCER_CICLO",
+      "ciclo_niveles": "7-9",
+      "area": "Relaciones y Álgebra",
+      "area_id": "ALG",
+      "paginas_pdf": { "inicio": 327, "fin": 350 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "7": [], "8": [], "9": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "TERCER_CICLO",
+      "ciclo_niveles": "7-9",
+      "area": "Estadística y Probabilidad",
+      "area_id": "EST",
+      "paginas_pdf": { "inicio": 351, "fin": 382 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "7": [], "8": [], "9": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "CICLO_DIVERSIFICADO",
+      "ciclo_niveles": "10-11",
+      "area": "Geometría",
+      "area_id": "GEO",
+      "paginas_pdf": { "inicio": 385, "fin": 404 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "10": [], "11": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": {
+        "recomendadas": ["GeoGebra"],
+        "notas": ""
+      },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "CICLO_DIVERSIFICADO",
+      "ciclo_niveles": "10-11",
+      "area": "Relaciones y Álgebra",
+      "area_id": "ALG",
+      "paginas_pdf": { "inicio": 405, "fin": 430 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "10": [], "11": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    },
+
+    {
+      "ciclo": "CICLO_DIVERSIFICADO",
+      "ciclo_niveles": "10-11",
+      "area": "Estadística y Probabilidad",
+      "area_id": "EST",
+      "paginas_pdf": { "inicio": 431, "fin": 452 },
+      "introduccion": "",
+      "proposito": "",
+      "habilidades_generales": [],
+      "metodologicas": {
+        "generales": [],
+        "por_anio": { "10": [], "11": [] }
+      },
+      "evaluacion": [],
+      "tecnologias": { "recomendadas": [], "notas": "" },
+      "dua_sugerencias": { "representacion": [], "accion_expresion": [], "motivacion": [] }
+    }
+
+  ]
+}

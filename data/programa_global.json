@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "descripcion": "Datos transversales del Programa de Estudios de Matemáticas MEP 2014. Aplica a todos los ciclos y áreas. Base para el motor de planeamientos.",
+    "fuente": "Programas de Estudio de Matemáticas, MEP, 2014",
+    "paginas_referencia": {
+      "introduccion_general": "13-20",
+      "fundamentos": "21-34",
+      "ejes": "35-40",
+      "gestion_planeamiento": "41-48",
+      "metodologia": "49-68",
+      "evaluacion": "69-72"
+    }
+  },
+
+  "procesos_matematicos": [
+    {
+      "id": "razonar",
+      "nombre": "Razonar y argumentar",
+      "descripcion": "Desarrollar la capacidad de construir y comunicar argumentos matemáticos válidos, identificar patrones y hacer generalizaciones.",
+      "pagina_pdf": 24
+    },
+    {
+      "id": "plantear",
+      "nombre": "Plantear y resolver problemas",
+      "descripcion": "Enfrentar situaciones que desafíen al estudiante, generar estrategias, evaluar resultados y reflexionar sobre el proceso.",
+      "pagina_pdf": 25
+    },
+    {
+      "id": "comunicar",
+      "nombre": "Comunicar",
+      "descripcion": "Expresar ideas matemáticas de forma oral, escrita y gráfica con claridad y precisión.",
+      "pagina_pdf": 25
+    },
+    {
+      "id": "conectar",
+      "nombre": "Conectar",
+      "descripcion": "Establecer relaciones entre diferentes conceptos matemáticos y entre la matemática y otras áreas del conocimiento.",
+      "pagina_pdf": 25
+    },
+    {
+      "id": "representar",
+      "nombre": "Representar",
+      "descripcion": "Usar y traducir entre distintas representaciones de ideas matemáticas: concreta, pictórica, simbólica, gráfica.",
+      "pagina_pdf": 26
+    }
+  ],
+
+  "ejes_disciplinares": [
+    {
+      "id": "resolucion_problemas",
+      "nombre": "Resolución de problemas y contextualización activa",
+      "descripcion": "Eje metodológico principal. El aprendizaje se construye a partir de situaciones reales y significativas que desafían al estudiante.",
+      "pagina_pdf": 36
+    },
+    {
+      "id": "tecnologias",
+      "nombre": "Tecnologías",
+      "descripcion": "Uso de herramientas tecnológicas como calculadoras, software de geometría dinámica y hojas de cálculo para explorar y verificar conceptos.",
+      "pagina_pdf": 37
+    },
+    {
+      "id": "actitudes",
+      "nombre": "Actitudes y creencias",
+      "descripcion": "Fomentar actitudes positivas hacia la matemática: confianza, perseverancia, curiosidad y valoración de la disciplina.",
+      "pagina_pdf": 37
+    },
+    {
+      "id": "historia",
+      "nombre": "Historia de las Matemáticas",
+      "descripcion": "Vincular el aprendizaje con el desarrollo histórico de los conceptos matemáticos para dar sentido y contexto cultural.",
+      "pagina_pdf": 39
+    }
+  ],
+
+  "organizacion_leccion": {
+    "descripcion": "Estructura pedagógica oficial para organizar las lecciones de Matemáticas según el MEP (pp. 41-45).",
+    "etapa_I": {
+      "nombre": "Aprendizaje de conocimientos",
+      "descripcion": "Se desarrolla en una lección o secuencia de lecciones. El docente propone un desafío y guía la construcción del conocimiento.",
+      "momentos": [
+        {
+          "numero": 1,
+          "nombre": "Propuesta del problema",
+          "descripcion": "El docente presenta una situación problema o desafío inicial que provoca la indagación y activa conocimientos previos."
+        },
+        {
+          "numero": 2,
+          "nombre": "Trabajo estudiantil independiente",
+          "descripcion": "Los estudiantes trabajan individualmente o en grupos para resolver el problema. El docente observa, guía con preguntas y no da respuestas directas."
+        },
+        {
+          "numero": 3,
+          "nombre": "Discusión interactiva y comunicativa",
+          "descripcion": "El docente abre un espacio de diálogo. Los estudiantes exponen estrategias, justifican procedimientos y comparan resultados."
+        },
+        {
+          "numero": 4,
+          "nombre": "Clausura o cierre",
+          "descripcion": "El docente formaliza el conocimiento con base en lo construido colectivamente. Consolida conceptos, procedimientos y terminología."
+        }
+      ]
+    },
+    "etapa_II": {
+      "nombre": "Movilización y aplicación de conocimientos",
+      "descripcion": "Los estudiantes aplican lo aprendido en la Etapa I mediante ejercicios, problemas de contexto y situaciones nuevas. Es el momento privilegiado para la evaluación formativa."
+    }
+  },
+
+  "planeamiento_correlacionado": {
+    "descripcion": "Modelo de planeamiento para escuelas multigrado o unidocentes. Permite correlacionar habilidades de distintos años escolares en una misma experiencia didáctica.",
+    "fuente": "Orientaciones Nacionales para el Planeamiento y la Mediación Correlacionada en Matemáticas en Escuelas Multigrado, MEP 2025-2026.",
+    "componentes_plantilla": [
+      "Aspectos administrativos (dirección, docente, años correlacionados, mes, periodicidad)",
+      "Competencia general seleccionada",
+      "Círculo de la Armonía (20 min): activación, armonización, relajación",
+      "Años escolares correlacionados: aprendizajes esperados + estrategias de mediación correlacionada + indicadores de evaluación",
+      "Año escolar no correlacionado (si existe): aprendizajes + estrategias + indicadores",
+      "Círculo Creativo (40 min)",
+      "Cierre Pedagógico (20 min)"
+    ],
+    "niveles_correlacion": [
+      {
+        "nivel": "Correlación curricular",
+        "descripcion": "El contenido central es común entre años. Los criterios de logro se ajustan en complejidad según el grado. Se usa cuando el cartel de alcance y secuencia indica el mismo color entre niveles."
+      },
+      {
+        "nivel": "Correlación metodológica",
+        "descripcion": "Los contenidos son distintos pero se trabajan con la misma dinámica y estrategia de mediación. Se usa cuando un año no comparte color con los demás en el cartel."
+      }
+    ],
+    "estrategias_integradas": [
+      { "nombre": "Pizarra colaborativa", "descripcion": "Cada grado registra en secciones diferenciadas de la pizarra sus procedimientos y resultados." },
+      { "nombre": "Estaciones de aprendizaje", "descripcion": "Espacios rotativos o no, con consignas graduadas por nivel de complejidad." },
+      { "nombre": "Menú de tareas", "descripcion": "Listado común de actividades con distintos niveles. Cada subgrupo elige retos acordes a su grado." }
+    ]
+  },
+
+  "dua": {
+    "nombre": "Diseño Universal para el Aprendizaje",
+    "descripcion": "Marco pedagógico que propone planificar desde el inicio con estrategias variadas para garantizar el acceso, participación y logro de todos los estudiantes.",
+    "principios": [
+      {
+        "id": "representacion",
+        "nombre": "Múltiples formas de representación",
+        "descripcion": "Ofrecer el contenido por diferentes vías: visual, concreta, simbólica, auditiva.",
+        "ejemplos_matematica": [
+          "Usar material concreto (bloques, fichas, reglas)",
+          "Representaciones gráficas y diagramas",
+          "Esquemas visuales de equivalencias",
+          "Software de geometría dinámica (GeoGebra)"
+        ]
+      },
+      {
+        "id": "accion_expresion",
+        "nombre": "Múltiples formas de acción y expresión",
+        "descripcion": "Permitir que cada estudiante demuestre lo aprendido de manera accesible.",
+        "ejemplos_matematica": [
+          "Expresión oral de procedimientos",
+          "Representación gráfica en papel cuadriculado",
+          "Uso de calculadora o software",
+          "Construcción con material manipulativo"
+        ]
+      },
+      {
+        "id": "motivacion",
+        "nombre": "Múltiples formas de motivación e implicación",
+        "descripcion": "Promover el interés, la persistencia y la autorregulación del aprendizaje.",
+        "ejemplos_matematica": [
+          "Contextualización en situaciones reales del entorno del estudiante",
+          "Trabajo colaborativo entre pares",
+          "Retos graduados con retroalimentación inmediata",
+          "Conexión con la historia de las matemáticas"
+        ]
+      }
+    ]
+  },
+
+  "indicadores_evaluacion": {
+    "descripcion": "Estructura oficial de los indicadores de evaluación según el programa MEP.",
+    "componentes": [
+      {
+        "nombre": "Verbo / acción",
+        "descripcion": "Proceso cognitivo que se desea evidenciar. Debe ser coherente con el nivel de complejidad del aprendizaje esperado.",
+        "ejemplos": ["clasifica", "resuelve", "representa", "explica", "analiza", "aplica", "determina"]
+      },
+      {
+        "nombre": "Contenido",
+        "descripcion": "Saber disciplinar o temática específica que se está abordando.",
+        "ejemplos": ["números naturales menores a 1000", "figuras planas", "medidas de longitud"]
+      },
+      {
+        "nombre": "Condición",
+        "descripcion": "Contexto, herramienta o forma en que el estudiante demuestra el aprendizaje.",
+        "ejemplos": ["en situaciones problema del entorno", "utilizando material concreto", "mediante representación gráfica"]
+      }
+    ],
+    "ejemplo": "Realiza mediciones utilizando el metro y el centímetro en situaciones problema del entorno.",
+    "rubricas": {
+      "escala_tipica": [
+        { "valor": 5, "etiqueta": "Siempre" },
+        { "valor": 4, "etiqueta": "Casi siempre" },
+        { "valor": 3, "etiqueta": "Algunas veces" },
+        { "valor": 2, "etiqueta": "Casi nunca" },
+        { "valor": 1, "etiqueta": "Nunca" }
+      ]
+    }
+  },
+
+  "competencias_generales": [
+    {
+      "id": "ciudadania",
+      "nombre": "Competencias para la ciudadanía responsable y solidaria"
+    },
+    {
+      "id": "vida",
+      "nombre": "Competencias para la vida: sociales, emocionales y de aprendizaje"
+    },
+    {
+      "id": "empleo",
+      "nombre": "Competencias para el empleo digno y el emprendimiento"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "descripcion": "Schema del objeto que produce template_engine.js al ensamblar un planeamiento. Define los campos que la IA recibe como contexto y los que debe generar.",
+    "uso": "Este objeto se construye en el cliente (browser) combinando los 3 JSONs y los inputs del docente. Se envía a la API de Claude para generar el planeamiento completo."
+  },
+
+  "tipos_planeamiento": {
+
+    "regular": {
+      "nombre": "Planeamiento didáctico regular",
+      "descripcion": "Para secundaria o primaria con un solo año escolar. Sigue Etapa I (4 momentos) + Etapa II.",
+      "contexto_entrada": {
+        "administrativo": {
+          "ciclo": "TERCER_CICLO",
+          "area": "Geometría",
+          "area_id": "GEO",
+          "nivel": "7",
+          "semana": 1,
+          "mes": "febrero",
+          "curso_lectivo": 2025,
+          "nombre_docente": "",
+          "centro_educativo": "",
+          "competencia_general": "vida"
+        },
+        "habilidades_seleccionadas": [
+          {
+            "id": "MAT-TC-7-GEO-H006",
+            "descripcion": "Texto de la habilidad seleccionada por el docente.",
+            "indicaciones_puntuales": "Texto de indicaciones puntuales del JSON existente."
+          }
+        ],
+        "contexto_area": {
+          "proposito": "Del curriculo_contexto.json",
+          "habilidades_generales": ["Del curriculo_contexto.json"],
+          "metodologicas_anio": ["Indicaciones específicas del año seleccionado"],
+          "evaluacion": ["Del curriculo_contexto.json"],
+          "tecnologias": { "recomendadas": ["GeoGebra"], "notas": "" }
+        },
+        "organizacion_leccion": "Del programa_global.json — etapa_I y etapa_II completas",
+        "dua_seleccionado": {
+          "representacion": ["opciones marcadas por el docente"],
+          "accion_expresion": ["opciones marcadas por el docente"],
+          "motivacion": ["opciones marcadas por el docente"]
+        },
+        "pei": {
+          "tiene_nee": false,
+          "estudiantes": []
+        }
+      },
+      "campos_que_genera_ia": {
+        "etapa_I": {
+          "momento_1_propuesta_problema": "La IA genera la situación problema contextualizada.",
+          "momento_2_trabajo_independiente": "La IA genera las instrucciones para el trabajo estudiantil, preguntas generadoras por nivel.",
+          "momento_3_discusion": "La IA genera guía para la discusión interactiva.",
+          "momento_4_cierre": "La IA genera el cierre cognitivo con formalización del conocimiento."
+        },
+        "etapa_II": {
+          "actividades": "La IA genera ejercicios y problemas de aplicación contextualizados."
+        },
+        "dua_estrategias": {
+          "representacion": "La IA genera estrategias concretas según opciones DUA seleccionadas.",
+          "accion_expresion": "La IA genera estrategias de expresión.",
+          "motivacion": "La IA genera estrategias de motivación.",
+          "alto_potencial": "La IA genera extensiones para estudiantes con alto potencial."
+        },
+        "indicadores_evaluacion": [
+          {
+            "habilidad_id": "MAT-TC-7-GEO-H006",
+            "indicadores": [
+              {
+                "texto": "La IA genera indicador con verbo + contenido + condición.",
+                "verbo": "",
+                "contenido": "",
+                "condicion": ""
+              }
+            ]
+          }
+        ],
+        "rubrica": {
+          "descripcion": "Rúbrica generada con escala 1-5 para los indicadores del planeamiento."
+        },
+        "pei_acomodo": null
+      }
+    },
+
+    "correlacionado": {
+      "nombre": "Planeamiento correlacionado multigrado",
+      "descripcion": "Para escuelas unidocentes o multigrado. Correlaciona habilidades de varios años escolares.",
+      "contexto_entrada": {
+        "administrativo": {
+          "ciclo": "PRIMER_CICLO",
+          "area": "Medidas",
+          "area_id": "MED",
+          "anios_correlacionados": ["1", "2", "3"],
+          "anio_no_correlacionado": null,
+          "semana": 1,
+          "mes": "febrero",
+          "curso_lectivo": 2025,
+          "periodicidad": "Mensual",
+          "nombre_docente": "",
+          "centro_educativo": "",
+          "direccion_regional": "",
+          "competencia_general": "vida"
+        },
+        "habilidades_por_anio": {
+          "1": [
+            {
+              "id": "MAT-PC-1-MED-H001",
+              "descripcion": "Habilidad del año 1 seleccionada."
+            }
+          ],
+          "2": [
+            {
+              "id": "MAT-PC-2-MED-H001",
+              "descripcion": "Habilidad del año 2 seleccionada."
+            }
+          ],
+          "3": [
+            {
+              "id": "MAT-PC-3-MED-H001",
+              "descripcion": "Habilidad del año 3 seleccionada."
+            }
+          ]
+        },
+        "contexto_area": {
+          "proposito": "Del curriculo_contexto.json",
+          "habilidades_generales": [],
+          "metodologicas_por_anio": {
+            "1": [],
+            "2": [],
+            "3": []
+          },
+          "evaluacion": []
+        },
+        "dua_seleccionado": {
+          "representacion": [],
+          "accion_expresion": [],
+          "motivacion": []
+        },
+        "pei": {
+          "tiene_nee": false,
+          "estudiantes": []
+        }
+      },
+      "campos_que_genera_ia": {
+        "circulo_armonia": {
+          "activacion": "La IA genera actividad de activación socioemocional (3 min).",
+          "armonizacion": "La IA genera actividad de armonización con conexión matemática (14 min).",
+          "relajacion": "La IA genera actividad de relajación y cierre (3 min)."
+        },
+        "semanas": [
+          {
+            "semana": 1,
+            "correlacionados": {
+              "anios": ["1", "2", "3"],
+              "estrategia_mediacion": "La IA genera estrategia correlacionada para los años indicados.",
+              "indicadores_por_anio": {
+                "1": ["Indicador verbo+contenido+condición para 1°"],
+                "2": ["Indicador para 2°"],
+                "3": ["Indicador para 3°"]
+              }
+            },
+            "no_correlacionado": null,
+            "circulo_creativo": "Descripción de la actividad del Círculo Creativo.",
+            "cierre_pedagogico": "Descripción del cierre pedagógico."
+          }
+        ],
+        "dua_estrategias": {
+          "representacion": "",
+          "accion_expresion": "",
+          "motivacion": "",
+          "alto_potencial": ""
+        },
+        "pei_acomodo": null
+      }
+    }
+  },
+
+  "pei_schema": {
+    "descripcion": "Estructura del PEI dentro de cualquier planeamiento. La IA genera el acomodo de habilidades cuando tiene_nee = true.",
+    "tiene_nee": true,
+    "estudiantes": [
+      {
+        "id": "est_001",
+        "tipo_adecuacion": "no_significativa",
+        "area_nee": "cognitiva",
+        "descripcion_breve": "Descripción libre opcional del docente sobre el estudiante.",
+        "anio_escolar": "2"
+      }
+    ],
+    "acomodo_generado_por_ia": {
+      "descripcion": "La IA genera este bloque cuando hay estudiantes con NEE.",
+      "por_estudiante": [
+        {
+          "id": "est_001",
+          "habilidades_acomodadas": [
+            {
+              "habilidad_original_id": "MAT-PC-2-MED-H001",
+              "descripcion_original": "Texto original de la habilidad.",
+              "acomodo": "Descripción de cómo se adapta la habilidad para esta NEE. Misma habilidad, diferente nivel de exigencia.",
+              "apoyos": ["Apoyo 1: material concreto específico", "Apoyo 2: tiempo extendido"],
+              "indicador_adaptado": "Indicador de evaluación con condiciones ajustadas a la NEE.",
+              "materiales_diferenciados": ["Material 1", "Material 2"]
+            }
+          ],
+          "estrategias_especificas": [
+            "Estrategia pedagógica 1 para esta área de NEE.",
+            "Estrategia pedagógica 2."
+          ],
+          "condiciones_evaluacion": "Descripción de cómo se evalúa con las adecuaciones aplicadas."
+        }
+      ]
+    }
+  },
+
+  "tipos_nee": {
+    "descripcion": "Catálogo de tipos de NEE soportados. La IA adapta el planeamiento según el tipo seleccionado.",
+    "adecuaciones": {
+      "significativa": "Modifica objetivos curriculares. Requiere adaptación profunda de habilidades.",
+      "no_significativa": "Mantiene objetivos curriculares. Ajusta metodología, tiempo, materiales y condiciones de evaluación."
+    },
+    "areas": [
+      { "id": "cognitiva", "nombre": "Cognitiva", "ejemplos": "Dificultades de aprendizaje, discapacidad intelectual" },
+      { "id": "motora", "nombre": "Motora / física", "ejemplos": "Limitaciones de motricidad fina o gruesa" },
+      { "id": "visual", "nombre": "Sensorial — Visual", "ejemplos": "Baja visión, ceguera" },
+      { "id": "auditiva", "nombre": "Sensorial — Auditiva", "ejemplos": "Hipoacusia, sordera" },
+      { "id": "socioemocional", "nombre": "Socioemocional / conductual", "ejemplos": "TEA, TDAH, dificultades de regulación emocional" },
+      { "id": "lenguaje", "nombre": "Lenguaje y comunicación", "ejemplos": "Dificultades de expresión oral o escrita" }
+    ]
+  }
+}
