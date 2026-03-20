@@ -921,7 +921,7 @@
 
       <div class="field-group cols-1" id="apikey-field" style="display:none">
         <div class="field">
-          <label>API Key (solo para uso en GitHub Pages)</label>
+          <label>API Key (funcion en construccion)</label>
           <input type="text" id="api_key" placeholder="sk-ant-..." autocomplete="off">
         </div>
       </div>
@@ -1415,18 +1415,18 @@ async function generarPlaneamiento() {
   const resultadoSection = document.getElementById("resultado-section");
   const resultadoContent = document.getElementById("resultado-content");
 
-  if (seleccionadas.length === 0) {
-    const confirmar = confirm("No seleccionaste habilidades específicas. ¿Querés que la IA infiera las más apropiadas para este mes?");
-    if (!confirmar) return;
-  }
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Ensamblando prompt...';
 
-  // API key
-  const apiKeyInput = document.getElementById("api_key").value.trim();
-  const headers = { "Content-Type": "application/json" };
-  if (apiKeyInput) {
-    headers["x-api-key"] = apiKeyInput;
-    headers["anthropic-version"] = "2023-06-01";
-  }
+  const prompt = ensamblarPrompt();
+
+  resultadoSection.classList.add("visible");
+  resultadoContent.textContent = prompt;
+  resultadoContent.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Regenerar prompt`;
+}
 
   btn.disabled = true;
   btn.innerHTML = '<div class="spinner"></div> Generando planeamiento...';
