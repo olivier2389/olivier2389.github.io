@@ -1059,25 +1059,10 @@ function normalizarHabilidades(data) {
   });
   return result;
 }
-  // Objeto anidado
-  const result = [];
-  Object.keys(data).forEach(ciclo => {
-    const areas = data[ciclo];
-    if (typeof areas === "object" && !Array.isArray(areas)) {
-      Object.keys(areas).forEach(area => {
-        const habs = areas[area];
-        if (Array.isArray(habs)) {
-          habs.forEach(h => result.push({
-            id: h.id || h.codigo || "",
-            texto: h.descripcion || h.habilidad || h.texto || "",
-            ciclo, area
-          }));
-        }
-      });
-    }
-  });
-  return result.filter(h => h.id);
-}
+
+
+
+
 
 // ═══════════════════════════════════════════
 //  FILTROS DE CICLO / ÁREA
