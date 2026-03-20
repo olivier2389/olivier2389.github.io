@@ -1091,9 +1091,10 @@ function filtrarPorCicloArea() {
   } else {
     filtradas = todasHabilidades.filter(h => {
       const matchCiclo = !ciclo || h.ciclo === ciclo || h.ciclo === "";
-      const matchArea  = !area  || h.area === area  || h.area === "";
-      return matchCiclo && matchArea;
-    });
+      const matchArea = !area || 
+        h.area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"") === 
+        area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"") || 
+        h.area === "";
   }
   renderLista(filtradas.slice(0, 80));
   document.getElementById("lista-info").textContent =
