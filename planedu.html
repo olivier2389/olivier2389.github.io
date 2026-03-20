@@ -1035,18 +1035,16 @@ async function cargarDatos() {
   }
 }
 
+
 function normalizarHabilidades(data) {
   const result = [];
-  const cycles = data.cycles || (Array.isArray(data) ? data : []);
+  const cycles = data.cycles || [];
   cycles.forEach(c => {
     const ciclo = c.ciclo || "";
-    const areas = c.areas || c.niveles || [];
-    areas.forEach(a => {
-      const area = a.area || a.nombre || "";
-      const niveles = a.niveles || [a];
-      niveles.forEach(n => {
-        const habs = n.habilidades || n.habilidad || [];
-        habs.forEach(h => {
+    (c.niveles || []).forEach(n => {
+      (n.areas || []).forEach(a => {
+        const area = a.nombre || a.area || "";
+        (a.habilidades || []).forEach(h => {
           if (h.id) result.push({
             id: h.id,
             texto: h.descripcion || h.habilidad || h.texto || "",
@@ -1059,9 +1057,6 @@ function normalizarHabilidades(data) {
   });
   return result;
 }
-
-
-
 
 
 // ═══════════════════════════════════════════
