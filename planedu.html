@@ -75,8 +75,6 @@ select option{background:var(--bg3);}
 .dua-check input[type="checkbox"]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:var(--purple);cursor:pointer;padding:0;border:none;background:none;box-shadow:none;}
 .dua-check.checked{border-color:rgba(139,111,245,.4);background:rgba(139,111,245,.07);}
 .dua-label{font-size:13px;color:var(--text);line-height:1.4;}
-
-/* SITUACIÓN PROBLEMA */
 .sp-toggle-card{background:var(--bg3);border:1.5px solid var(--border2);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:0;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:14px;}
 .sp-toggle-card:hover{border-color:rgba(240,168,50,.3);}
 .sp-toggle-card.active{border-color:rgba(240,168,50,.5);background:rgba(240,168,50,.06);}
@@ -86,14 +84,12 @@ select option{background:var(--bg3);}
 .sp-fields{display:none;}
 .sp-fields.visible{display:block;margin-top:16px;animation:fadeUp .2s ease-out;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-
 .momentos-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
 @media(max-width:600px){.momentos-grid{grid-template-columns:1fr;}}
 .momento-card{background:var(--bg3);border:1px solid rgba(240,168,50,.2);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:flex-start;gap:10px;}
 .momento-num{font-family:var(--mono);font-size:11px;background:rgba(240,168,50,.12);color:var(--amber);border:1px solid rgba(240,168,50,.25);border-radius:4px;padding:2px 7px;flex-shrink:0;margin-top:1px;}
 .momento-texto{font-size:13px;color:var(--text);line-height:1.4;}
 .momento-texto strong{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--amber);display:block;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px;}
-
 .pei-toggle-row{display:flex;gap:12px;margin-bottom:16px;}
 .radio-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;background:var(--bg3);border:1.5px solid var(--border2);border-radius:var(--radius);cursor:pointer;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--muted);transition:all .2s;}
 .radio-btn input{display:none;}
@@ -126,22 +122,17 @@ select option{background:var(--bg3);}
 </style>
 </head>
 <body>
-
 <header>
   <a href="index.html" class="site-logo">EduPrompt</a>
   <nav class="main-nav">
     <a href="index.html" class="nav-link">🧩 NEE</a>
     <a href="planedu.html" class="nav-link active">📋 PlanEdu</a>
   </nav>
-  <div class="header-right">
-    <span class="header-badge">✦ MEP Costa Rica</span>
-  </div>
+  <div class="header-right"><span class="header-badge">✦ MEP Costa Rica</span></div>
 </header>
-
 <main>
   <div class="page-title">Planeamientos MEP</div>
   <div class="page-subtitle">Genera planeamientos mensuales completos · Formato oficial · Con DUA, Situación Problema y PEI</div>
-
   <div class="stepper">
     <div class="step-item"><div class="step-dot active" id="dot-1">1</div><span class="step-label active" id="lbl-1">Configurar</span></div>
     <div class="step-connector" id="conn-1"></div>
@@ -153,7 +144,6 @@ select option{background:var(--bg3);}
     <div class="step-connector" id="conn-4"></div>
     <div class="step-item"><div class="step-dot" id="dot-5">5</div><span class="step-label" id="lbl-5">Generar</span></div>
   </div>
-
   <!-- PASO 1 -->
   <div class="step-panel active" id="panel-1">
     <div class="card">
@@ -176,12 +166,7 @@ select option{background:var(--bg3);}
       <div class="field-group cols-3">
         <div class="field"><label>Año escolar</label><select id="anio"><option value="">— Seleccione —</option></select></div>
         <div class="field"><label>Mes</label>
-          <select id="mes">
-            <option value="">— Seleccione —</option>
-            <option>Enero</option><option>Febrero</option><option>Marzo</option><option>Abril</option>
-            <option>Mayo</option><option>Junio</option><option>Julio</option><option>Agosto</option>
-            <option>Setiembre</option><option>Octubre</option><option>Noviembre</option>
-          </select>
+          <select id="mes"><option value="">— Seleccione —</option><option>Enero</option><option>Febrero</option><option>Marzo</option><option>Abril</option><option>Mayo</option><option>Junio</option><option>Julio</option><option>Agosto</option><option>Setiembre</option><option>Octubre</option><option>Noviembre</option></select>
         </div>
         <div class="field"><label>Semanas</label>
           <select id="semanas"><option value="4">4 semanas</option><option value="3">3 semanas</option><option value="5">5 semanas</option></select>
@@ -203,7 +188,6 @@ select option{background:var(--bg3);}
       </div>
     </div>
   </div>
-
   <!-- PASO 2 -->
   <div class="step-panel" id="panel-2">
     <div class="card">
@@ -228,39 +212,31 @@ select option{background:var(--bg3);}
       <button class="btn btn-primary" id="btn-continuar-paso2" onclick="irPaso(3)">Continuar →</button>
     </div>
   </div>
-
-  <!-- PASO 3: DUA + SITUACIÓN PROBLEMA -->
+  <!-- PASO 3 -->
   <div class="step-panel" id="panel-3">
     <div class="card">
       <div class="card-title"><span class="step-badge">PASO 3</span>DUA y Enfoque de Resolución de Problemas</div>
       <div class="card-desc">Estrategias DUA obligatorias y configuración del enfoque de situación problema MEP</div>
-
       <span class="section-label">Representación · Principio I</span>
       <div class="dua-grid" style="margin-bottom:20px;">
         <label class="dua-check"><input type="checkbox" name="dua" value="Representación visual (diagramas, esquemas, imágenes)"><span class="dua-label">Visual · Diagramas, esquemas, imágenes</span></label>
         <label class="dua-check"><input type="checkbox" name="dua" value="Representación concreta (manipulables, materiales físicos)"><span class="dua-label">Concreta · Manipulables, materiales físicos</span></label>
         <label class="dua-check"><input type="checkbox" name="dua" value="Representación simbólica (notación formal, algoritmos)"><span class="dua-label">Simbólica · Notación formal, algoritmos</span></label>
       </div>
-
       <span class="section-label">Acción y Expresión · Principio II</span>
       <div class="dua-grid" style="margin-bottom:20px;">
         <label class="dua-check"><input type="checkbox" name="dua" value="Expresión oral (exposición, discusión, trabajo grupal)"><span class="dua-label">Oral · Exposición, discusión, debate</span></label>
         <label class="dua-check"><input type="checkbox" name="dua" value="Expresión escrita (resolución de problemas, informes)"><span class="dua-label">Escrita · Problemas, informes, portafolio</span></label>
         <label class="dua-check"><input type="checkbox" name="dua" value="Expresión tecnológica (software, calculadora, GeoGebra)"><span class="dua-label">Tecnológica · Software, GeoGebra, calculadora</span></label>
       </div>
-
       <span class="section-label">Motivación e Implicación · Principio III</span>
       <div class="dua-grid" style="margin-bottom:28px;">
         <label class="dua-check"><input type="checkbox" name="dua" value="Motivación por contexto real (situaciones de la vida cotidiana)"><span class="dua-label">Contexto real · Situaciones cotidianas</span></label>
         <label class="dua-check"><input type="checkbox" name="dua" value="Motivación colaborativa (trabajo en equipo, co-construcción)"><span class="dua-label">Colaborativa · Equipos, co-construcción</span></label>
         <label class="dua-check"><input type="checkbox" name="dua" value="Motivación autónoma (resolución independiente, autogestión)"><span class="dua-label">Autónoma · Autogestión, resolución independiente</span></label>
       </div>
-
       <hr class="divider">
-
-      <!-- SITUACIÓN PROBLEMA TOGGLE -->
       <span class="section-label" style="color:var(--amber);">Enfoque de resolución de problemas · MEP</span>
-
       <label class="sp-toggle-card" id="sp-toggle-card" onclick="toggleSituacionProblema(event)">
         <input type="checkbox" id="sp-activo" onclick="event.stopPropagation()">
         <div>
@@ -268,9 +244,7 @@ select option{background:var(--bg3);}
           <div class="sp-toggle-sub">Activa los 4 momentos fundamentales del MEP — enfoque obligatorio en Matemáticas</div>
         </div>
       </label>
-
       <div class="sp-fields" id="sp-fields">
-
         <span class="section-label" style="margin-top:4px;">Los 4 momentos MEP que se incluirán en el planeamiento</span>
         <div class="momentos-grid">
           <div class="momento-card"><span class="momento-num">M1</span><div class="momento-texto"><strong>Propuesta del problema</strong>Presentación contextualizada. El docente NO revela el proceso de solución.</div></div>
@@ -278,14 +252,12 @@ select option{background:var(--bg3);}
           <div class="momento-card"><span class="momento-num">M3</span><div class="momento-texto"><strong>Discusión interactiva</strong>Socialización de estrategias. Argumentación matemática entre pares.</div></div>
           <div class="momento-card"><span class="momento-num">M4</span><div class="momento-texto"><strong>Clausura o cierre</strong>Institucionalización del conocimiento. El docente sistematiza los aprendizajes.</div></div>
         </div>
-
         <div class="field-group cols-1" style="margin-bottom:14px;">
           <div class="field">
             <label>Contexto de la situación problema</label>
-            <textarea id="sp_contexto" rows="3" placeholder="Describí el contexto auténtico. Ej: gestión del presupuesto escolar, diseño de una huerta, análisis de datos climáticos de la región, planificación de un evento deportivo..."></textarea>
+            <textarea id="sp_contexto" rows="3" placeholder="Describí el contexto auténtico. Ej: gestión del presupuesto escolar, diseño de una huerta, análisis de datos climáticos de la región..."></textarea>
           </div>
         </div>
-
         <div class="field-group" style="margin-bottom:14px;">
           <div class="field">
             <label>Recursos para la situación problema</label>
@@ -302,24 +274,20 @@ select option{background:var(--bg3);}
             </select>
           </div>
         </div>
-
         <div class="field-group cols-1">
           <div class="field">
             <label>Observaciones sobre la evaluación de la situación problema</label>
-            <textarea id="sp_evaluacion" rows="3" placeholder="Describí cómo evaluarás el proceso. Ej: rúbrica de argumentación matemática, lista de cotejo de estrategias, registro anecdótico, portafolio del proceso de resolución..."></textarea>
+            <textarea id="sp_evaluacion" rows="3" placeholder="Describí cómo evaluarás el proceso. Ej: rúbrica de argumentación matemática, lista de cotejo de estrategias..."></textarea>
           </div>
         </div>
-
-      </div><!-- /sp-fields -->
+      </div>
     </div>
-
     <div class="nav-row">
       <button class="btn btn-ghost" onclick="irPaso(2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Atrás</button>
       <button class="btn btn-primary" onclick="irPaso(4)">Continuar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
-
-  <!-- PASO 4: PEI -->
+  <!-- PASO 4 -->
   <div class="step-panel" id="panel-4">
     <div class="card">
       <div class="card-title"><span class="step-badge">PASO 4</span>Adecuaciones curriculares (PEI)</div>
@@ -356,8 +324,7 @@ select option{background:var(--bg3);}
       <button class="btn btn-primary" onclick="irPaso(5)">Continuar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
-
-  <!-- PASO 5: GENERAR -->
+  <!-- PASO 5 -->
   <div class="step-panel" id="panel-5">
     <div class="card">
       <div class="card-title"><span class="step-badge">PASO 5</span>Generar prompt</div>
@@ -377,200 +344,38 @@ select option{background:var(--bg3);}
       <span></span>
     </div>
   </div>
-
   <!-- RESULTADO -->
   <div id="resultado-section">
     <div class="resultado-header">
       <div class="resultado-title">✦ Prompt listo para copiar</div>
       <div class="resultado-actions">
-        <button class="btn btn-ghost" onclick="copiarTexto()" style="font-size:12px;padding:8px 14px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          Copiar prompt
-        </button>
-        <button class="btn btn-primary" onclick="exportarTxt()" style="font-size:12px;padding:8px 16px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Guardar .txt
-        </button>
+        <button class="btn btn-ghost" onclick="copiarTexto()" style="font-size:12px;padding:8px 14px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar prompt</button>
+        <button class="btn btn-primary" onclick="exportarTxt()" style="font-size:12px;padding:8px 16px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Guardar .txt</button>
         <button class="btn btn-ghost" onclick="nuevoPlaneamiento()" style="font-size:12px;padding:8px 14px;">Nuevo</button>
       </div>
     </div>
     <div id="resultado-content" contenteditable="true"></div>
   </div>
 </main>
-
 <script>
 let pasoActual=1,todasHabilidades=[],filtradas=[],seleccionadas=[],curriculoContexto={},programaGlobal={},searchTimeout;
-
-const CICLOS_MAP={
-  PRIMER_CICLO:{areas:["Números","Geometría","Medidas","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["1°","2°","3°"]},
-  SEGUNDO_CICLO:{areas:["Números","Geometría","Medidas","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["4°","5°","6°"]},
-  TERCER_CICLO:{areas:["Números","Geometría","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["7°","8°","9°"]},
-  CICLO_DIVERSIFICADO:{areas:["Geometría","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["10°","11°"]}
-};
-
-async function cargarDatos(){
-  try{
-    console.log("🔄 Iniciando carga de datos...");
-    const[habRes,ctxRes,pgRes]=await Promise.allSettled([fetch("data/curriculo_matematica.json"),fetch("data/curriculo_contexto.json"),fetch("data/programa_global.json")]);
-    if(habRes.status==="fulfilled"&&habRes.value.ok){const d=await habRes.value.json();console.log("✅ JSON habilidades cargado");todasHabilidades=normalizarHabilidades(d);console.log("✅ Habilidades normalizadas:",todasHabilidades.length);}
-    if(ctxRes.status==="fulfilled"&&ctxRes.value.ok){const r=await ctxRes.value.json();r.forEach(e=>{const k=(e.ciclo||"")+"_"+(e.area||e.area_id||"");curriculoContexto[k]=e;});console.log("✅ Contexto cargado:",Object.keys(curriculoContexto).length,"entradas");}
-    if(pgRes.status==="fulfilled"&&pgRes.value.ok){programaGlobal=await pgRes.value.json();console.log("✅ Programa global cargado");}
-    if(todasHabilidades.length>0){renderLista(todasHabilidades.slice(0,60));document.getElementById("lista-info").textContent=`${todasHabilidades.length} habilidades disponibles · mostrando 60`;}
-  }catch(e){console.error("❌ Error crítico:",e);document.getElementById("lista-habilidades").innerHTML='<div class="empty-msg">❌ Error cargando el currículo.</div>';}
-}
-
-function normalizarHabilidades(data){
-  const r=[];
-  if(Array.isArray(data)){console.log("📋 JSON es array plano");return data.map(h=>({id:h.id||h.codigo||"",texto:h.descripcion||h.habilidad||h.texto||"",ciclo:h.ciclo||"",area:h.area||h.materia||""}));}
-  if(data&&data.cycles){console.log("📋 JSON tiene estructura anidada");data.cycles.forEach(c=>{const ciclo=c.ciclo||"";(c.niveles||[]).forEach(n=>{(n.areas||[]).forEach(a=>{const area=a.nombre||a.area||"";(a.habilidades||[]).forEach(h=>{if(h.id)r.push({id:h.id,texto:h.descripcion||h.habilidad||h.texto||"",ciclo,area});});});});});}
-  return r;
-}
-
-function onCicloChange(){
-  console.log("🔄 Ciclo cambiado:",document.getElementById("ciclo").value);
-  const ciclo=document.getElementById("ciclo").value;
-  const aS=document.getElementById("area"),nS=document.getElementById("anio");
-  aS.innerHTML='<option value="">— Seleccione —</option>';nS.innerHTML='<option value="">— Seleccione —</option>';
-  if(!ciclo)return;
-  const cfg=CICLOS_MAP[ciclo];if(!cfg)return;
-  cfg.areas.forEach(a=>aS.innerHTML+=`<option value="${a}">${a}</option>`);
-  cfg.anios.forEach(a=>nS.innerHTML+=`<option value="${a}">${a}</option>`);
-  filtrarPorCicloArea();
-}
-
-function filtrarPorCicloArea(){
-  const ciclo=document.getElementById("ciclo").value,area=document.getElementById("area").value;
-  if(!ciclo&&!area){filtradas=[...todasHabilidades];}
-  else{
-    filtradas=todasHabilidades.filter(h=>{
-      const an=area?area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""):"";
-      const hn=h.area?h.area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""):"";
-      return(!ciclo||h.ciclo===ciclo||h.ciclo==="")&&(!area||hn===an||h.area==="");
-    });
-  }
-  renderLista(filtradas.slice(0,80));
-  document.getElementById("lista-info").textContent=`${filtradas.length} habilidades · mostrando ${Math.min(filtradas.length,80)}`;
-}
-
-function renderLista(habilidades){
-  const cont=document.getElementById("lista-habilidades");
-  if(!habilidades||habilidades.length===0){cont.innerHTML='<div class="empty-msg">Sin resultados. Probá otra búsqueda.</div>';return;}
-  cont.innerHTML="";
-  habilidades.forEach(h=>{
-    const item=document.createElement("label");item.className="hab-item";
-    const isChecked=seleccionadas.some(s=>s.id===h.id);
-    item.innerHTML=`<input type="checkbox"${isChecked?" checked":""}><span class="hab-id">${h.id}</span><span class="hab-texto">${h.texto}</span>`;
-    const cb=item.querySelector("input");
-    cb.addEventListener("change",e=>{
-      e.stopPropagation();
-      if(e.target.checked){if(!seleccionadas.some(s=>s.id===h.id))seleccionadas.push({id:h.id,texto:h.texto});}
-      else{eliminarHabilidad(h.id);return;}
-      renderSeleccionadas();actualizarBotonContinuar();
-    });
-    item.addEventListener("click",e=>{if(e.target.tagName!=="INPUT"){cb.checked=!cb.checked;cb.dispatchEvent(new Event("change"));}});
-    cont.appendChild(item);
-  });
-}
-
-function renderSeleccionadas(){
-  const cont=document.getElementById("seleccionadas"),badge=document.getElementById("seleccionadas-count");
-  badge.textContent=`${seleccionadas.length} seleccionada${seleccionadas.length!==1?"s":""}`;
-  if(seleccionadas.length===0){cont.innerHTML='<span class="sel-empty">Ninguna seleccionada aún</span>';return;}
-  cont.innerHTML="";
-  seleccionadas.forEach(h=>{
-    const chip=document.createElement("div");chip.className="sel-chip";
-    chip.innerHTML=`<span>${h.id}</span><button title="Quitar ${h.id}">×</button>`;
-    chip.querySelector("button").addEventListener("click",e=>{e.stopPropagation();eliminarHabilidad(h.id);});
-    cont.appendChild(chip);
-  });
-}
-
-function eliminarHabilidad(id){
-  seleccionadas=seleccionadas.filter(h=>h.id!==id);
-  document.querySelectorAll("#lista-habilidades input[type='checkbox']").forEach(cb=>{
-    const hi=cb.closest(".hab-item");if(hi&&hi.querySelector(".hab-id")?.textContent===id)cb.checked=false;
-  });
-  renderSeleccionadas();actualizarBotonContinuar();
-}
-
+const CICLOS_MAP={PRIMER_CICLO:{areas:["Números","Geometría","Medidas","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["1°","2°","3°"]},SEGUNDO_CICLO:{areas:["Números","Geometría","Medidas","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["4°","5°","6°"]},TERCER_CICLO:{areas:["Números","Geometría","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["7°","8°","9°"]},CICLO_DIVERSIFICADO:{areas:["Geometría","Relaciones y Álgebra","Estadística y Probabilidad"],anios:["10°","11°"]}};
+async function cargarDatos(){try{console.log("🔄 Iniciando carga de datos...");const[habRes,ctxRes,pgRes]=await Promise.allSettled([fetch("data/curriculo_matematica.json"),fetch("data/curriculo_contexto.json"),fetch("data/programa_global.json")]);if(habRes.status==="fulfilled"&&habRes.value.ok){const d=await habRes.value.json();console.log("✅ JSON habilidades cargado");todasHabilidades=normalizarHabilidades(d);console.log("✅ Habilidades normalizadas:",todasHabilidades.length);}if(ctxRes.status==="fulfilled"&&ctxRes.value.ok){const r=await ctxRes.value.json();r.forEach(e=>{const k=(e.ciclo||"")+"_"+(e.area||e.area_id||"");curriculoContexto[k]=e;});console.log("✅ Contexto cargado:",Object.keys(curriculoContexto).length,"entradas");}if(pgRes.status==="fulfilled"&&pgRes.value.ok){programaGlobal=await pgRes.value.json();console.log("✅ Programa global cargado");}if(todasHabilidades.length>0){renderLista(todasHabilidades.slice(0,60));document.getElementById("lista-info").textContent=`${todasHabilidades.length} habilidades disponibles · mostrando 60`;}}catch(e){console.error("❌ Error crítico:",e);document.getElementById("lista-habilidades").innerHTML='<div class="empty-msg">❌ Error cargando el currículo.</div>';}}
+function normalizarHabilidades(data){const r=[];if(Array.isArray(data)){console.log("📋 JSON es array plano");return data.map(h=>({id:h.id||h.codigo||"",texto:h.descripcion||h.habilidad||h.texto||"",ciclo:h.ciclo||"",area:h.area||h.materia||""}));}if(data&&data.cycles){console.log("📋 JSON tiene estructura anidada");data.cycles.forEach(c=>{const ciclo=c.ciclo||"";(c.niveles||[]).forEach(n=>{(n.areas||[]).forEach(a=>{const area=a.nombre||a.area||"";(a.habilidades||[]).forEach(h=>{if(h.id)r.push({id:h.id,texto:h.descripcion||h.habilidad||h.texto||"",ciclo,area});});});});});}return r;}
+function onCicloChange(){console.log("🔄 Ciclo cambiado:",document.getElementById("ciclo").value);const ciclo=document.getElementById("ciclo").value;const aS=document.getElementById("area"),nS=document.getElementById("anio");aS.innerHTML='<option value="">— Seleccione —</option>';nS.innerHTML='<option value="">— Seleccione —</option>';if(!ciclo)return;const cfg=CICLOS_MAP[ciclo];if(!cfg)return;cfg.areas.forEach(a=>aS.innerHTML+=`<option value="${a}">${a}</option>`);cfg.anios.forEach(a=>nS.innerHTML+=`<option value="${a}">${a}</option>`);filtrarPorCicloArea();}
+function filtrarPorCicloArea(){const ciclo=document.getElementById("ciclo").value,area=document.getElementById("area").value;if(!ciclo&&!area){filtradas=[...todasHabilidades];}else{filtradas=todasHabilidades.filter(h=>{const an=area?area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""):"";const hn=h.area?h.area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""):"";return(!ciclo||h.ciclo===ciclo||h.ciclo==="")&&(!area||hn===an||h.area==="");});}renderLista(filtradas.slice(0,80));document.getElementById("lista-info").textContent=`${filtradas.length} habilidades · mostrando ${Math.min(filtradas.length,80)}`;}
+function renderLista(habilidades){const cont=document.getElementById("lista-habilidades");if(!habilidades||habilidades.length===0){cont.innerHTML='<div class="empty-msg">Sin resultados. Probá otra búsqueda.</div>';return;}cont.innerHTML="";habilidades.forEach(h=>{const item=document.createElement("label");item.className="hab-item";const isChecked=seleccionadas.some(s=>s.id===h.id);item.innerHTML=`<input type="checkbox"${isChecked?" checked":""}><span class="hab-id">${h.id}</span><span class="hab-texto">${h.texto}</span>`;const cb=item.querySelector("input");cb.addEventListener("change",e=>{e.stopPropagation();if(e.target.checked){if(!seleccionadas.some(s=>s.id===h.id))seleccionadas.push({id:h.id,texto:h.texto});}else{eliminarHabilidad(h.id);return;}renderSeleccionadas();actualizarBotonContinuar();});item.addEventListener("click",e=>{if(e.target.tagName!=="INPUT"){cb.checked=!cb.checked;cb.dispatchEvent(new Event("change"));}});cont.appendChild(item);});}
+function renderSeleccionadas(){const cont=document.getElementById("seleccionadas"),badge=document.getElementById("seleccionadas-count");badge.textContent=`${seleccionadas.length} seleccionada${seleccionadas.length!==1?"s":""}`;if(seleccionadas.length===0){cont.innerHTML='<span class="sel-empty">Ninguna seleccionada aún</span>';return;}cont.innerHTML="";seleccionadas.forEach(h=>{const chip=document.createElement("div");chip.className="sel-chip";chip.innerHTML=`<span>${h.id}</span><button title="Quitar ${h.id}">×</button>`;chip.querySelector("button").addEventListener("click",e=>{e.stopPropagation();eliminarHabilidad(h.id);});cont.appendChild(chip);});}
+function eliminarHabilidad(id){seleccionadas=seleccionadas.filter(h=>h.id!==id);document.querySelectorAll("#lista-habilidades input[type='checkbox']").forEach(cb=>{const hi=cb.closest(".hab-item");if(hi&&hi.querySelector(".hab-id")?.textContent===id)cb.checked=false;});renderSeleccionadas();actualizarBotonContinuar();}
 function limpiarSeleccion(){seleccionadas=[];document.querySelectorAll("#lista-habilidades input[type='checkbox']").forEach(cb=>cb.checked=false);renderSeleccionadas();actualizarBotonContinuar();}
 function actualizarBotonContinuar(){const b=document.getElementById("btn-continuar-paso2");if(b)b.innerHTML=`Continuar con ${seleccionadas.length} habilidad${seleccionadas.length!==1?"es":""} →`;}
-
-function buscarHabilidades(){
-  const q=document.getElementById("buscador-habilidades").value.toLowerCase().trim();
-  const base=filtradas.length>0?filtradas:todasHabilidades;
-  if(!q){renderLista(base.slice(0,80));document.getElementById("lista-info").textContent=`${base.length} habilidades · mostrando 80`;return;}
-  const res=base.filter(h=>h.texto.toLowerCase().includes(q)||h.id.toLowerCase().includes(q));
-  renderLista(res.slice(0,60));document.getElementById("lista-info").textContent=`${res.length} resultado${res.length!==1?"s":""} para "${q}"`;
-}
-
-function toggleSituacionProblema(e){
-  if(e)e.preventDefault();
-  const cb=document.getElementById("sp-activo"),card=document.getElementById("sp-toggle-card"),fields=document.getElementById("sp-fields");
-  cb.checked=!cb.checked;card.classList.toggle("active",cb.checked);fields.classList.toggle("visible",cb.checked);
-}
-
-function onPeiChange(si){
-  document.getElementById("pei-fields").classList.toggle("visible",si);
-  document.getElementById("pei-no-btn").classList.toggle("selected-no",!si);
-  document.getElementById("pei-si-btn").classList.toggle("selected-yes",si);
-}
-
-function irPaso(n){
-  if(n>1&&pasoActual===1){if(!document.getElementById("ciclo").value||!document.getElementById("area").value){alert("⚠️ Seleccioná el ciclo y el área antes de continuar.");return;}}
-  if(n===3&&pasoActual===2&&seleccionadas.length===0){if(!confirm("No seleccionaste habilidades. ¿Continuar de todas formas?"))return;}
-  document.getElementById(`panel-${pasoActual}`).classList.remove("active");
-  document.getElementById(`panel-${n}`).classList.add("active");
-  for(let i=1;i<=5;i++){
-    const dot=document.getElementById(`dot-${i}`),lbl=document.getElementById(`lbl-${i}`);
-    dot.className="step-dot";lbl.className="step-label";
-    if(i<n){dot.classList.add("done");lbl.classList.add("active");}
-    else if(i===n){dot.classList.add("active");lbl.classList.add("active");}
-    if(i<5)document.getElementById(`conn-${i}`).className="step-connector"+(i<n?" done":"");
-  }
-  if(n===5)renderResumen();
-  pasoActual=n;window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function renderResumen(){
-  const ciclo=document.getElementById("ciclo"),area=document.getElementById("area"),anio=document.getElementById("anio"),mes=document.getElementById("mes");
-  const docente=document.getElementById("docente").value||"—",centro=document.getElementById("centro").value||"—";
-  const duaN=Array.from(document.querySelectorAll('input[name="dua"]:checked')).length;
-  const peiSi=document.querySelector('input[name="pei"]:checked')?.value==="si";
-  const spActivo=document.getElementById("sp-activo").checked;
-  document.getElementById("resumen-config").innerHTML=`
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
-      <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Ciclo</span><br>${ciclo.options[ciclo.selectedIndex]?.text||"—"}</div>
-      <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Área</span><br>${area.options[area.selectedIndex]?.text||"—"}</div>
-      <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Año / Mes</span><br>${anio.options[anio.selectedIndex]?.text||"—"} · ${mes.options[mes.selectedIndex]?.text||"—"}</div>
-      <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Docente</span><br>${docente}</div>
-      <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Habilidades</span><br><span style="color:var(--accent)">${seleccionadas.length} seleccionada${seleccionadas.length!==1?"s":""}</span></div>
-      <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Estrategias</span><br>${duaN} DUA${spActivo?" · <span style='color:var(--amber)'>✦ Situación Problema</span>":""}${peiSi?" · PEI":""}</div>
-    </div>`;
-}
-
-function ensamblarPrompt(){
-  const ciclo=document.getElementById("ciclo").value,area=document.getElementById("area").value,anio=document.getElementById("anio").value;
-  const mes=document.getElementById("mes").value,semanas=document.getElementById("semanas").value;
-  const docente=document.getElementById("docente").value,centro=document.getElementById("centro").value,dirReg=document.getElementById("dir_regional").value;
-  const tipoPlan=document.getElementById("tipo_plan").value;
-  const peiSi=document.querySelector('input[name="pei"]:checked')?.value==="si";
-  const peiTipo=document.getElementById("pei_tipo")?.value,peiArea=document.getElementById("pei_area_nee")?.value,peiObs=document.getElementById("pei_obs")?.value;
-  const spActivo=document.getElementById("sp-activo").checked;
-  const spContexto=document.getElementById("sp_contexto")?.value||"";
-  const spRecursos=document.getElementById("sp_recursos")?.value||"";
-  const spOrg=document.getElementById("sp_organizacion")?.value||"pequeños grupos";
-  const spEvaluacion=document.getElementById("sp_evaluacion")?.value||"";
-  const estrategiasDUA=Array.from(document.querySelectorAll('input[name="dua"]:checked')).map(cb=>"- "+cb.value).join("\n");
-  const habilidadesTexto=seleccionadas.map(h=>`• [${h.id}] ${h.texto}`).join("\n");
-  const ctxKey=ciclo+"_"+area,ctx=curriculoContexto[ctxKey]||{};
-  const introduccion=ctx.introduccion||"",proposito=ctx.proposito||"";
-  const habGenerales=Array.isArray(ctx.habilidades_generales)?ctx.habilidades_generales.join("; "):"";
-  const metGenerales=Array.isArray(ctx.metodologicas?.generales)?ctx.metodologicas.generales.join("; "):"";
-  const metAnio=ctx.metodologicas?.por_anio?.[anio.replace("°","")]||"";
-  const evaluacion=Array.isArray(ctx.evaluacion)?ctx.evaluacion.join("; "):"";
-
-  const spBloque=spActivo?`
+function buscarHabilidades(){const q=document.getElementById("buscador-habilidades").value.toLowerCase().trim();const base=filtradas.length>0?filtradas:todasHabilidades;if(!q){renderLista(base.slice(0,80));document.getElementById("lista-info").textContent=`${base.length} habilidades · mostrando 80`;return;}const res=base.filter(h=>h.texto.toLowerCase().includes(q)||h.id.toLowerCase().includes(q));renderLista(res.slice(0,60));document.getElementById("lista-info").textContent=`${res.length} resultado${res.length!==1?"s":""} para "${q}"`;}
+function toggleSituacionProblema(e){if(e)e.preventDefault();const cb=document.getElementById("sp-activo"),card=document.getElementById("sp-toggle-card"),fields=document.getElementById("sp-fields");cb.checked=!cb.checked;card.classList.toggle("active",cb.checked);fields.classList.toggle("visible",cb.checked);}
+function onPeiChange(si){document.getElementById("pei-fields").classList.toggle("visible",si);document.getElementById("pei-no-btn").classList.toggle("selected-no",!si);document.getElementById("pei-si-btn").classList.toggle("selected-yes",si);}
+function irPaso(n){if(n>1&&pasoActual===1){if(!document.getElementById("ciclo").value||!document.getElementById("area").value){alert("⚠️ Seleccioná el ciclo y el área antes de continuar.");return;}}if(n===3&&pasoActual===2&&seleccionadas.length===0){if(!confirm("No seleccionaste habilidades. ¿Continuar de todas formas?"))return;}document.getElementById(`panel-${pasoActual}`).classList.remove("active");document.getElementById(`panel-${n}`).classList.add("active");for(let i=1;i<=5;i++){const dot=document.getElementById(`dot-${i}`),lbl=document.getElementById(`lbl-${i}`);dot.className="step-dot";lbl.className="step-label";if(i<n){dot.classList.add("done");lbl.classList.add("active");}else if(i===n){dot.classList.add("active");lbl.classList.add("active");}if(i<5)document.getElementById(`conn-${i}`).className="step-connector"+(i<n?" done":"");}if(n===5)renderResumen();pasoActual=n;window.scrollTo({top:0,behavior:"smooth"});}
+function renderResumen(){const ciclo=document.getElementById("ciclo"),area=document.getElementById("area"),anio=document.getElementById("anio"),mes=document.getElementById("mes");const docente=document.getElementById("docente").value||"—",centro=document.getElementById("centro").value||"—";const duaN=Array.from(document.querySelectorAll('input[name="dua"]:checked')).length;const peiSi=document.querySelector('input[name="pei"]:checked')?.value==="si";const spActivo=document.getElementById("sp-activo").checked;document.getElementById("resumen-config").innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;"><div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Ciclo</span><br>${ciclo.options[ciclo.selectedIndex]?.text||"—"}</div><div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Área</span><br>${area.options[area.selectedIndex]?.text||"—"}</div><div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Año / Mes</span><br>${anio.options[anio.selectedIndex]?.text||"—"} · ${mes.options[mes.selectedIndex]?.text||"—"}</div><div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Docente</span><br>${docente}</div><div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Habilidades</span><br><span style="color:var(--accent)">${seleccionadas.length} seleccionada${seleccionadas.length!==1?"s":""}</span></div><div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Estrategias</span><br>${duaN} DUA${spActivo?" · <span style='color:var(--amber)'>✦ Situación Problema</span>":""}${peiSi?" · PEI":""}</div></div>`;}
+function ensamblarPrompt(){const ciclo=document.getElementById("ciclo").value,area=document.getElementById("area").value,anio=document.getElementById("anio").value;const mes=document.getElementById("mes").value,semanas=document.getElementById("semanas").value;const docente=document.getElementById("docente").value,centro=document.getElementById("centro").value,dirReg=document.getElementById("dir_regional").value;const tipoPlan=document.getElementById("tipo_plan").value;const peiSi=document.querySelector('input[name="pei"]:checked')?.value==="si";const peiTipo=document.getElementById("pei_tipo")?.value,peiArea=document.getElementById("pei_area_nee")?.value,peiObs=document.getElementById("pei_obs")?.value;const spActivo=document.getElementById("sp-activo").checked;const spContexto=document.getElementById("sp_contexto")?.value||"";const spRecursos=document.getElementById("sp_recursos")?.value||"";const spOrg=document.getElementById("sp_organizacion")?.value||"pequeños grupos";const spEvaluacion=document.getElementById("sp_evaluacion")?.value||"";const estrategiasDUA=Array.from(document.querySelectorAll('input[name="dua"]:checked')).map(cb=>"- "+cb.value).join("\n");const habilidadesTexto=seleccionadas.map(h=>`• [${h.id}] ${h.texto}`).join("\n");const ctxKey=ciclo+"_"+area,ctx=curriculoContexto[ctxKey]||{};const introduccion=ctx.introduccion||"",proposito=ctx.proposito||"";const habGenerales=Array.isArray(ctx.habilidades_generales)?ctx.habilidades_generales.join("; "):"";const metGenerales=Array.isArray(ctx.metodologicas?.generales)?ctx.metodologicas.generales.join("; "):"";const metAnio=ctx.metodologicas?.por_anio?.[anio.replace("°","")]||"";const evaluacion=Array.isArray(ctx.evaluacion)?ctx.evaluacion.join("; "):"";
+const spBloque=spActivo?`
 
 ════ SITUACIÓN PROBLEMA CONTEXTUALIZADA (ENFOQUE MEP) ════
 El planeamiento DEBE incluir al menos una situación problema contextualizada con los 4 momentos fundamentales del MEP.
@@ -583,38 +388,27 @@ RECURSOS: ${spRecursos||"materiales didácticos apropiados para el nivel"}
 
 Para cada situación problema desarrollá explícitamente los 4 MOMENTOS:
 
-MOMENTO 1 — PROPUESTA DEL PROBLEMA:
-• Presentación clara y contextualizada de la situación
-• El docente NO revela el proceso de solución ni da pistas directas
-• Preguntas generadoras que activen conocimientos previos
-• Verificación de comprensión del enunciado por parte de todos los estudiantes
-• Materiales de apoyo para la comprensión inicial
+I ETAPA: APRENDIZAJE DE CONOCIMIENTOS
 
-MOMENTO 2 — TRABAJO ESTUDIANTIL INDEPENDIENTE:
-• Espacio de resolución individual o en ${spOrg} sin intervención directiva
-• Rol del docente: observar, registrar estrategias diversas, formular preguntas que promuevan el pensamiento SIN dar respuestas
-• Tiempo estimado para este momento
-• Posibles estrategias que utilizarán los estudiantes y cómo el docente las aprovechará en el momento 3
+A. Propuesta del problema:
+Presentación clara y contextualizada de la situación. El docente NO revela el proceso de solución ni da pistas directas. Preguntas generadoras que activen conocimientos previos.
 
-MOMENTO 3 — DISCUSIÓN INTERACTIVA Y COMUNICATIVA:
-• Estrategia para la socialización de soluciones y estrategias diversas
-• Técnicas de argumentación matemática entre pares
-• Preguntas del docente para profundizar y conectar estrategias
-• Gestión de errores como oportunidades de aprendizaje
-• Cómo se conectan las estrategias informales con el conocimiento matemático formal
+Trabajo estudiantil independiente:
+Espacio de resolución en ${spOrg} sin intervención directiva. Rol del docente: observar, registrar estrategias diversas, formular preguntas que promuevan el pensamiento SIN dar respuestas.
 
-MOMENTO 4 — CLAUSURA O CIERRE:
-• Institucionalización del conocimiento matemático (el docente sistematiza)
-• Síntesis explícita de los aprendizajes trabajados
-• Formalización del concepto o procedimiento en lenguaje matemático
-• Conexión directa con las habilidades MEP trabajadas
-• Evaluación formativa del proceso
+Discusión interactiva y comunicativa:
+Estrategia para la socialización de soluciones y estrategias diversas. Técnicas de argumentación matemática entre pares. El docente conecta estrategias informales con el conocimiento matemático formal.
+
+Clausura o cierre:
+Institucionalización del conocimiento matemático. El docente sistematiza, formaliza el concepto y lo conecta directamente con las habilidades MEP trabajadas.
+
+II ETAPA: MOVILIZACIÓN Y APLICACIÓN DE CONOCIMIENTOS
+El docente brinda ejercicios para que los estudiantes apliquen y consoliden los conocimientos en situaciones nuevas y variadas.
 
 EVALUACIÓN DE LA SITUACIÓN PROBLEMA:
-${spEvaluacion||"Incluí criterios de evaluación formativa que valoren el proceso de resolución, no solo el resultado. Considerá: argumentación matemática, uso de estrategias diversas, participación en la discusión, capacidad de comunicar ideas matemáticas."}
+${spEvaluacion||"Incluí criterios de evaluación formativa que valoren el proceso de resolución, no solo el resultado."}
 `:"";
-
-  const peiBloque=peiSi?`
+const peiBloque=peiSi?`
 
 ════ ADECUACIÓN CURRICULAR (PEI) ════
 Tipo de adecuación: ${peiTipo}
@@ -626,10 +420,8 @@ Generá una sección PEI completa que incluya:
 • Estrategias diferenciadas para cada momento de la clase
 • Criterios de evaluación adaptados a sus capacidades reales
 • Materiales o apoyos específicos necesarios
-${spActivo?"• Adaptaciones específicas para cada uno de los 4 momentos de la situación problema":""}
-`:""  ;
-
-  return`Sos un experto en planificación didáctica según el programa oficial de Matemática del MEP de Costa Rica (Programa de Matemáticas 2012, reformulado 2013).
+`:"";
+return`Sos un experto en planificación didáctica según el programa oficial de Matemática del MEP de Costa Rica (Programa de Matemáticas 2012, reformulado 2013).
 
 Generá un planeamiento mensual COMPLETO, específico y directamente utilizable por el docente sin modificaciones.
 
@@ -665,18 +457,16 @@ ${spBloque}${peiBloque}
 
 2. TABLA SEMANAL (exactamente ${semanas} filas)
    Columnas: Semana | Período | Aprendizajes esperados | Estrategias metodológicas | Indicadores de evaluación
-   — Progresión pedagógica coherente entre semanas (exploración → conceptualización → aplicación → consolidación)
+   — Progresión pedagógica: exploración → conceptualización → aplicación → consolidación
    — Estrategias que integran los principios DUA seleccionados
-   — Actividades específicas, no genéricas
-   ${spActivo?"— Al menos una semana desarrolla la situación problema con los 4 momentos MEP":""}
+   ${spActivo?"— Al menos una semana desarrolla la situación problema con las 2 etapas y 4 momentos MEP":""}
    — Indicadores observables y medibles
 
 3. SECCIÓN DUA
-   Cómo se implementa concretamente cada principio DUA seleccionado durante este mes.
+   Cómo se implementa concretamente cada principio DUA durante este mes.
 
 ${spActivo?`4. DESARROLLO COMPLETO DE LA SITUACIÓN PROBLEMA
-   Guía detallada para el docente de los 4 momentos MEP con la situación contextualizada.
-   Incluir: guión del docente, preguntas clave por momento, criterios de observación, tiempo estimado.
+   Guía detallada para el docente: guión, preguntas clave por momento, criterios de observación, tiempo estimado.
 
 5. MEDIACIÓN PEDAGÓGICA
    Metodología general, recursos y estrategias del mes.
@@ -685,43 +475,12 @@ ${spActivo?`4. DESARROLLO COMPLETO DE LA SITUACIÓN PROBLEMA
 `}${peiSi?`${spActivo?"6":"5"}. SECCIÓN PEI / ADECUACIÓN CURRICULAR
    Detalle completo de adecuaciones para el estudiante con ${peiArea}.
 `:""}
-
-Usá lenguaje técnico-pedagógico del MEP costarricense. El planeamiento debe poder entregarse a la dirección sin ninguna modificación.`;
-}
-
-async function generarPlaneamiento(){
-  const btn=document.getElementById("btn-generar"),rs=document.getElementById("resultado-section"),rc=document.getElementById("resultado-content");
-  btn.disabled=true;btn.innerHTML='<div class="spinner"></div> Ensamblando prompt...';
-  const prompt=ensamblarPrompt();
-  rs.classList.add("visible");rc.textContent=prompt;
-  rc.scrollIntoView({behavior:"smooth",block:"start"});
-  btn.disabled=false;btn.innerHTML=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Regenerar prompt`;
-}
-
-function copiarTexto(){
-  navigator.clipboard.writeText(document.getElementById("resultado-content").textContent).then(()=>{
-    const btn=event.target.closest("button"),orig=btn.innerHTML;btn.innerHTML="✓ ¡Copiado!";setTimeout(()=>btn.innerHTML=orig,2000);
-  });
-}
-
-function exportarTxt(){
-  const texto=document.getElementById("resultado-content").textContent;
-  const ciclo=document.getElementById("ciclo").value,mes=document.getElementById("mes").value;
-  const blob=new Blob([texto],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
-  a.href=url;a.download=`prompt_planeamiento_${ciclo}_${mes}.txt`;a.click();URL.revokeObjectURL(url);
-}
-
+Usá lenguaje técnico-pedagógico del MEP costarricense. El planeamiento debe poder entregarse a la dirección sin ninguna modificación.`;}
+async function generarPlaneamiento(){const btn=document.getElementById("btn-generar"),rs=document.getElementById("resultado-section"),rc=document.getElementById("resultado-content");btn.disabled=true;btn.innerHTML='<div class="spinner"></div> Ensamblando prompt...';const prompt=ensamblarPrompt();rs.classList.add("visible");rc.textContent=prompt;rc.scrollIntoView({behavior:"smooth",block:"start"});btn.disabled=false;btn.innerHTML=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Regenerar prompt`;}
+function copiarTexto(){navigator.clipboard.writeText(document.getElementById("resultado-content").textContent).then(()=>{const btn=event.target.closest("button"),orig=btn.innerHTML;btn.innerHTML="✓ ¡Copiado!";setTimeout(()=>btn.innerHTML=orig,2000);});}
+function exportarTxt(){const texto=document.getElementById("resultado-content").textContent;const ciclo=document.getElementById("ciclo").value,mes=document.getElementById("mes").value;const blob=new Blob([texto],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`prompt_planeamiento_${ciclo}_${mes}.txt`;a.click();URL.revokeObjectURL(url);}
 function nuevoPlaneamiento(){if(confirm("¿Iniciás un planeamiento nuevo? Se perderá el actual."))location.reload();}
-
-document.addEventListener("DOMContentLoaded",()=>{
-  console.log("🚀 PlanEdu inicializado");
-  cargarDatos();
-  document.getElementById("buscador-habilidades").addEventListener("input",function(){clearTimeout(searchTimeout);searchTimeout=setTimeout(buscarHabilidades,300);});
-  document.getElementById("area").addEventListener("change",filtrarPorCicloArea);
-  document.querySelectorAll(".dua-check input").forEach(cb=>cb.addEventListener("change",function(){this.closest(".dua-check").classList.toggle("checked",this.checked);}));
-  document.getElementById("pei-no-btn").classList.add("selected-no");
-  actualizarBotonContinuar();
-});
+document.addEventListener("DOMContentLoaded",()=>{console.log("🚀 PlanEdu inicializado");cargarDatos();document.getElementById("buscador-habilidades").addEventListener("input",function(){clearTimeout(searchTimeout);searchTimeout=setTimeout(buscarHabilidades,300);});document.getElementById("area").addEventListener("change",filtrarPorCicloArea);document.querySelectorAll(".dua-check input").forEach(cb=>cb.addEventListener("change",function(){this.closest(".dua-check").classList.toggle("checked",this.checked);}));document.getElementById("pei-no-btn").classList.add("selected-no");actualizarBotonContinuar();});
 </script>
 <script src="js/metaEngine.js"></script>
 </body>
