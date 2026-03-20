@@ -1036,16 +1036,29 @@ async function cargarDatos() {
 }
 
 function normalizarHabilidades(data) {
-  // Acepta: array de {id, descripcion/habilidad/texto, ciclo, area} 
-  // o objeto anidado {ciclo: {area: [{...}]}}
-  if (Array.isArray(data)) {
-    return data.map(h => ({
-      id: h.id || h.codigo || "",
-      texto: h.descripcion || h.habilidad || h.texto || h.enunciado || JSON.stringify(h),
-      ciclo: h.ciclo || "",
-      area: h.area || h.area_id || ""
-    })).filter(h => h.id);
-  }
+  const result = [];
+  const cycles = data.cycles || (Array.isArray(data) ? data : []);
+  cycles.forEach(c => {
+    const ciclo = c.ciclo || "";
+    const areas = c.areas || c.niveles || [];
+    areas.forEach(a => {
+      const area = a.area || a.nombre || "";
+      const niveles = a.niveles || [a];
+      niveles.forEach(n => {
+        const habs = n.habilidades || n.habilidad || [];
+        habs.forEach(h => {
+          if (h.id) result.push({
+            id: h.id,
+            texto: h.descripcion || h.habilidad || h.texto || "",
+            ciclo,
+            area
+          });
+        });
+      });
+    });
+  });
+  return result;
+}
   // Objeto anidado
   const result = [];
   Object.keys(data).forEach(ciclo => {
