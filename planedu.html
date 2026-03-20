@@ -7,961 +7,936 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Mono:wght@400;500&family=Literata:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:       #0d0f14;
-    --bg2:      #13161e;
-    --bg3:      #1a1e2a;
-    --border:   rgba(255,255,255,0.07);
-    --border2:  rgba(255,255,255,0.13);
-    --text:     #e8eaf0;
-    --muted:    #7a7f96;
-    --accent:   #3ecfb2;
-    --accent2:  #2aa898;
-    --accent-bg:rgba(62,207,178,0.08);
-    --accent-glow:rgba(62,207,178,0.18);
-    --purple:   #8b6ff5;
-    --amber:    #f0a832;
-    --red:      #e05252;
-    --radius:   10px;
-    --radius-lg:16px;
-    --mono: 'DM Mono', monospace;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Literata', Georgia, serif;
-    font-size: 15px;
-    line-height: 1.65;
-    min-height: 100vh;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .site-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    padding: 16px 20px 16px 0;
-    border-right: 1px solid var(--border);
-    margin-right: 4px;
-    text-decoration: none;
-  }
-  .tab {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    padding: 18px 20px;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: color .2s, border-color .2s;
-  }
-  .tab:hover { color: var(--text); }
-  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-  /* ── MAIN LAYOUT ── */
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  .page-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-  .page-subtitle {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 36px;
-  }
-
-  /* ── STEPPER ── */
-  .stepper {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 40px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-  .step-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-  .step-dot {
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    border: 1.5px solid var(--border2);
-    background: var(--bg3);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-    transition: all .3s;
-    flex-shrink: 0;
-  }
-  .step-dot.done { background: var(--accent); border-color: var(--accent); color: #0d0f14; }
-  .step-dot.active { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-  .step-label {
-    font-family: 'Syne', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-    transition: color .3s;
-  }
-  .step-label.active { color: var(--text); }
-  .step-connector {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    margin: 0 10px;
-    min-width: 20px;
-  }
-  .step-connector.done { background: var(--accent2); }
-
-  /* ── CARD ── */
-  .card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    margin-bottom: 20px;
-  }
-  .card-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .card-title .step-badge {
-    font-family: var(--mono);
-    font-size: 10px;
-    background: var(--accent-bg);
-    color: var(--accent);
-    border: 1px solid rgba(62,207,178,0.25);
-    border-radius: 4px;
-    padding: 2px 6px;
-    letter-spacing: 0.05em;
-  }
-  .card-desc {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 24px;
-  }
-
-  /* ── FORM FIELDS ── */
-  .field-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  .field-group.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-  .field-group.cols-1 { grid-template-columns: 1fr; }
-  @media (max-width: 600px) { .field-group, .field-group.cols-3 { grid-template-columns: 1fr; } }
-
-  .field { display: flex; flex-direction: column; gap: 6px; }
-  label {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
-  input[type="text"], input[type="number"], select, textarea {
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius);
-    color: var(--text);
-    font-family: 'Literata', serif;
-    font-size: 14px;
-    padding: 10px 14px;
-    outline: none;
-    transition: border-color .2s, box-shadow .2s;
-    width: 100%;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--accent2);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7f96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-    cursor: pointer;
-  }
-  select option { background: var(--bg3); }
-
-  /* ── SKILL SELECTOR ── */
-  .skill-selector {
-    border: 1px solid var(--border2);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-  }
-  .skill-search-wrap {
-    padding: 12px 14px;
-    background: var(--bg3);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  .skill-search-wrap svg { flex-shrink: 0; opacity: 0.5; }
-  #buscador-habilidades {
-    background: transparent;
-    border: none;
-    padding: 0;
-    font-size: 14px;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  #buscador-habilidades:focus { box-shadow: none; border-color: transparent; }
-
-  .skill-meta {
-    padding: 8px 14px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .skill-meta span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
-  .skill-meta .count-badge {
-    background: var(--accent-bg);
-    color: var(--accent);
-    border: 1px solid rgba(62,207,178,0.2);
-    border-radius: 20px;
-    padding: 2px 10px;
-    font-family: var(--mono);
-    font-size: 11px;
-  }
-
-  #lista-habilidades {
-    max-height: 280px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border2) transparent;
-  }
-  .hab-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    transition: background .15s;
-  }
-  .hab-item:hover { background: var(--bg3); }
-  .hab-item:last-child { border-bottom: none; }
-  .hab-item input[type="checkbox"] {
-    width: 16px; height: 16px;
-    flex-shrink: 0;
-    margin-top: 2px;
-    accent-color: var(--accent);
-    cursor: pointer;
-    padding: 0;
-    border: none;
-    background: none;
-    box-shadow: none;
-  }
-  .hab-item input:focus { box-shadow: none; border-color: transparent; }
-  .hab-id {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    flex-shrink: 0;
-    margin-top: 2px;
-    min-width: 56px;
-  }
-  .hab-texto { font-size: 13px; color: var(--text); line-height: 1.5; }
-  .empty-msg { padding: 24px; text-align: center; color: var(--muted); font-size: 13px; }
-
-  /* ── SELECCIONADAS ── */
-  .seleccionadas-header {
-    padding: 10px 14px;
-    background: var(--bg);
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .seleccionadas-header span {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  #seleccionadas {
-    padding: 8px 14px;
-    min-height: 44px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .sel-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--accent-bg);
-    border: 1px solid rgba(62,207,178,0.25);
-    border-radius: 20px;
-    padding: 4px 10px 4px 12px;
-    font-size: 12px;
-    color: var(--accent);
-    font-family: var(--mono);
-    animation: chipIn .15s ease-out;
-  }
-  @keyframes chipIn { from { opacity:0; transform: scale(.9); } to { opacity:1; transform: scale(1); } }
-  .sel-chip button {
-    background: none; border: none; cursor: pointer;
-    color: rgba(62,207,178,0.6);
-    font-size: 14px; line-height: 1;
-    padding: 0; margin-left: 2px;
-    transition: color .15s;
-  }
-  .sel-chip button:hover { color: var(--accent); }
-  .sel-empty { font-size: 13px; color: var(--muted); padding: 8px 0; font-style: italic; }
-
-  /* ── DUA CHECKBOXES ── */
-  .dua-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-  }
-  @media (max-width: 640px) { .dua-grid { grid-template-columns: 1fr; } }
-  .dua-check {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 12px;
-    cursor: pointer;
-    transition: border-color .2s, background .2s;
-  }
-  .dua-check:hover { border-color: var(--border2); }
-  .dua-check input[type="checkbox"] {
-    width: 15px; height: 15px;
-    flex-shrink: 0; margin-top: 2px;
-    accent-color: var(--purple);
-    cursor: pointer;
-    padding: 0; border: none; background: none; box-shadow: none;
-  }
-  .dua-check input:focus { box-shadow: none; }
-  .dua-check.checked { border-color: rgba(139,111,245,0.4); background: rgba(139,111,245,0.07); }
-  .dua-label { font-size: 13px; color: var(--text); line-height: 1.4; }
-
-  /* ── PEI TOGGLE ── */
-  .pei-toggle-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-  .radio-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-    background: var(--bg3);
-    border: 1.5px solid var(--border2);
-    border-radius: var(--radius);
-    cursor: pointer;
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--muted);
-    transition: all .2s;
-  }
-  .radio-btn input { display: none; }
-  .radio-btn.selected-yes { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
-  .radio-btn.selected-no  { border-color: var(--border2); color: var(--text); }
-
-  #pei-fields { display: none; }
-  #pei-fields.visible { display: block; }
-
-  /* ── NAV BUTTONS ── */
-  .nav-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 28px;
-    gap: 12px;
-  }
-  .btn {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 11px 24px;
-    border-radius: var(--radius);
-    border: none;
-    cursor: pointer;
-    transition: all .2s;
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .btn-ghost {
-    background: transparent;
-    border: 1px solid var(--border2);
-    color: var(--muted);
-  }
-  .btn-ghost:hover { border-color: var(--border); color: var(--text); }
-  .btn-primary {
-    background: var(--accent);
-    color: #0d0f14;
-  }
-  .btn-primary:hover { background: var(--accent2); box-shadow: 0 0 20px var(--accent-glow); }
-  .btn-primary:disabled { background: var(--border2); color: var(--muted); cursor: not-allowed; box-shadow: none; }
-  .btn-generate {
-    background: linear-gradient(135deg, var(--accent), #2a9f90);
-    color: #0d0f14;
-    padding: 13px 32px;
-    font-size: 14px;
-    width: 100%;
-    justify-content: center;
-    border-radius: var(--radius-lg);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-generate:hover { box-shadow: 0 0 30px var(--accent-glow); transform: translateY(-1px); }
-  .btn-generate:disabled { background: var(--border2); color: var(--muted); transform: none; cursor: not-allowed; }
-
-  /* ── SPINNER ── */
-  .spinner {
-    width: 16px; height: 16px;
-    border: 2px solid rgba(13,15,20,0.3);
-    border-top-color: #0d0f14;
-    border-radius: 50%;
-    animation: spin .6s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ── RESULTADO ── */
-  #resultado-section {
-    display: none;
-    margin-top: 32px;
-    animation: fadeUp .4s ease-out;
-  }
-  @keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
-  #resultado-section.visible { display: block; }
-
-  .resultado-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .resultado-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--accent);
-  }
-  .resultado-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-
-  #resultado-content {
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    white-space: pre-wrap;
-    font-family: 'Literata', serif;
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text);
-    min-height: 200px;
-    max-height: 600px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border2) transparent;
-    outline: none;
-  }
-  #resultado-content[contenteditable="true"] {
-    cursor: text;
-  }
-  #resultado-content[contenteditable="true"]:focus {
-    border-color: var(--accent2);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
-
-  /* ── API KEY NOTICE ── */
-  .api-notice {
-    background: rgba(240,168,50,0.08);
-    border: 1px solid rgba(240,168,50,0.25);
-    border-radius: var(--radius);
-    padding: 12px 16px;
-    margin-bottom: 16px;
-    font-size: 13px;
-    color: var(--amber);
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .api-notice.hidden { display: none; }
-
-  /* ── STEP PANELS ── */
-  .step-panel { display: none; }
-  .step-panel.active { display: block; animation: fadeUp .25s ease-out; }
-
-  /* ── MISC ── */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 20px 0;
-  }
-  .info-row {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 8px;
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: 4px;
-    padding: 2px 7px;
-    color: var(--muted);
-  }
+:root {
+--bg:       #0d0f14;
+--bg2:      #13161e;
+--bg3:      #1a1e2a;
+--border:   rgba(255,255,255,0.07);
+--border2:  rgba(255,255,255,0.13);
+--text:     #e8eaf0;
+--muted:    #7a7f96;
+--accent:   #3ecfb2;
+--accent2:  #2aa898;
+--accent-bg:rgba(62,207,178,0.08);
+--accent-glow:rgba(62,207,178,0.18);
+--purple:   #8b6ff5;
+--amber:    #f0a832;
+--red:      #e05252;
+--radius:   10px;
+--radius-lg:16px;
+--mono: 'DM Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+background: var(--bg);
+color: var(--text);
+font-family: 'Literata', Georgia, serif;
+font-size: 15px;
+line-height: 1.65;
+min-height: 100vh;
+}
+/* ── HEADER ── */
+header {
+background: var(--bg2);
+border-bottom: 1px solid var(--border);
+padding: 0 24px;
+display: flex;
+align-items: center;
+gap: 0;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.site-logo {
+font-family: 'Syne', sans-serif;
+font-weight: 700;
+font-size: 15px;
+color: var(--accent);
+letter-spacing: 0.04em;
+padding: 16px 20px 16px 0;
+border-right: 1px solid var(--border);
+margin-right: 4px;
+text-decoration: none;
+}
+.tab {
+font-family: 'Syne', sans-serif;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 0.03em;
+padding: 18px 20px;
+color: var(--muted);
+text-decoration: none;
+border-bottom: 2px solid transparent;
+transition: color .2s, border-color .2s;
+}
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+/* ── MAIN LAYOUT ── */
+main {
+max-width: 860px;
+margin: 0 auto;
+padding: 40px 24px 80px;
+}
+.page-title {
+font-family: 'Syne', sans-serif;
+font-size: 26px;
+font-weight: 700;
+color: var(--text);
+margin-bottom: 4px;
+}
+.page-subtitle {
+color: var(--muted);
+font-size: 14px;
+margin-bottom: 36px;
+}
+/* ── STEPPER ── */
+.stepper {
+display: flex;
+align-items: center;
+gap: 0;
+margin-bottom: 40px;
+overflow-x: auto;
+padding-bottom: 4px;
+}
+.step-item {
+display: flex;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+}
+.step-dot {
+width: 30px; height: 30px;
+border-radius: 50%;
+border: 1.5px solid var(--border2);
+background: var(--bg3);
+display: flex; align-items: center; justify-content: center;
+font-family: var(--mono);
+font-size: 12px;
+color: var(--muted);
+transition: all .3s;
+flex-shrink: 0;
+}
+.step-dot.done { background: var(--accent); border-color: var(--accent); color: #0d0f14; }
+.step-dot.active { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+.step-label {
+font-family: 'Syne', sans-serif;
+font-size: 12px;
+font-weight: 600;
+color: var(--muted);
+letter-spacing: 0.03em;
+white-space: nowrap;
+transition: color .3s;
+}
+.step-label.active { color: var(--text); }
+.step-connector {
+flex: 1;
+height: 1px;
+background: var(--border);
+margin: 0 10px;
+min-width: 20px;
+}
+.step-connector.done { background: var(--accent2); }
+/* ── CARD ── */
+.card {
+background: var(--bg2);
+border: 1px solid var(--border);
+border-radius: var(--radius-lg);
+padding: 32px;
+margin-bottom: 20px;
+}
+.card-title {
+font-family: 'Syne', sans-serif;
+font-size: 16px;
+font-weight: 700;
+color: var(--text);
+margin-bottom: 4px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.card-title .step-badge {
+font-family: var(--mono);
+font-size: 10px;
+background: var(--accent-bg);
+color: var(--accent);
+border: 1px solid rgba(62,207,178,0.25);
+border-radius: 4px;
+padding: 2px 6px;
+letter-spacing: 0.05em;
+}
+.card-desc {
+font-size: 13px;
+color: var(--muted);
+margin-bottom: 24px;
+}
+/* ── FORM FIELDS ── */
+.field-group {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-bottom: 16px;
+}
+.field-group.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.field-group.cols-1 { grid-template-columns: 1fr; }
+@media (max-width: 600px) { .field-group, .field-group.cols-3 { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 6px; }
+label {
+font-family: 'Syne', sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.06em;
+color: var(--muted);
+text-transform: uppercase;
+}
+input[type="text"], input[type="number"], select, textarea {
+background: var(--bg3);
+border: 1px solid var(--border2);
+border-radius: var(--radius);
+color: var(--text);
+font-family: 'Literata', serif;
+font-size: 14px;
+padding: 10px 14px;
+outline: none;
+transition: border-color .2s, box-shadow .2s;
+width: 100%;
+appearance: none;
+-webkit-appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+border-color: var(--accent2);
+box-shadow: 0 0 0 3px var(--accent-glow);
+}
+select {
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7f96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 14px center;
+padding-right: 36px;
+cursor: pointer;
+}
+select option { background: var(--bg3); }
+/* ── SKILL SELECTOR ── */
+.skill-selector {
+border: 1px solid var(--border2);
+border-radius: var(--radius-lg);
+overflow: hidden;
+}
+.skill-search-wrap {
+padding: 12px 14px;
+background: var(--bg3);
+border-bottom: 1px solid var(--border);
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.skill-search-wrap svg { flex-shrink: 0; opacity: 0.5; }
+#buscador-habilidades {
+background: transparent;
+border: none;
+padding: 0;
+font-size: 14px;
+border-radius: 0;
+box-shadow: none;
+}
+#buscador-habilidades:focus { box-shadow: none; border-color: transparent; }
+.skill-meta {
+padding: 8px 14px;
+background: var(--bg);
+border-bottom: 1px solid var(--border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.skill-meta span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.skill-meta .count-badge {
+background: var(--accent-bg);
+color: var(--accent);
+border: 1px solid rgba(62,207,178,0.2);
+border-radius: 20px;
+padding: 2px 10px;
+font-family: var(--mono);
+font-size: 11px;
+}
+#lista-habilidades {
+max-height: 280px;
+overflow-y: auto;
+scrollbar-width: thin;
+scrollbar-color: var(--border2) transparent;
+}
+.hab-item {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+padding: 10px 14px;
+border-bottom: 1px solid var(--border);
+cursor: pointer;
+transition: background .15s;
+}
+.hab-item:hover { background: var(--bg3); }
+.hab-item:last-child { border-bottom: none; }
+.hab-item input[type="checkbox"] {
+width: 16px; height: 16px;
+flex-shrink: 0;
+margin-top: 2px;
+accent-color: var(--accent);
+cursor: pointer;
+padding: 0;
+border: none;
+background: none;
+box-shadow: none;
+}
+.hab-item input:focus { box-shadow: none; border-color: transparent; }
+.hab-id {
+font-family: var(--mono);
+font-size: 11px;
+color: var(--accent);
+flex-shrink: 0;
+margin-top: 2px;
+min-width: 56px;
+}
+.hab-texto { font-size: 13px; color: var(--text); line-height: 1.5; }
+.empty-msg { padding: 24px; text-align: center; color: var(--muted); font-size: 13px; }
+/* ── SELECCIONADAS ── */
+.seleccionadas-header {
+padding: 10px 14px;
+background: var(--bg);
+border-top: 1px solid var(--border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.seleccionadas-header span {
+font-family: 'Syne', sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: var(--muted);
+}
+#seleccionadas {
+padding: 8px 14px;
+min-height: 44px;
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+}
+.sel-chip {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+background: var(--accent-bg);
+border: 1px solid rgba(62,207,178,0.25);
+border-radius: 20px;
+padding: 4px 10px 4px 12px;
+font-size: 12px;
+color: var(--accent);
+font-family: var(--mono);
+animation: chipIn .15s ease-out;
+}
+@keyframes chipIn { from { opacity:0; transform: scale(.9); } to { opacity:1; transform: scale(1); } }
+.sel-chip button {
+background: none; border: none; cursor: pointer;
+color: rgba(62,207,178,0.6);
+font-size: 14px; line-height: 1;
+padding: 0; margin-left: 2px;
+transition: color .15s;
+}
+.sel-chip button:hover { color: var(--accent); }
+.sel-empty { font-size: 13px; color: var(--muted); padding: 8px 0; font-style: italic; }
+/* ── DUA CHECKBOXES ── */
+.dua-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 10px;
+}
+@media (max-width: 640px) { .dua-grid { grid-template-columns: 1fr; } }
+.dua-check {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+background: var(--bg3);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+padding: 12px;
+cursor: pointer;
+transition: border-color .2s, background .2s;
+}
+.dua-check:hover { border-color: var(--border2); }
+.dua-check input[type="checkbox"] {
+width: 15px; height: 15px;
+flex-shrink: 0; margin-top: 2px;
+accent-color: var(--purple);
+cursor: pointer;
+padding: 0; border: none; background: none; box-shadow: none;
+}
+.dua-check input:focus { box-shadow: none; }
+.dua-check.checked { border-color: rgba(139,111,245,0.4); background: rgba(139,111,245,0.07); }
+.dua-label { font-size: 13px; color: var(--text); line-height: 1.4; }
+/* ── PEI TOGGLE ── */
+.pei-toggle-row {
+display: flex;
+gap: 12px;
+margin-bottom: 16px;
+}
+.radio-btn {
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+padding: 10px;
+background: var(--bg3);
+border: 1.5px solid var(--border2);
+border-radius: var(--radius);
+cursor: pointer;
+font-family: 'Syne', sans-serif;
+font-size: 13px;
+font-weight: 600;
+color: var(--muted);
+transition: all .2s;
+}
+.radio-btn input { display: none; }
+.radio-btn.selected-yes { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+.radio-btn.selected-no  { border-color: var(--border2); color: var(--text); }
+#pei-fields { display: none; }
+#pei-fields.visible { display: block; }
+/* ── NAV BUTTONS ── */
+.nav-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 28px;
+gap: 12px;
+}
+.btn {
+font-family: 'Syne', sans-serif;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 0.04em;
+padding: 11px 24px;
+border-radius: var(--radius);
+border: none;
+cursor: pointer;
+transition: all .2s;
+display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-ghost {
+background: transparent;
+border: 1px solid var(--border2);
+color: var(--muted);
+}
+.btn-ghost:hover { border-color: var(--border); color: var(--text); }
+.btn-primary {
+background: var(--accent);
+color: #0d0f14;
+}
+.btn-primary:hover { background: var(--accent2); box-shadow: 0 0 20px var(--accent-glow); }
+.btn-primary:disabled { background: var(--border2); color: var(--muted); cursor: not-allowed; box-shadow: none; }
+.btn-generate {
+background: linear-gradient(135deg, var(--accent), #2a9f90);
+color: #0d0f14;
+padding: 13px 32px;
+font-size: 14px;
+width: 100%;
+justify-content: center;
+border-radius: var(--radius-lg);
+position: relative;
+overflow: hidden;
+}
+.btn-generate:hover { box-shadow: 0 0 30px var(--accent-glow); transform: translateY(-1px); }
+.btn-generate:disabled { background: var(--border2); color: var(--muted); transform: none; cursor: not-allowed; }
+/* ── SPINNER ── */
+.spinner {
+width: 16px; height: 16px;
+border: 2px solid rgba(13,15,20,0.3);
+border-top-color: #0d0f14;
+border-radius: 50%;
+animation: spin .6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* ── RESULTADO ── */
+#resultado-section {
+display: none;
+margin-top: 32px;
+animation: fadeUp .4s ease-out;
+}
+@keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+#resultado-section.visible { display: block; }
+.resultado-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 16px;
+flex-wrap: wrap;
+gap: 12px;
+}
+.resultado-title {
+font-family: 'Syne', sans-serif;
+font-size: 14px;
+font-weight: 700;
+color: var(--accent);
+}
+.resultado-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#resultado-content {
+background: var(--bg2);
+border: 1px solid var(--border2);
+border-radius: var(--radius-lg);
+padding: 32px;
+white-space: pre-wrap;
+font-family: 'Literata', serif;
+font-size: 14px;
+line-height: 1.8;
+color: var(--text);
+min-height: 200px;
+max-height: 600px;
+overflow-y: auto;
+scrollbar-width: thin;
+scrollbar-color: var(--border2) transparent;
+outline: none;
+}
+#resultado-content[contenteditable="true"] {
+cursor: text;
+}
+#resultado-content[contenteditable="true"]:focus {
+border-color: var(--accent2);
+box-shadow: 0 0 0 3px var(--accent-glow);
+}
+/* ── API KEY NOTICE ── */
+.api-notice {
+background: rgba(240,168,50,0.08);
+border: 1px solid rgba(240,168,50,0.25);
+border-radius: var(--radius);
+padding: 12px 16px;
+margin-bottom: 16px;
+font-size: 13px;
+color: var(--amber);
+display: flex;
+gap: 10px;
+align-items: flex-start;
+}
+.api-notice.hidden { display: none; }
+/* ── STEP PANELS ── */
+.step-panel { display: none; }
+.step-panel.active { display: block; animation: fadeUp .25s ease-out; }
+/* ── MISC ── */
+.divider {
+border: none;
+border-top: 1px solid var(--border);
+margin: 20px 0;
+}
+.info-row {
+display: flex;
+gap: 6px;
+align-items: center;
+font-size: 12px;
+color: var(--muted);
+margin-top: 8px;
+}
+.tag {
+font-family: var(--mono);
+font-size: 11px;
+background: var(--bg3);
+border: 1px solid var(--border2);
+border-radius: 4px;
+padding: 2px 7px;
+color: var(--muted);
+}
 </style>
 </head>
 <body>
-
 <header>
-  <a href="index.html" class="site-logo">EduPrompt</a>
-  <a href="index.html" class="tab">NEE</a>
-  <a href="planedu.html" class="tab active">PlanEdu</a>
+<a href="index.html" class="site-logo">EduPrompt</a>
+<a href="index.html" class="tab">NEE</a>
+<a href="planedu.html" class="tab active">PlanEdu</a>
 </header>
-
 <main>
-  <div class="page-title">Planeamientos MEP</div>
-  <div class="page-subtitle">Genera planeamientos mensuales completos · Formato oficial · Con DUA y PEI</div>
+<div class="page-title">Planeamientos MEP</div>
+<div class="page-subtitle">Genera planeamientos mensuales completos · Formato oficial · Con DUA y PEI</div>
 
-  <!-- STEPPER -->
-  <div class="stepper" id="stepper">
-    <div class="step-item">
-      <div class="step-dot active" id="dot-1">1</div>
-      <span class="step-label active" id="lbl-1">Configurar</span>
-    </div>
-    <div class="step-connector" id="conn-1"></div>
-    <div class="step-item">
-      <div class="step-dot" id="dot-2">2</div>
-      <span class="step-label" id="lbl-2">Habilidades</span>
-    </div>
-    <div class="step-connector" id="conn-2"></div>
-    <div class="step-item">
-      <div class="step-dot" id="dot-3">3</div>
-      <span class="step-label" id="lbl-3">DUA</span>
-    </div>
-    <div class="step-connector" id="conn-3"></div>
-    <div class="step-item">
-      <div class="step-dot" id="dot-4">4</div>
-      <span class="step-label" id="lbl-4">PEI</span>
-    </div>
-    <div class="step-connector" id="conn-4"></div>
-    <div class="step-item">
-      <div class="step-dot" id="dot-5">5</div>
-      <span class="step-label" id="lbl-5">Generar</span>
-    </div>
+<!-- STEPPER -->
+<div class="stepper" id="stepper">
+  <div class="step-item">
+    <div class="step-dot active" id="dot-1">1</div>
+    <span class="step-label active" id="lbl-1">Configurar</span>
   </div>
-
-  <!-- ════════ PASO 1: CONFIGURAR ════════ -->
-  <div class="step-panel active" id="panel-1">
-    <div class="card">
-      <div class="card-title">
-        <span class="step-badge">PASO 1</span>
-        Configuración del planeamiento
-      </div>
-      <div class="card-desc">Datos generales del docente, institución y período</div>
-
-      <div class="field-group">
-        <div class="field">
-          <label>Ciclo</label>
-          <select id="ciclo" onchange="onCicloChange()">
-            <option value="">— Seleccione —</option>
-            <option value="PRIMER_CICLO">I Ciclo (1°, 2°, 3°)</option>
-            <option value="SEGUNDO_CICLO">II Ciclo (4°, 5°, 6°)</option>
-            <option value="TERCER_CICLO">III Ciclo (7°, 8°, 9°)</option>
-            <option value="CICLO_DIVERSIFICADO">Ciclo Diversificado (10°, 11°)</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Área / Materia</label>
-          <select id="area">
-            <option value="">— Seleccione ciclo primero —</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field-group cols-3">
-        <div class="field">
-          <label>Año(s) escolar(es)</label>
-          <select id="anio">
-            <option value="">— Seleccione —</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Mes</label>
-          <select id="mes">
-            <option value="">— Seleccione —</option>
-            <option value="Enero">Enero</option>
-            <option value="Febrero">Febrero</option>
-            <option value="Marzo">Marzo</option>
-            <option value="Abril">Abril</option>
-            <option value="Mayo">Mayo</option>
-            <option value="Junio">Junio</option>
-            <option value="Julio">Julio</option>
-            <option value="Agosto">Agosto</option>
-            <option value="Setiembre">Setiembre</option>
-            <option value="Octubre">Octubre</option>
-            <option value="Noviembre">Noviembre</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Semanas del mes</label>
-          <select id="semanas">
-            <option value="4">4 semanas</option>
-            <option value="3">3 semanas</option>
-            <option value="5">5 semanas</option>
-          </select>
-        </div>
-      </div>
-
-      <hr class="divider">
-
-      <div class="field-group">
-        <div class="field">
-          <label>Nombre del docente</label>
-          <input type="text" id="docente" placeholder="Ej. María González Jiménez">
-        </div>
-        <div class="field">
-          <label>Centro educativo</label>
-          <input type="text" id="centro" placeholder="Ej. Escuela República de Panamá">
-        </div>
-      </div>
-      <div class="field-group">
-        <div class="field">
-          <label>Dirección regional</label>
-          <input type="text" id="dir_regional" placeholder="Ej. San José Central">
-        </div>
-        <div class="field">
-          <label>Tipo de planeamiento</label>
-          <select id="tipo_plan">
-            <option value="regular">Regular</option>
-            <option value="correlacionado">Correlacionado</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="nav-row">
-        <span></span>
-        <button class="btn btn-primary" onclick="irPaso(2)">
-          Continuar
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-    </div>
+  <div class="step-connector" id="conn-1"></div>
+  <div class="step-item">
+    <div class="step-dot" id="dot-2">2</div>
+    <span class="step-label" id="lbl-2">Habilidades</span>
   </div>
+  <div class="step-connector" id="conn-2"></div>
+  <div class="step-item">
+    <div class="step-dot" id="dot-3">3</div>
+    <span class="step-label" id="lbl-3">DUA</span>
+  </div>
+  <div class="step-connector" id="conn-3"></div>
+  <div class="step-item">
+    <div class="step-dot" id="dot-4">4</div>
+    <span class="step-label" id="lbl-4">PEI</span>
+  </div>
+  <div class="step-connector" id="conn-4"></div>
+  <div class="step-item">
+    <div class="step-dot" id="dot-5">5</div>
+    <span class="step-label" id="lbl-5">Generar</span>
+  </div>
+</div>
 
-  <!-- ════════ PASO 2: HABILIDADES ════════ -->
-  <div class="step-panel" id="panel-2">
-    <div class="card">
-      <div class="card-title">
-        <span class="step-badge">PASO 2</span>
-        Selección de habilidades
-      </div>
-      <div class="card-desc">Buscá y seleccioná las habilidades específicas que trabajarás este mes</div>
-
-      <div class="skill-selector">
-        <!-- Buscador -->
-        <div class="skill-search-wrap">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="buscador-habilidades" placeholder="Buscá por palabra clave o código de habilidad..." autocomplete="off">
-        </div>
-
-        <!-- Meta -->
-        <div class="skill-meta">
-          <span id="lista-info">Cargando habilidades...</span>
-          <span class="count-badge" id="seleccionadas-count">0 seleccionadas</span>
-        </div>
-
-        <!-- Lista filtrada -->
-        <div id="lista-habilidades">
-          <div class="empty-msg">Cargando datos del currículo...</div>
-        </div>
-
-        <!-- Chips de seleccionadas -->
-        <div class="seleccionadas-header">
-          <span>Habilidades seleccionadas para el planeamiento</span>
-          <button class="btn btn-ghost" style="padding:5px 10px;font-size:11px;" onclick="limpiarSeleccion()">Limpiar</button>
-        </div>
-        <div id="seleccionadas">
-          <span class="sel-empty">Ninguna seleccionada aún</span>
-        </div>
-      </div>
-
+<!-- ════════ PASO 1: CONFIGURAR ════════ -->
+<div class="step-panel active" id="panel-1">
+  <div class="card">
+    <div class="card-title">
+      <span class="step-badge">PASO 1</span>
+      Configuración del planeamiento
     </div>
+    <div class="card-desc">Datos generales del docente, institución y período</div>
+    
+    <div class="field-group">
+      <div class="field">
+        <label>Ciclo</label>
+        <select id="ciclo" onchange="onCicloChange()">
+          <option value="">— Seleccione —</option>
+          <option value="PRIMER_CICLO">I Ciclo (1°, 2°, 3°)</option>
+          <option value="SEGUNDO_CICLO">II Ciclo (4°, 5°, 6°)</option>
+          <option value="TERCER_CICLO">III Ciclo (7°, 8°, 9°)</option>
+          <option value="CICLO_DIVERSIFICADO">Ciclo Diversificado (10°, 11°)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Área / Materia</label>
+        <select id="area">
+          <option value="">— Seleccione ciclo primero —</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="field-group cols-3">
+      <div class="field">
+        <label>Año(s) escolar(es)</label>
+        <select id="anio">
+          <option value="">— Seleccione —</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Mes</label>
+        <select id="mes">
+          <option value="">— Seleccione —</option>
+          <option value="Enero">Enero</option>
+          <option value="Febrero">Febrero</option>
+          <option value="Marzo">Marzo</option>
+          <option value="Abril">Abril</option>
+          <option value="Mayo">Mayo</option>
+          <option value="Junio">Junio</option>
+          <option value="Julio">Julio</option>
+          <option value="Agosto">Agosto</option>
+          <option value="Setiembre">Setiembre</option>
+          <option value="Octubre">Octubre</option>
+          <option value="Noviembre">Noviembre</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Semanas del mes</label>
+        <select id="semanas">
+          <option value="4">4 semanas</option>
+          <option value="3">3 semanas</option>
+          <option value="5">5 semanas</option>
+        </select>
+      </div>
+    </div>
+    
+    <hr class="divider">
+    
+    <div class="field-group">
+      <div class="field">
+        <label>Nombre del docente</label>
+        <input type="text" id="docente" placeholder="Ej. María González Jiménez">
+      </div>
+      <div class="field">
+        <label>Centro educativo</label>
+        <input type="text" id="centro" placeholder="Ej. Escuela República de Panamá">
+      </div>
+    </div>
+    
+    <div class="field-group">
+      <div class="field">
+        <label>Dirección regional</label>
+        <input type="text" id="dir_regional" placeholder="Ej. San José Central">
+      </div>
+      <div class="field">
+        <label>Tipo de planeamiento</label>
+        <select id="tipo_plan">
+          <option value="regular">Regular</option>
+          <option value="correlacionado">Correlacionado</option>
+        </select>
+      </div>
+    </div>
+    
     <div class="nav-row">
-      <button class="btn btn-ghost" onclick="irPaso(1)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Atrás
-      </button>
-      <button class="btn btn-primary" onclick="irPaso(3)">
-        Continuar
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- ════════ PASO 3: DUA ════════ -->
-  <div class="step-panel" id="panel-3">
-    <div class="card">
-      <div class="card-title">
-        <span class="step-badge">PASO 3</span>
-        Estrategias DUA
-      </div>
-      <div class="card-desc">Diseño Universal para el Aprendizaje — obligatorio en el MEP. Seleccioná las estrategias que aplicarás.</div>
-
-      <div style="margin-bottom:18px;">
-        <label style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-family:'Syne',sans-serif;font-weight:600;margin-bottom:10px;display:block;">
-          Representación (Principio I)
-        </label>
-        <div class="dua-grid">
-          <label class="dua-check" id="dua-rep-visual">
-            <input type="checkbox" name="dua" value="Representación visual (diagramas, esquemas, imágenes)">
-            <span class="dua-label">Visual · Diagramas, esquemas, imágenes</span>
-          </label>
-          <label class="dua-check" id="dua-rep-concreta">
-            <input type="checkbox" name="dua" value="Representación concreta (manipulables, materiales físicos)">
-            <span class="dua-label">Concreta · Manipulables, materiales físicos</span>
-          </label>
-          <label class="dua-check" id="dua-rep-simbolica">
-            <input type="checkbox" name="dua" value="Representación simbólica (notación formal, algoritmos)">
-            <span class="dua-label">Simbólica · Notación formal, algoritmos</span>
-          </label>
-        </div>
-      </div>
-
-      <div style="margin-bottom:18px;">
-        <label style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-family:'Syne',sans-serif;font-weight:600;margin-bottom:10px;display:block;">
-          Acción y Expresión (Principio II)
-        </label>
-        <div class="dua-grid">
-          <label class="dua-check">
-            <input type="checkbox" name="dua" value="Expresión oral (exposición, discusión, trabajo grupal)">
-            <span class="dua-label">Oral · Exposición, discusión, debate</span>
-          </label>
-          <label class="dua-check">
-            <input type="checkbox" name="dua" value="Expresión escrita (resolución de problemas, informes)">
-            <span class="dua-label">Escrita · Problemas, informes, portafolio</span>
-          </label>
-          <label class="dua-check">
-            <input type="checkbox" name="dua" value="Expresión tecnológica (software, calculadora, GeoGebra)">
-            <span class="dua-label">Tecnológica · Software, GeoGebra, calculadora</span>
-          </label>
-        </div>
-      </div>
-
-      <div>
-        <label style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-family:'Syne',sans-serif;font-weight:600;margin-bottom:10px;display:block;">
-          Motivación e Implicación (Principio III)
-        </label>
-        <div class="dua-grid">
-          <label class="dua-check">
-            <input type="checkbox" name="dua" value="Motivación por contexto real (situaciones de la vida cotidiana)">
-            <span class="dua-label">Contexto real · Situaciones cotidianas</span>
-          </label>
-          <label class="dua-check">
-            <input type="checkbox" name="dua" value="Motivación colaborativa (trabajo en equipo, co-construcción)">
-            <span class="dua-label">Colaborativa · Equipos, co-construcción</span>
-          </label>
-          <label class="dua-check">
-            <input type="checkbox" name="dua" value="Motivación autónoma (resolución independiente, autogestión)">
-            <span class="dua-label">Autónoma · Autogestión, resolución independiente</span>
-          </label>
-        </div>
-      </div>
-
-    </div>
-    <div class="nav-row">
-      <button class="btn btn-ghost" onclick="irPaso(2)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Atrás
-      </button>
-      <button class="btn btn-primary" onclick="irPaso(4)">
-        Continuar
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- ════════ PASO 4: PEI ════════ -->
-  <div class="step-panel" id="panel-4">
-    <div class="card">
-      <div class="card-title">
-        <span class="step-badge">PASO 4</span>
-        Adecuaciones curriculares (PEI)
-      </div>
-      <div class="card-desc">¿Hay estudiantes con Necesidades Educativas Especiales que requieran adecuación en este grupo?</div>
-
-      <div class="pei-toggle-row">
-        <label class="radio-btn" id="pei-no-btn">
-          <input type="radio" name="pei" value="no" checked onchange="onPeiChange(false)">
-          Sin adecuaciones
-        </label>
-        <label class="radio-btn" id="pei-si-btn">
-          <input type="radio" name="pei" value="si" onchange="onPeiChange(true)">
-          Con adecuaciones (PEI)
-        </label>
-      </div>
-
-      <div id="pei-fields">
-        <div class="field-group">
-          <div class="field">
-            <label>Tipo de adecuación</label>
-            <select id="pei_tipo">
-              <option value="de acceso">De acceso</option>
-              <option value="no significativa">No significativa</option>
-              <option value="significativa">Significativa</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Área de NEE</label>
-            <select id="pei_area_nee">
-              <option value="discapacidad intelectual">Discapacidad intelectual</option>
-              <option value="discapacidad visual">Discapacidad visual</option>
-              <option value="discapacidad auditiva">Discapacidad auditiva</option>
-              <option value="discapacidad motora">Discapacidad motora</option>
-              <option value="trastorno del espectro autista (TEA)">TEA</option>
-              <option value="trastorno por déficit atencional (TDAH)">TDAH</option>
-              <option value="dificultades de aprendizaje">Dificultades de aprendizaje</option>
-              <option value="talento excepcional">Talento excepcional</option>
-            </select>
-          </div>
-        </div>
-        <div class="field-group cols-1">
-          <div class="field">
-            <label>Observación adicional (opcional)</label>
-            <textarea id="pei_obs" rows="3" placeholder="Descripción breve de la adecuación específica que el docente desea incluir..."></textarea>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="nav-row">
-      <button class="btn btn-ghost" onclick="irPaso(3)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Atrás
-      </button>
-      <button class="btn btn-primary" onclick="irPaso(5)">
-        Continuar
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- ════════ PASO 5: GENERAR ════════ -->
-  <div class="step-panel" id="panel-5">
-    <div class="card">
-      <div class="card-title">
-        <span class="step-badge">PASO 5</span>
-        Generar planeamiento
-      </div>
-      <div class="card-desc">Revisá el resumen y generá el planeamiento completo con IA</div>
-
-      <div id="resumen-config" style="background:var(--bg3);border-radius:var(--radius);padding:16px;margin-bottom:20px;font-size:13px;line-height:1.8;">
-        Cargando resumen...
-      </div>
-
-      <div class="api-notice" id="api-notice">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <span>Para usar fuera de claude.ai se requiere una API key de Anthropic.</span>
-      </div>
-
-      <div class="field-group cols-1" id="apikey-field" style="display:none">
-        <div class="field">
-          <label>API Key (solo para uso en GitHub Pages)</label>
-          <input type="text" id="api_key" placeholder="sk-ant-..." autocomplete="off">
-        </div>
-      </div>
-
-      <button class="btn btn-generate" id="btn-generar" onclick="generarPlaneamiento()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        Generar planeamiento
-      </button>
-
-    </div>
-    <div class="nav-row">
-      <button class="btn btn-ghost" onclick="irPaso(4)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Atrás
-      </button>
       <span></span>
+      <button class="btn btn-primary" onclick="irPaso(2)">
+        Continuar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
+</div>
 
-  <!-- ════════ RESULTADO ════════ -->
-  <div id="resultado-section">
-    <div class="resultado-header">
-      <div class="resultado-title">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        Planeamiento generado
+<!-- ════════ PASO 2: HABILIDADES ════════ -->
+<div class="step-panel" id="panel-2">
+  <div class="card">
+    <div class="card-title">
+      <span class="step-badge">PASO 2</span>
+      Selección de habilidades
+    </div>
+    <div class="card-desc">Buscá y seleccioná las habilidades específicas que trabajarás este mes</div>
+    
+    <div class="skill-selector">
+      <!-- Buscador -->
+      <div class="skill-search-wrap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="buscador-habilidades" placeholder="Buscá por palabra clave o código de habilidad..." autocomplete="off">
       </div>
-      <div class="resultado-actions">
-        <button class="btn btn-ghost" onclick="copiarTexto()" style="font-size:12px;padding:8px 14px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          Copiar
-        </button>
-        <button class="btn btn-primary" onclick="exportarDocx()" style="font-size:12px;padding:8px 16px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Exportar .docx
-        </button>
-        <button class="btn btn-ghost" onclick="nuevoPlaneamiento()" style="font-size:12px;padding:8px 14px;">Nuevo</button>
+      
+      <!-- Meta -->
+      <div class="skill-meta">
+        <span id="lista-info">Cargando habilidades...</span>
+        <span class="count-badge" id="seleccionadas-count">0 seleccionadas</span>
+      </div>
+      
+      <!-- Lista filtrada -->
+      <div id="lista-habilidades">
+        <div class="empty-msg">Cargando datos del currículo...</div>
+      </div>
+      
+      <!-- Chips de seleccionadas -->
+      <div class="seleccionadas-header">
+        <span>Habilidades seleccionadas para el planeamiento</span>
+        <button class="btn btn-ghost" style="padding:5px 10px;font-size:11px;" onclick="limpiarSeleccion()">Limpiar</button>
+      </div>
+      <div id="seleccionadas">
+        <span class="sel-empty">Ninguna seleccionada aún</span>
       </div>
     </div>
-    <div id="resultado-content" contenteditable="true"></div>
   </div>
+  
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="irPaso(1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Atrás
+    </button>
+    <button class="btn btn-primary" onclick="irPaso(3)">
+      Continuar
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ════════ PASO 3: DUA ════════ -->
+<div class="step-panel" id="panel-3">
+  <div class="card">
+    <div class="card-title">
+      <span class="step-badge">PASO 3</span>
+      Estrategias DUA
+    </div>
+    <div class="card-desc">Diseño Universal para el Aprendizaje — obligatorio en el MEP. Seleccioná las estrategias que aplicarás.</div>
+    
+    <div style="margin-bottom:18px;">
+      <label style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-family:'Syne',sans-serif;font-weight:600;margin-bottom:10px;display:block;">
+        Representación (Principio I)
+      </label>
+      <div class="dua-grid">
+        <label class="dua-check" id="dua-rep-visual">
+          <input type="checkbox" name="dua" value="Representación visual (diagramas, esquemas, imágenes)">
+          <span class="dua-label">Visual · Diagramas, esquemas, imágenes</span>
+        </label>
+        <label class="dua-check" id="dua-rep-concreta">
+          <input type="checkbox" name="dua" value="Representación concreta (manipulables, materiales físicos)">
+          <span class="dua-label">Concreta · Manipulables, materiales físicos</span>
+        </label>
+        <label class="dua-check" id="dua-rep-simbolica">
+          <input type="checkbox" name="dua" value="Representación simbólica (notación formal, algoritmos)">
+          <span class="dua-label">Simbólica · Notación formal, algoritmos</span>
+        </label>
+      </div>
+    </div>
+    
+    <div style="margin-bottom:18px;">
+      <label style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-family:'Syne',sans-serif;font-weight:600;margin-bottom:10px;display:block;">
+        Acción y Expresión (Principio II)
+      </label>
+      <div class="dua-grid">
+        <label class="dua-check">
+          <input type="checkbox" name="dua" value="Expresión oral (exposición, discusión, trabajo grupal)">
+          <span class="dua-label">Oral · Exposición, discusión, debate</span>
+        </label>
+        <label class="dua-check">
+          <input type="checkbox" name="dua" value="Expresión escrita (resolución de problemas, informes)">
+          <span class="dua-label">Escrita · Problemas, informes, portafolio</span>
+        </label>
+        <label class="dua-check">
+          <input type="checkbox" name="dua" value="Expresión tecnológica (software, calculadora, GeoGebra)">
+          <span class="dua-label">Tecnológica · Software, GeoGebra, calculadora</span>
+        </label>
+      </div>
+    </div>
+    
+    <div>
+      <label style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-family:'Syne',sans-serif;font-weight:600;margin-bottom:10px;display:block;">
+        Motivación e Implicación (Principio III)
+      </label>
+      <div class="dua-grid">
+        <label class="dua-check">
+          <input type="checkbox" name="dua" value="Motivación por contexto real (situaciones de la vida cotidiana)">
+          <span class="dua-label">Contexto real · Situaciones cotidianas</span>
+        </label>
+        <label class="dua-check">
+          <input type="checkbox" name="dua" value="Motivación colaborativa (trabajo en equipo, co-construcción)">
+          <span class="dua-label">Colaborativa · Equipos, co-construcción</span>
+        </label>
+        <label class="dua-check">
+          <input type="checkbox" name="dua" value="Motivación autónoma (resolución independiente, autogestión)">
+          <span class="dua-label">Autónoma · Autogestión, resolución independiente</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="irPaso(2)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Atrás
+    </button>
+    <button class="btn btn-primary" onclick="irPaso(4)">
+      Continuar
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ════════ PASO 4: PEI ════════ -->
+<div class="step-panel" id="panel-4">
+  <div class="card">
+    <div class="card-title">
+      <span class="step-badge">PASO 4</span>
+      Adecuaciones curriculares (PEI)
+    </div>
+    <div class="card-desc">¿Hay estudiantes con Necesidades Educativas Especiales que requieran adecuación en este grupo?</div>
+    
+    <div class="pei-toggle-row">
+      <label class="radio-btn" id="pei-no-btn">
+        <input type="radio" name="pei" value="no" checked onchange="onPeiChange(false)">
+        Sin adecuaciones
+      </label>
+      <label class="radio-btn" id="pei-si-btn">
+        <input type="radio" name="pei" value="si" onchange="onPeiChange(true)">
+        Con adecuaciones (PEI)
+      </label>
+    </div>
+    
+    <div id="pei-fields">
+      <div class="field-group">
+        <div class="field">
+          <label>Tipo de adecuación</label>
+          <select id="pei_tipo">
+            <option value="de acceso">De acceso</option>
+            <option value="no significativa">No significativa</option>
+            <option value="significativa">Significativa</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Área de NEE</label>
+          <select id="pei_area_nee">
+            <option value="discapacidad intelectual">Discapacidad intelectual</option>
+            <option value="discapacidad visual">Discapacidad visual</option>
+            <option value="discapacidad auditiva">Discapacidad auditiva</option>
+            <option value="discapacidad motora">Discapacidad motora</option>
+            <option value="trastorno del espectro autista (TEA)">TEA</option>
+            <option value="trastorno por déficit atencional (TDAH)">TDAH</option>
+            <option value="dificultades de aprendizaje">Dificultades de aprendizaje</option>
+            <option value="talento excepcional">Talento excepcional</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group cols-1">
+        <div class="field">
+          <label>Observación adicional (opcional)</label>
+          <textarea id="pei_obs" rows="3" placeholder="Descripción breve de la adecuación específica que el docente desea incluir..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="irPaso(3)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Atrás
+    </button>
+    <button class="btn btn-primary" onclick="irPaso(5)">
+      Continuar
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ════════ PASO 5: GENERAR ════════ -->
+<div class="step-panel" id="panel-5">
+  <div class="card">
+    <div class="card-title">
+      <span class="step-badge">PASO 5</span>
+      Generar planeamiento
+    </div>
+    <div class="card-desc">Revisá el resumen y generá el planeamiento completo con IA</div>
+    
+    <div id="resumen-config" style="background:var(--bg3);border-radius:var(--radius);padding:16px;margin-bottom:20px;font-size:13px;line-height:1.8;">
+      Cargando resumen...
+    </div>
+    
+    <div class="api-notice" id="api-notice">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      <span>Para usar fuera de claude.ai se requiere una API key de Anthropic.</span>
+    </div>
+    
+    <div class="field-group cols-1" id="apikey-field" style="display:none">
+      <div class="field">
+        <label>API Key (solo para uso en GitHub Pages)</label>
+        <input type="text" id="api_key" placeholder="sk-ant-..." autocomplete="off">
+      </div>
+    </div>
+    
+    <button class="btn btn-generate" id="btn-generar" onclick="generarPlaneamiento()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Generar planeamiento
+    </button>
+  </div>
+  
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="irPaso(4)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Atrás
+    </button>
+    <span></span>
+  </div>
+</div>
+
+<!-- ════════ RESULTADO ════════ -->
+<div id="resultado-section">
+  <div class="resultado-header">
+    <div class="resultado-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Planeamiento generado
+    </div>
+    <div class="resultado-actions">
+      <button class="btn btn-ghost" onclick="copiarTexto()" style="font-size:12px;padding:8px 14px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copiar
+      </button>
+      <button class="btn btn-primary" onclick="exportarDocx()" style="font-size:12px;padding:8px 16px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exportar .docx
+      </button>
+      <button class="btn btn-ghost" onclick="nuevoPlaneamiento()" style="font-size:12px;padding:8px 14px;">Nuevo</button>
+    </div>
+  </div>
+  <div id="resultado-content" contenteditable="true"></div>
+</div>
 
 </main>
 
@@ -1003,168 +978,192 @@ const CICLOS_MAP = {
 // ═══════════════════════════════════════════
 async function cargarDatos() {
   try {
+    console.log("🔄 Iniciando carga de datos...");
+    
     const [habRes, ctxRes, pgRes] = await Promise.allSettled([
       fetch("data/curriculo_matematica.json"),
       fetch("data/curriculo_contexto.json"),
       fetch("data/programa_global.json")
     ]);
 
+    // Cargar habilidades
     if (habRes.status === "fulfilled" && habRes.value.ok) {
       const data = await habRes.value.json();
-      // Normalizar: el JSON puede ser array plano o anidado por ciclo/área
+      console.log("✅ JSON habilidades cargado:", typeof data);
       todasHabilidades = normalizarHabilidades(data);
+      console.log("✅ Habilidades normalizadas:", todasHabilidades.length);
+    } else {
+      console.error("❌ Error cargando habilidades:", habRes);
+      document.getElementById("lista-habilidades").innerHTML = 
+        '<div class="empty-msg">⚠️ No se pudo cargar curriculo_matematica.json<br><small>Verificá que el archivo esté en data/</small></div>';
     }
+    
+    // Cargar contexto
     if (ctxRes.status === "fulfilled" && ctxRes.value.ok) {
       const raw = await ctxRes.value.json();
-      // Indexar por ciclo+área para acceso rápido
       raw.forEach(e => {
         const key = (e.ciclo || "") + "_" + (e.area || e.area_id || "");
         curriculoContexto[key] = e;
       });
+      console.log("✅ Contexto cargado:", Object.keys(curriculoContexto).length, "entradas");
     }
+    
+    // Cargar programa global
     if (pgRes.status === "fulfilled" && pgRes.value.ok) {
       programaGlobal = await pgRes.value.json();
+      console.log("✅ Programa global cargado");
     }
-
+    
+    // Render inicial
     renderLista(todasHabilidades.slice(0, 60));
-    document.getElementById("lista-info").textContent =
+    document.getElementById("lista-info").textContent = 
       `${todasHabilidades.length} habilidades disponibles · mostrando 60`;
+      
   } catch (e) {
-    document.getElementById("lista-habilidades").innerHTML =
-      '<div class="empty-msg">No se pudo cargar curriculo_matematica.json — verificá que el archivo esté en data/</div>';
+    console.error("❌ Error crítico en cargarDatos:", e);
+    document.getElementById("lista-habilidades").innerHTML = 
+      '<div class="empty-msg">❌ Error cargando el currículo.<br><small>Revisá la consola (F12) para más detalles.</small></div>';
   }
 }
 
-
+// ═══════════════════════════════════════════
+//  NORMALIZACIÓN DEFENSIVA DE HABILIDADES
+// ═══════════════════════════════════════════
 function normalizarHabilidades(data) {
   const result = [];
-  const cycles = data.cycles || [];
-  cycles.forEach(c => {
-    const ciclo = c.ciclo || "";
-    (c.niveles || []).forEach(n => {
-      (n.areas || []).forEach(a => {
-        const area = a.nombre || a.area || "";
-        (a.habilidades || []).forEach(h => {
-          if (h.id) result.push({
-            id: h.id,
-            texto: h.descripcion || h.habilidad || h.texto || "",
-            ciclo,
-            area
+  
+  // Si es array plano (formato alternativo)
+  if (Array.isArray(data)) {
+    console.log("📋 JSON es array plano");
+    return data.map(h => ({
+      id: h.id || h.codigo || "",
+      texto: h.descripcion || h.habilidad || h.texto || "",
+      ciclo: h.ciclo || "",
+      area: h.area || h.materia || ""
+    }));
+  }
+  
+  // Si es objeto con estructura anidada (formato MEP oficial)
+  if (data && data.cycles) {
+    console.log("📋 JSON tiene estructura anidada");
+    data.cycles.forEach(c => {
+      const ciclo = c.ciclo || "";
+      (c.niveles || []).forEach(n => {
+        (n.areas || []).forEach(a => {
+          const area = a.nombre || a.area || "";
+          (a.habilidades || []).forEach(h => {
+            if (h.id) {
+              result.push({
+                id: h.id,
+                texto: h.descripcion || h.habilidad || h.texto || "",
+                ciclo,
+                area
+              });
+            }
           });
         });
       });
     });
-  });
+  }
+  
   return result;
 }
 
-
 // ═══════════════════════════════════════════
-//  FILTROS DE CICLO / ÁREA
+//  FILTROS DE CICLO / ÁREA (CORREGIDO)
 // ═══════════════════════════════════════════
 function onCicloChange() {
   const ciclo = document.getElementById("ciclo").value;
   const areaSelect = document.getElementById("area");
   const anioSelect = document.getElementById("anio");
-
+  
+  console.log("🔄 Ciclo cambiado:", ciclo);
+  
+  // Reset selects
   areaSelect.innerHTML = '<option value="">— Seleccione —</option>';
   anioSelect.innerHTML = '<option value="">— Seleccione —</option>';
-
+  
   if (!ciclo) return;
+  
   const cfg = CICLOS_MAP[ciclo];
+  if (!cfg) {
+    console.error("❌ Ciclo no encontrado:", ciclo);
+    return;
+  }
+  
+  // Poblar áreas
   cfg.areas.forEach(a => {
     areaSelect.innerHTML += `<option value="${a}">${a}</option>`;
   });
+  
+  // Poblar años
   cfg.anios.forEach(a => {
     anioSelect.innerHTML += `<option value="${a}">${a}</option>`;
   });
-
-  // Filtrar habilidades por ciclo automáticamente
+  
+  // Filtrar automáticamente
   filtrarPorCicloArea();
 }
 
 function filtrarPorCicloArea() {
   const ciclo = document.getElementById("ciclo").value;
   const area  = document.getElementById("area").value;
+  
+  console.log("🔍 Filtros:", {ciclo, area});
+  
   if (!ciclo && !area) {
-    filtradas = todasHabilidades;
+    filtradas = [...todasHabilidades];
   } else {
     filtradas = todasHabilidades.filter(h => {
+      // Normalizar para comparación (sin tildes)
+      const areaNorm = area ? area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
+      const hAreaNorm = h.area ? h.area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
+      
       const matchCiclo = !ciclo || h.ciclo === ciclo || h.ciclo === "";
-      const matchArea = !area || 
-        h.area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"") === 
-        area.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"") || 
-        h.area === "";
+      const matchArea = !area || hAreaNorm === areaNorm || h.area === "";
+      
+      return matchCiclo && matchArea;
+    });
   }
+  
+  console.log("✅ Filtrado:", filtradas.length, "resultados");
+  
   renderLista(filtradas.slice(0, 80));
-  document.getElementById("lista-info").textContent =
+  document.getElementById("lista-info").textContent = 
     `${filtradas.length} habilidades · mostrando ${Math.min(filtradas.length, 80)}`;
-  document.getElementById("buscador-habilidades").value = "";
 }
 
 // ═══════════════════════════════════════════
-//  BUSCADOR
-// ═══════════════════════════════════════════
-document.addEventListener("DOMContentLoaded", () => {
-  cargarDatos();
-
-  document.getElementById("buscador-habilidades").addEventListener("input", function() {
-    const q = this.value.toLowerCase().trim();
-    const base = filtradas.length > 0 ? filtradas : todasHabilidades;
-    if (!q) {
-      renderLista(base.slice(0, 80));
-      document.getElementById("lista-info").textContent =
-        `${base.length} habilidades · mostrando 80`;
-      return;
-    }
-    const res = base.filter(h =>
-      h.texto.toLowerCase().includes(q) || h.id.toLowerCase().includes(q)
-    );
-    renderLista(res.slice(0, 60));
-    document.getElementById("lista-info").textContent =
-      `${res.length} resultado${res.length !== 1 ? "s" : ""} para "${q}"`;
-  });
-
-  document.getElementById("area").addEventListener("change", filtrarPorCicloArea);
-
-  // DUA checkboxes toggle class
-  document.querySelectorAll(".dua-check input").forEach(cb => {
-    cb.addEventListener("change", function() {
-      this.closest(".dua-check").classList.toggle("checked", this.checked);
-    });
-  });
-
-  // Detectar entorno
-  const enClaudeAI = window.location.hostname.includes("claude.ai") ||
-                     window.location.hostname === "localhost" ||
-                     window.location.protocol === "about:";
-  if (!enClaudeAI) {
-    document.getElementById("api-notice").classList.add("hidden");
-    document.getElementById("apikey-field").style.display = "block";
-  }
-});
-
-// ═══════════════════════════════════════════
-//  RENDER LISTA (Zona 2)
+//  RENDER LISTA DE HABILIDADES
 // ═══════════════════════════════════════════
 function renderLista(habilidades) {
   const cont = document.getElementById("lista-habilidades");
+  
   if (!habilidades || habilidades.length === 0) {
-    cont.innerHTML = '<div class="empty-msg">Sin resultados. Probá otra búsqueda.</div>';
+    cont.innerHTML = '<div class="empty-msg">Sin resultados. Probá otra búsqueda o filtro.</div>';
     return;
   }
+  
   cont.innerHTML = "";
+  
   habilidades.forEach(h => {
     const item = document.createElement("label");
     item.className = "hab-item";
+    
     const isChecked = seleccionadas.some(s => s.id === h.id);
+    
     item.innerHTML = `
       <input type="checkbox" ${isChecked ? "checked" : ""}>
       <span class="hab-id">${h.id}</span>
       <span class="hab-texto">${h.texto}</span>
     `;
+    
     const cb = item.querySelector("input");
-    cb.addEventListener("change", e => {
+    
+    // Event listener para checkbox
+    cb.addEventListener("change", (e) => {
+      e.stopPropagation(); // Evitar conflicto con click en label
+      
       if (e.target.checked) {
         if (!seleccionadas.some(s => s.id === h.id)) {
           seleccionadas.push({ id: h.id, texto: h.texto });
@@ -1175,25 +1174,35 @@ function renderLista(habilidades) {
       }
       renderSeleccionadas();
     });
+    
+    // Click en el item para toggle
+    item.addEventListener("click", (e) => {
+      if (e.target.tagName !== "INPUT") {
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event("change"));
+      }
+    });
+    
     cont.appendChild(item);
   });
 }
 
 // ═══════════════════════════════════════════
-//  renderSeleccionadas — función del usuario (Zona 3)
+//  RENDER SELECCIONADAS (CHIPS)
 // ═══════════════════════════════════════════
 function renderSeleccionadas() {
   const cont = document.getElementById("seleccionadas");
-  cont.innerHTML = "";
-
-  document.getElementById("seleccionadas-count").textContent =
-    `${seleccionadas.length} seleccionada${seleccionadas.length !== 1 ? "s" : ""}`;
-
+  const countBadge = document.getElementById("seleccionadas-count");
+  
+  countBadge.textContent = `${seleccionadas.length} seleccionada${seleccionadas.length !== 1 ? "s" : ""}`;
+  
   if (seleccionadas.length === 0) {
     cont.innerHTML = '<span class="sel-empty">Ninguna seleccionada aún</span>';
     return;
   }
-
+  
+  cont.innerHTML = "";
+  
   seleccionadas.forEach(h => {
     const chip = document.createElement("div");
     chip.className = "sel-chip";
@@ -1201,28 +1210,34 @@ function renderSeleccionadas() {
       <span>${h.id}</span>
       <button title="Quitar ${h.id}" aria-label="Quitar habilidad ${h.id}">×</button>
     `;
-    chip.querySelector("button").addEventListener("click", () => {
+    
+    chip.querySelector("button").addEventListener("click", (e) => {
+      e.stopPropagation();
       eliminar(h.id);
     });
+    
     cont.appendChild(chip);
   });
 }
 
 function eliminar(id) {
   seleccionadas = seleccionadas.filter(h => h.id !== id);
-  // Desmarcar el checkbox si está visible
-  const checkboxes = document.querySelectorAll("#lista-habilidades input[type='checkbox']");
-  checkboxes.forEach(cb => {
-    const habId = cb.closest(".hab-item")?.querySelector(".hab-id")?.textContent;
-    if (habId === id) cb.checked = false;
+  
+  // Desmarcar checkbox si está visible
+  document.querySelectorAll("#lista-habilidades input[type='checkbox']").forEach(cb => {
+    const habItem = cb.closest(".hab-item");
+    if (habItem) {
+      const habId = habItem.querySelector(".hab-id")?.textContent;
+      if (habId === id) cb.checked = false;
+    }
   });
+  
   renderSeleccionadas();
 }
 
 function limpiarSeleccion() {
   seleccionadas = [];
-  document.querySelectorAll("#lista-habilidades input[type='checkbox']")
-    .forEach(cb => cb.checked = false);
+  document.querySelectorAll("#lista-habilidades input[type='checkbox']").forEach(cb => cb.checked = false);
   renderSeleccionadas();
 }
 
@@ -1230,48 +1245,69 @@ function limpiarSeleccion() {
 //  PEI TOGGLE
 // ═══════════════════════════════════════════
 function onPeiChange(tienePEI) {
-  document.getElementById("pei-fields").classList.toggle("visible", tienePEI);
-  document.getElementById("pei-no-btn").classList.toggle("selected-no", !tienePEI);
-  document.getElementById("pei-si-btn").classList.toggle("selected-yes", tienePEI);
+  const fields = document.getElementById("pei-fields");
+  const btnNo = document.getElementById("pei-no-btn");
+  const btnSi = document.getElementById("pei-si-btn");
+  
+  fields.classList.toggle("visible", tienePEI);
+  btnNo.classList.toggle("selected-no", !tienePEI);
+  btnSi.classList.toggle("selected-yes", tienePEI);
 }
-// Init PEI state
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("pei-no-btn").classList.add("selected-no");
-});
 
 // ═══════════════════════════════════════════
-//  STEPPER NAVIGATION
+//  STEPPER NAVIGATION CON VALIDACIÓN
 // ═══════════════════════════════════════════
 function irPaso(n) {
-  // Validar paso 1
-  if (n > 1) {
+  // Validación Paso 1 → 2
+  if (n > 1 && pasoActual === 1) {
     const ciclo = document.getElementById("ciclo").value;
     const area  = document.getElementById("area").value;
+    
     if (!ciclo || !area) {
-      alert("Seleccioná el ciclo y el área antes de continuar.");
+      alert("⚠️ Seleccioná el ciclo y el área antes de continuar.");
       return;
     }
   }
-
+  
+  // Validación Paso 2 → 3
+  if (n === 3 && pasoActual === 2 && seleccionadas.length === 0) {
+    if (!confirm("⚠️ No has seleccionado ninguna habilidad.\n\n¿Continuar sin habilidades seleccionadas?")) {
+      return;
+    }
+  }
+  
+  // Ocultar panel actual
   document.getElementById(`panel-${pasoActual}`).classList.remove("active");
+  
+  // Mostrar nuevo panel
   document.getElementById(`panel-${n}`).classList.add("active");
-
-  // Update stepper
+  
+  // Actualizar stepper
   for (let i = 1; i <= 5; i++) {
     const dot = document.getElementById(`dot-${i}`);
     const lbl = document.getElementById(`lbl-${i}`);
+    
     dot.className = "step-dot";
     lbl.className = "step-label";
-    if (i < n) { dot.classList.add("done"); lbl.classList.add("active"); }
-    else if (i === n) { dot.classList.add("active"); lbl.classList.add("active"); }
-
+    
+    if (i < n) {
+      dot.classList.add("done");
+      lbl.classList.add("active");
+    } else if (i === n) {
+      dot.classList.add("active");
+      lbl.classList.add("active");
+    }
+    
+    // Conectores
     if (i < 5) {
       const conn = document.getElementById(`conn-${i}`);
       conn.className = "step-connector" + (i < n ? " done" : "");
     }
   }
-
+  
+  // Render resumen si es paso 5
   if (n === 5) renderResumen();
+  
   pasoActual = n;
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -1284,18 +1320,19 @@ function renderResumen() {
   const area  = document.getElementById("area");
   const anio  = document.getElementById("anio");
   const mes   = document.getElementById("mes");
+  
   const docente  = document.getElementById("docente").value || "—";
   const centro   = document.getElementById("centro").value || "—";
   const dirReg   = document.getElementById("dir_regional").value || "—";
-  const tipoPlan = document.getElementById("tipo_plan");
+  
   const duaMarcadas = Array.from(document.querySelectorAll('input[name="dua"]:checked')).length;
   const peiSi = document.querySelector('input[name="pei"]:checked')?.value === "si";
-
+  
   const ciclolabel = ciclo.options[ciclo.selectedIndex]?.text || "—";
   const arealabel  = area.options[area.selectedIndex]?.text || "—";
   const anioval    = anio.options[anio.selectedIndex]?.text || "—";
   const mesval     = mes.options[mes.selectedIndex]?.text || "—";
-
+  
   document.getElementById("resumen-config").innerHTML = `
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
       <div><span style="color:var(--muted);font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Ciclo</span><br>${ciclolabel}</div>
@@ -1323,36 +1360,36 @@ function ensamblarPrompt() {
   const centro    = document.getElementById("centro").value;
   const dirReg    = document.getElementById("dir_regional").value;
   const tipoPlan  = document.getElementById("tipo_plan").value;
+  
   const peiSi     = document.querySelector('input[name="pei"]:checked')?.value === "si";
   const peiTipo   = document.getElementById("pei_tipo")?.value;
   const peiArea   = document.getElementById("pei_area_nee")?.value;
   const peiObs    = document.getElementById("pei_obs")?.value;
-
+  
   const estrategiasDUA = Array.from(document.querySelectorAll('input[name="dua"]:checked'))
     .map(cb => "- " + cb.value).join("\n");
-
+  
   const habilidadesTexto = seleccionadas
     .map(h => `• [${h.id}] ${h.texto}`)
     .join("\n");
-
-  // Contexto curricular del JSON
+  
+  // Contexto curricular
   const ctxKey = ciclo + "_" + area;
   const ctx = curriculoContexto[ctxKey] || {};
+  
   const introduccion   = ctx.introduccion || "";
   const proposito      = ctx.proposito || "";
-  const habGenerales   = Array.isArray(ctx.habilidades_generales)
-    ? ctx.habilidades_generales.join("; ") : "";
-  const metGenerales   = Array.isArray(ctx.metodologicas?.generales)
-    ? ctx.metodologicas.generales.join("; ") : "";
+  const habGenerales   = Array.isArray(ctx.habilidades_generales) ? ctx.habilidades_generales.join("; ") : "";
+  const metGenerales   = Array.isArray(ctx.metodologicas?.generales) ? ctx.metodologicas.generales.join("; ") : "";
   const metAnio        = ctx.metodologicas?.por_anio?.[anio] || "";
-  const evaluacion     = Array.isArray(ctx.evaluacion)
-    ? ctx.evaluacion.join("; ") : "";
-
+  const evaluacion     = Array.isArray(ctx.evaluacion) ? ctx.evaluacion.join("; ") : "";
+  
   const peiSeccion = peiSi ? `
 ADECUACIÓN CURRICULAR (PEI):
 - Tipo: ${peiTipo}
 - Área de NEE: ${peiArea}
 ${peiObs ? "- Nota adicional: " + peiObs : ""}
+
 Generá una sección específica de adecuaciones con: modificaciones a las habilidades, estrategias diferenciadas y criterios de evaluación adaptados para este estudiante.
 ` : "";
 
@@ -1392,39 +1429,43 @@ Generá un planeamiento con esta estructura exacta:
 1. ENCABEZADO INSTITUCIONAL (tabla con todos los datos generales)
 
 2. TABLA SEMANAL (${semanas} filas):
-   | Semana | Período | Aprendizajes esperados | Estrategias metodológicas | Indicadores de evaluación |
-   — Cada semana debe tener actividades específicas, no genéricas
-   — Las estrategias deben integrar los principios DUA seleccionados
-   — Los indicadores deben ser observables y medibles
+| Semana | Período | Aprendizajes esperados | Estrategias metodológicas | Indicadores de evaluación |
+
+— Cada semana debe tener actividades específicas, no genéricas
+— Las estrategias deben integrar los principios DUA seleccionados
+— Los indicadores deben ser observables y medibles
 
 3. SECCIÓN DUA:
-   Descripción detallada de cómo se implementa cada principio DUA seleccionado en las actividades del mes.
+Descripción detallada de cómo se implementa cada principio DUA seleccionado en las actividades del mes.
 
 4. MEDIACIÓN PEDAGÓGICA:
-   Descripción de la metodología general, recursos didácticos y estrategias de mediación.
+Descripción de la metodología general, recursos didácticos y estrategias de mediación.
 
-${peiSi ? "5. SECCIÓN PEI / ADECUACIÓN CURRICULAR:\n   Detalle completo de las adecuaciones para el estudiante con " + peiArea + ".\n" : ""}
+${peiSi ? `5. SECCIÓN PEI / ADECUACIÓN CURRICULAR:
+Detalle completo de las adecuaciones para el estudiante con ${peiArea}.
+` : ""}
 
 Usá lenguaje técnico-pedagógico del MEP costarricense. Sé específico en las actividades. El planeamiento debe ser directamente utilizable por el docente sin modificaciones.`;
 }
 
 // ═══════════════════════════════════════════
-//  GENERACIÓN — Claude API
+//  GENERACIÓN — PROMPT PARA IA
 // ═══════════════════════════════════════════
 async function generarPlaneamiento() {
   const btn = document.getElementById("btn-generar");
   const resultadoSection = document.getElementById("resultado-section");
   const resultadoContent = document.getElementById("resultado-content");
-
+  
   btn.disabled = true;
   btn.innerHTML = '<div class="spinner"></div> Ensamblando prompt...';
-
+  
   const prompt = ensamblarPrompt();
-
+  
   resultadoSection.classList.add("visible");
   resultadoContent.textContent = prompt;
   resultadoContent.scrollIntoView({ behavior: "smooth", block: "start" });
-
+  
+  // Reset button
   btn.disabled = false;
   btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Regenerar prompt`;
 }
@@ -1443,12 +1484,15 @@ function exportarDocx() {
   const texto = document.getElementById("resultado-content").textContent;
   const ciclo = document.getElementById("ciclo").value;
   const mes   = document.getElementById("mes").value;
+  
   const blob  = new Blob([texto], { type: "text/plain;charset=utf-8" });
   const url   = URL.createObjectURL(blob);
   const a     = document.createElement("a");
+  
   a.href = url;
   a.download = `planeamiento_${ciclo}_${mes}.txt`;
   a.click();
+  
   URL.revokeObjectURL(url);
 }
 
@@ -1458,7 +1502,63 @@ function nuevoPlaneamiento() {
   }
 }
 
+// ═══════════════════════════════════════════
+//  INICIALIZACIÓN
+// ═══════════════════════════════════════════
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🚀 PlanEdu inicializado");
+  
+  // Cargar datos
+  cargarDatos();
+  
+  // Buscador con debounce
+  let searchTimeout;
+  document.getElementById("buscador-habilidades").addEventListener("input", function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      const q = this.value.toLowerCase().trim();
+      const base = filtradas.length > 0 ? filtradas : todasHabilidades;
+      
+      if (!q) {
+        renderLista(base.slice(0, 80));
+        document.getElementById("lista-info").textContent = 
+          `${base.length} habilidades · mostrando 80`;
+        return;
+      }
+      
+      const res = base.filter(h => 
+        h.texto.toLowerCase().includes(q) || h.id.toLowerCase().includes(q)
+      );
+      
+      renderLista(res.slice(0, 60));
+      document.getElementById("lista-info").textContent = 
+        `${res.length} resultado${res.length !== 1 ? "s" : ""} para "${q}"`;
+    }, 300);
+  });
+  
+  // Event listener para área (filtro adicional)
+  document.getElementById("area").addEventListener("change", filtrarPorCicloArea);
+  
+  // DUA checkboxes: toggle visual class
+  document.querySelectorAll(".dua-check input").forEach(cb => {
+    cb.addEventListener("change", function() {
+      this.closest(".dua-check").classList.toggle("checked", this.checked);
+    });
+  });
+  
+  // Detectar entorno para API notice
+  const enClaudeAI = window.location.hostname.includes("claude.ai") || 
+                     window.location.hostname === "localhost" || 
+                     window.location.protocol === "about:";
+  
+  if (!enClaudeAI) {
+    document.getElementById("api-notice").classList.add("hidden");
+    document.getElementById("apikey-field").style.display = "block";
+  }
+  
+  // Init PEI state
+  document.getElementById("pei-no-btn").classList.add("selected-no");
+});
 </script>
-<script src="js/metaEngine.js"></script>
 </body>
 </html>
