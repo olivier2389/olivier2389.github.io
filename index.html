@@ -23,6 +23,7 @@
   <nav style="display:flex;align-items:center;gap:0;margin-left:8px;">
     <a href="index.html" style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;padding:18px 20px;color:#e8eaf0;text-decoration:none;border-bottom:2px solid #3ecfb2;letter-spacing:.03em;">NEE</a>
     <a href="planedu.html" style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;padding:18px 20px;color:#7a7f96;text-decoration:none;border-bottom:2px solid transparent;letter-spacing:.03em;">PlanEdu</a>
+    <a href="rubricas.html" style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;padding:18px 20px;color:#7a7f96;text-decoration:none;border-bottom:2px solid transparent;letter-spacing:.03em;">Rúbricas</a>
   </nav>
   <div class="header-right">
     <select id="sel_materia_header" onchange="cambiarMateria()" title="Seleccionar materia"></select>
@@ -272,19 +273,21 @@
     <div class="dev-body">
 
       <div class="dev-section">
-        <h4>Estado actual (v2)</h4>
+        <h4>Estado actual (v3)</h4>
         <div class="code-block">✅ Estructura modular (HTML + CSS + JS separados)
-✅ curriculo_matematica.json cargado desde data/
-✅ MetaPromptEngine — núcleo de prompts (js/metaPromptEngine.js)
+✅ curriculo_matematica.json (618 habilidades, cycles→niveles→areas)
+✅ MetaPromptEngine v3 — prompt DOBLE FASE (js/metaPromptEngine.js)
 ✅ Motor de plantillas con 7 tipos (js/templateRegistry.js)
 ✅ Selector de materia en header (listo para más materias)
 ✅ Sistema NEE con chips seleccionables
-✅ Panel de desarrollo con hoja de ruta
-✅ Listo para GitHub Pages
+✅ skillId separado — habilidad con código + texto completo en el prompt
+✅ PlanEdu con doble fase (planedu.html)
+✅ metaEngine.js compartido entre NEE y PlanEdu
+✅ Listo para GitHub Pages · oliver2389.github.io
+⏳ Rúbricas de evaluación — nueva pestaña (rubricas.html) · EN DESARROLLO
+⏳ Conexión directa a API Claude — campo api_key listo en planedu.html
 ⏳ Más materias (Ciencias, Español) — requiere extractor Python
-⏳ Conexión directa a API de IA (código listo, comentado en app.js)
-⏳ Persistencia localStorage (código listo, comentado en app.js)
-⏳ Módulo de actividades múltiples</div>
+⏳ Exportar a .docx con formato oficial MEP</div>
       </div>
 
       <div class="dev-section">
@@ -345,24 +348,23 @@
 
       <div class="dev-section">
         <h4>Prompt para continuar con Claude</h4>
-        <div class="code-block">Hola Claude. Continuamos el proyecto EduPrompt NEE
-del Profesor Carlos Elizondo Castillo (MEP Costa Rica).
+        <div class="code-block">Continuamos EduPrompt NEE · PlanEdu · Rúbricas.
+Prof. Carlos Elizondo Castillo · MEP Costa Rica.
 
-CONTEXTO:
-- Tenemos eduprompt-nee/ con estructura modular lista para GitHub Pages
-- curriculo_matematica.json (854 habilidades, 3 ciclos)
-- MetaPromptEngine en js/metaPromptEngine.js
-- Motor de plantillas en js/templateRegistry.js (7 plantillas)
-- Lógica principal en js/app.js
+Estado actual (v3):
+- index.html (NEE) + planedu.html + rubricas.html · oliver2389.github.io
+- metaPromptEngine.js v3 — prompt DOBLE FASE en NEE
+- planedu.html con doble fase + 5 pasos + DUA + SP + PEI
+- metaEngine.js compartido (buildPrompt + callClaude + render)
+- curriculo_matematica.json (618 habilidades, cycles→niveles→areas)
+- curriculo_contexto.json (17 entradas contexto curricular MEP)
+- app.js con skillId separado — habilidad con código + texto
 
-PRÓXIMO PASO ELEGIDO:
-[A] Agregar módulo de actividades múltiples
-[B] Activar conexión con API de IA (código ya está comentado en app.js)
-[C] Activar persistencia localStorage (código ya está en app.js)
-[D] Mapear nuevo plan de estudios con el extractor Python
-[E] Mejorar el extractor Python (indicadores MEP pendientes)
+Próximo paso:
+- Construir rubricas.html — tabla Indicadores / Inicial / Intermedio / Avanzado
+- El docente selecciona habilidades y genera la rúbrica con prompt doble fase
 
-Adjunto el ZIP del proyecto. Continúa desde aquí.</div>
+Adjunto los archivos. Continuá desde aquí.</div>
         <button class="btn btn-ghost btn-sm" style="margin-top:.6rem" onclick="copyDevPrompt()">
           📋 Copiar este prompt
         </button>

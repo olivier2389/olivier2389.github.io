@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rúbricas · EduPrompt MEP</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#e8eaf0;--muted:#7a7f96;--accent:#3ecfb2;--accent2:#2aa898;--accent-bg:rgba(62,207,178,0.08);--accent-glow:rgba(62,207,178,0.18);--purple:#8b6ff5;--amber:#f0a832;--red:#e05252;--radius:10px;--radius-lg:16px;--mono:'DM Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;font-size:15px;line-height:1.65;min-height:100vh;}
+
+/* ── Header ── */
+header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;position:sticky;top:0;z-index:100;}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--text);}
+.logo-mark{color:var(--accent);font-size:18px;}
+.logo em{color:var(--accent);font-style:normal;}
+nav{display:flex;align-items:center;gap:0;margin-left:8px;}
+nav a{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;padding:18px 20px;color:#7a7f96;text-decoration:none;border-bottom:2px solid transparent;letter-spacing:.03em;transition:color .2s;}
+nav a.active{color:#e8eaf0;border-bottom-color:var(--accent);}
+nav a:hover{color:#e8eaf0;}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:1rem;}
+.header-badge{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.05em;}
+
+/* ── Layout ── */
+main{max-width:860px;margin:0 auto;padding:40px 24px 80px;}
+.hero{margin-bottom:36px;}
+.hero-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(139,111,245,.1);border:1px solid rgba(139,111,245,.25);border-radius:20px;padding:4px 14px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
+h1{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;line-height:1.2;margin-bottom:10px;}
+h1 em{color:var(--accent);font-style:normal;}
+.hero p{color:var(--muted);font-size:14px;max-width:520px;}
+
+/* ── Steps ── */
+.steps{display:flex;flex-direction:column;gap:12px;}
+.step{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s;}
+.step.active{border-color:rgba(62,207,178,.25);}
+.step-header{display:flex;align-items:center;gap:14px;padding:18px 24px;cursor:pointer;user-select:none;}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--bg3);border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--muted);flex-shrink:0;transition:all .2s;}
+.step-num.done{background:var(--accent);border-color:var(--accent);color:#0d0f14;}
+.step-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+.step-subtitle{font-size:12px;color:var(--muted);margin-top:2px;}
+.step-toggle{margin-left:auto;color:var(--muted);font-size:12px;transition:transform .2s;}
+.step.open .step-toggle{transform:rotate(180deg);}
+.step-body{display:none;padding:0 24px 24px;}
+.step.open .step-body{display:block;}
+
+/* ── Forms ── */
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+select,input[type="text"],textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:'Nunito',sans-serif;font-size:14px;padding:10px 14px;outline:none;transition:border-color .2s;appearance:none;}
+select:focus,input:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px var(--accent-glow);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7f96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+
+/* ── Skill selector ── */
+.skill-selector{border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;}
+.skill-search-wrap{padding:10px 14px;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;}
+#buscador{background:transparent;border:none;padding:0;font-size:14px;width:100%;color:var(--text);font-family:'Nunito',sans-serif;}
+#buscador:focus{outline:none;box-shadow:none;}
+.skill-meta-bar{padding:6px 14px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.skill-meta-bar span{font-family:var(--mono);font-size:11px;color:var(--muted);}
+.count-badge{background:var(--accent-bg);color:var(--accent);border:1px solid rgba(62,207,178,.2);border-radius:20px;padding:2px 10px;}
+#lista{max-height:260px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;}
+.hab-item{display:flex;align-items:flex-start;gap:12px;padding:9px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;}
+.hab-item:hover{background:var(--bg3);}
+.hab-item:last-child{border-bottom:none;}
+.hab-item input[type="checkbox"]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);}
+.hab-id{font-family:var(--mono);font-size:11px;color:var(--accent);flex-shrink:0;min-width:56px;margin-top:2px;}
+.hab-texto{font-size:13px;color:var(--text);line-height:1.5;}
+.empty-msg{padding:20px;text-align:center;color:var(--muted);font-size:13px;}
+.sel-header{padding:8px 14px;background:var(--bg);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.sel-header span{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.sel-header button{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;background:none;border:none;color:var(--muted);cursor:pointer;padding:2px 6px;}
+.sel-header button:hover{color:var(--red);}
+#seleccionadas{padding:8px 14px;min-height:42px;display:flex;flex-wrap:wrap;gap:6px;}
+.sel-chip{display:inline-flex;align-items:center;gap:6px;background:var(--accent-bg);border:1px solid rgba(62,207,178,.25);border-radius:20px;padding:4px 10px 4px 12px;font-size:12px;color:var(--accent);font-family:var(--mono);}
+.sel-chip button{background:none;border:none;cursor:pointer;color:rgba(62,207,178,.5);font-size:14px;padding:0;transition:color .15s;}
+.sel-chip button:hover{color:var(--accent);}
+.sel-empty{font-size:13px;color:var(--muted);padding:6px 0;font-style:italic;}
+
+/* ── Tipo rúbrica chips ── */
+.tipo-grid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.tipo-chip{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;padding:8px 16px;border-radius:20px;background:var(--bg3);border:1.5px solid var(--border2);color:var(--muted);cursor:pointer;transition:all .2s;}
+.tipo-chip:hover{border-color:var(--border);color:var(--text);}
+.tipo-chip.selected{background:rgba(139,111,245,.1);border-color:rgba(139,111,245,.4);color:var(--purple);}
+
+/* ── Buttons ── */
+.btn{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;padding:11px 24px;border-radius:var(--radius);border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-teal{background:var(--accent);color:#0d0f14;}
+.btn-teal:hover{background:var(--accent2);box-shadow:0 0 20px var(--accent-glow);}
+.btn-ghost{background:transparent;border:1px solid var(--border2);color:var(--muted);}
+.btn-ghost:hover{border-color:var(--border);color:var(--text);}
+.btn-purple{background:rgba(139,111,245,.15);color:var(--purple);border:1px solid rgba(139,111,245,.3);}
+.btn-purple:hover{background:rgba(139,111,245,.25);}
+
+/* ── Prompt output ── */
+.prompt-output{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;display:none;}
+.prompt-output.visible{display:block;}
+.prompt-toolbar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--bg3);border-bottom:1px solid var(--border);}
+.prompt-toolbar-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;}
+.prompt-text{width:100%;background:transparent;border:none;padding:20px;font-family:'DM Mono',monospace;font-size:12.5px;line-height:1.8;color:var(--text);min-height:240px;resize:vertical;outline:none;}
+
+/* ── Rubric preview table ── */
+.rubric-preview{margin-top:20px;overflow-x:auto;display:none;}
+.rubric-preview.visible{display:block;}
+.rubric-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--bg2);}
+.rubric-table th{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 14px;background:var(--bg3);border:1px solid var(--border2);text-align:left;}
+.rubric-table th.th-indicator{color:var(--muted);min-width:200px;}
+.rubric-table th.th-inicial{color:var(--red);}
+.rubric-table th.th-intermedio{color:var(--amber);}
+.rubric-table th.th-avanzado{color:var(--accent);}
+.rubric-table td{padding:12px 14px;border:1px solid var(--border);vertical-align:top;line-height:1.6;}
+.rubric-table tr:nth-child(odd) td{background:rgba(255,255,255,.015);}
+.rubric-table .td-indicator{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;color:var(--text);}
+.rubric-table .td-id{font-family:var(--mono);font-size:10px;color:var(--accent);display:block;margin-bottom:4px;}
+.rubric-table .td-nivel{font-size:12.5px;color:var(--text);}
+.rubric-table .td-check{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;display:block;}
+.nivel-badge{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:6px;}
+.badge-inicial{background:rgba(224,82,82,.1);color:var(--red);border:1px solid rgba(224,82,82,.25);}
+.badge-intermedio{background:rgba(240,168,50,.1);color:var(--amber);border:1px solid rgba(240,168,50,.25);}
+.badge-avanzado{background:rgba(62,207,178,.1);color:var(--accent);border:1px solid rgba(62,207,178,.25);}
+
+/* ── Loading ── */
+.loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:9999;transition:opacity .4s;}
+.loading-screen.hidden{opacity:0;pointer-events:none;}
+.loading-spinner{width:36px;height:36px;border:3px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-text{font-family:'Syne',sans-serif;font-size:13px;color:var(--muted);}
+
+/* ── Hint ── */
+.hint{background:rgba(240,168,50,.07);border:1px solid rgba(240,168,50,.2);border-radius:var(--radius);padding:10px 16px;font-size:13px;color:var(--amber);margin-top:12px;}
+footer{text-align:center;padding:20px;font-family:var(--mono);font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-spinner"></div>
+  <span class="loading-text" id="loadingText">Cargando currículo MEP...</span>
+</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">✦</div>
+    <span>Edu<em>Prompt</em></span>
+  </div>
+  <nav>
+    <a href="index.html">NEE</a>
+    <a href="planedu.html">PlanEdu</a>
+    <a href="rubricas.html" class="active">Rúbricas</a>
+  </nav>
+  <div class="header-right">
+    <span class="header-badge">Rúbricas · MEP Costa Rica</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="hero-pill">✦ Rúbricas de evaluación por habilidad MEP</div>
+    <h1>Generá rúbricas<br><em>precisas</em> en segundos</h1>
+    <p>Seleccioná las habilidades MEP, configurá el tipo de rúbrica y obtené un prompt listo para generar la tabla de indicadores con niveles de desempeño.</p>
+  </div>
+
+  <div class="steps">
+
+    <!-- ══ PASO 1: SELECCIONAR HABILIDADES ══ -->
+    <div class="step open active" id="step1">
+      <div class="step-header" onclick="toggleStep('step1')">
+        <div class="step-num" id="num1">1</div>
+        <div>
+          <div class="step-title">Habilidades MEP</div>
+          <div class="step-subtitle">Seleccioná las habilidades a evaluar con la rúbrica</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div class="form-group" style="margin-bottom:0">
+            <label>Ciclo</label>
+            <select id="sel_ciclo" onchange="onCicloChange()">
+              <option value="">— Todos —</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label>Área</label>
+            <select id="sel_area" onchange="filtrarHabilidades()">
+              <option value="">— Todas —</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label>Nivel / Grado</label>
+            <select id="sel_nivel" onchange="filtrarHabilidades()">
+              <option value="">— Todos —</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="skill-selector">
+          <div class="skill-search-wrap">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" id="buscador" placeholder="Buscar habilidad por texto o código...">
+          </div>
+          <div class="skill-meta-bar">
+            <span id="lista-info">Cargando...</span>
+            <span class="count-badge" id="sel-count">0 seleccionadas</span>
+          </div>
+          <div id="lista"></div>
+          <div class="sel-header">
+            <span>Habilidades seleccionadas</span>
+            <button onclick="limpiarSeleccion()">Limpiar</button>
+          </div>
+          <div id="seleccionadas"><span class="sel-empty">Ninguna seleccionada aún</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ PASO 2: CONFIGURAR RÚBRICA ══ -->
+    <div class="step" id="step2">
+      <div class="step-header" onclick="toggleStep('step2')">
+        <div class="step-num" id="num2">2</div>
+        <div>
+          <div class="step-title">Configuración de la rúbrica</div>
+          <div class="step-subtitle">Tipo, escala y parámetros adicionales</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <div class="form-group">
+          <label>Tipo de rúbrica</label>
+          <div class="tipo-grid">
+            <div class="tipo-chip selected" data-tipo="holistica" onclick="selectTipo(this)">Holística</div>
+            <div class="tipo-chip" data-tipo="analitica" onclick="selectTipo(this)">Analítica</div>
+            <div class="tipo-chip" data-tipo="simple" onclick="selectTipo(this)">Lista de cotejo</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="form-group">
+            <label>Escala de desempeño</label>
+            <select id="sel_escala">
+              <option value="3">3 niveles: Inicial · Intermedio · Avanzado</option>
+              <option value="4">4 niveles: Inicial · En proceso · Logrado · Avanzado</option>
+              <option value="5">5 niveles (con Sobresaliente)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nivel educativo</label>
+            <select id="sel_nivel_rubrica">
+              <option value="primaria">Primaria (I y II Ciclo)</option>
+              <option value="secundaria" selected>Secundaria (III Ciclo)</option>
+              <option value="diversificado">Diversificado (X–XI)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Contexto adicional (opcional)</label>
+          <textarea id="ctx_rubrica" rows="2" placeholder="Ej: actividad de laboratorio, trabajo en grupo, prueba escrita individual..."></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ PASO 3: GENERAR ══ -->
+    <div class="step" id="step3">
+      <div class="step-header" onclick="toggleStep('step3')">
+        <div class="step-num" id="num3">3</div>
+        <div>
+          <div class="step-title">Generar prompt de rúbrica</div>
+          <div class="step-subtitle">Ensambla el prompt de doble fase listo para copiar</div>
+        </div>
+        <span class="step-toggle">▼</span>
+      </div>
+      <div class="step-body">
+
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1rem">
+          <button class="btn btn-teal" onclick="generarPrompt()">
+            ✦ Generar prompt de rúbrica
+          </button>
+          <button class="btn btn-ghost" onclick="copiarPrompt()" id="btnCopy" style="display:none">
+            📋 Copiar prompt
+          </button>
+          <button class="btn btn-purple" onclick="verPreview()" id="btnPreview" style="display:none">
+            👁 Vista previa tabla
+          </button>
+        </div>
+
+        <div class="prompt-output" id="promptOutput">
+          <div class="prompt-toolbar">
+            <span class="prompt-toolbar-label">prompt generado · doble fase</span>
+            <span id="promptStats" style="font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted)"></span>
+          </div>
+          <textarea class="prompt-text" id="promptText" readonly></textarea>
+        </div>
+
+        <!-- Vista previa de la estructura de la tabla -->
+        <div class="rubric-preview" id="rubricPreview">
+          <p style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;">Vista previa · estructura de la tabla</p>
+          <table class="rubric-table" id="rubricTable"></table>
+        </div>
+
+        <div class="hint" id="hintMsg" style="display:none"></div>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <b>EduPrompt · Rúbricas v1</b> · MEP Costa Rica · Matemáticas ·
+  Desarrollado con el Profesor Carlos Elizondo Castillo
+</footer>
+
+<script>
+// ─── Estado ────────────────────────────────────────────────
+let todasHabilidades = [];
+let filtradas        = [];
+let seleccionadas    = [];
+let tipoRubrica      = 'holistica';
+let searchTimeout    = null;
+
+const CICLOS_MAP = {
+  PRIMER_CICLO:        { label:'Primer Ciclo (1°–3°)',        areas:['Números','Medidas','Geometría','Relaciones y Álgebra','Estadística y Probabilidad'], anios:['1','2','3','1-3'] },
+  SEGUNDO_CICLO:       { label:'Segundo Ciclo (4°–6°)',       areas:['Números','Medidas','Geometría','Relaciones y Álgebra','Estadística y Probabilidad'], anios:['4','5','6'] },
+  TERCER_CICLO:        { label:'Tercer Ciclo (7°–9°)',        areas:['Números','Medidas','Geometría','Relaciones y Álgebra','Estadística y Probabilidad'], anios:['7','8','9','7-9'] },
+  CICLO_DIVERSIFICADO: { label:'Ciclo Diversificado (10°–11°)',areas:['Números','Medidas','Geometría','Relaciones y Álgebra','Estadística y Probabilidad'], anios:['10','11'] },
+};
+
+// ─── Carga de datos ────────────────────────────────────────
+async function cargarDatos() {
+  try {
+    const [r1] = await Promise.all([
+      fetch('data/curriculo_matematica.json')
+    ]);
+    const data = await r1.json();
+    todasHabilidades = normalizarHabilidades(data);
+    filtradas = [...todasHabilidades];
+    poblarCiclos();
+    renderLista(filtradas.slice(0, 80));
+    document.getElementById('lista-info').textContent = `${todasHabilidades.length} habilidades · mostrando 80`;
+    document.getElementById('loadingScreen').classList.add('hidden');
+  } catch(e) {
+    document.getElementById('loadingText').textContent = 'Error cargando datos. Verificá la ruta del JSON.';
+    console.error(e);
+  }
+}
+
+function normalizarHabilidades(data) {
+  const r = [];
+  if (data && data.cycles) {
+    data.cycles.forEach(c => {
+      const ciclo = c.name || c.ciclo || '';
+      (c.levels || c.niveles || []).forEach(n => {
+        const nivel = n.name || n.nivel || '';
+        (n.areas || []).forEach(a => {
+          const area = a.name || a.nombre || '';
+          (a.habilidades || []).forEach(h => {
+            if (h.id) r.push({ id: h.id, texto: h.descripcion || h.habilidad || '', ciclo, area, nivel });
+          });
+        });
+      });
+    });
+  }
+  return r;
+}
+
+function poblarCiclos() {
+  const sel = document.getElementById('sel_ciclo');
+  sel.innerHTML = '<option value="">— Todos los ciclos —</option>';
+  Object.entries(CICLOS_MAP).forEach(([k, v]) => {
+    sel.innerHTML += `<option value="${k}">${v.label}</option>`;
+  });
+}
+
+function onCicloChange() {
+  const ciclo = document.getElementById('sel_ciclo').value;
+  const aS = document.getElementById('sel_area');
+  const nS = document.getElementById('sel_nivel');
+  aS.innerHTML = '<option value="">— Todas las áreas —</option>';
+  nS.innerHTML = '<option value="">— Todos los niveles —</option>';
+  if (ciclo && CICLOS_MAP[ciclo]) {
+    CICLOS_MAP[ciclo].areas.forEach(a => aS.innerHTML += `<option value="${a}">${a}</option>`);
+    CICLOS_MAP[ciclo].anios.forEach(a => nS.innerHTML += `<option value="${a}">${a}° año</option>`);
+  }
+  filtrarHabilidades();
+}
+
+function filtrarHabilidades() {
+  const ciclo = document.getElementById('sel_ciclo').value;
+  const area  = document.getElementById('sel_area').value;
+  const nivel = document.getElementById('sel_nivel').value;
+  filtradas = todasHabilidades.filter(h => {
+    const matchCiclo = !ciclo || h.ciclo === ciclo;
+    const matchArea  = !area  || h.area.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'') === area.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    const matchNivel = !nivel || h.nivel === nivel;
+    return matchCiclo && matchArea && matchNivel;
+  });
+  renderLista(filtradas.slice(0, 80));
+  document.getElementById('lista-info').textContent = `${filtradas.length} habilidades · mostrando ${Math.min(filtradas.length, 80)}`;
+}
+
+// ─── Lista y selección ──────────────────────────────────────
+function renderLista(habilidades) {
+  const cont = document.getElementById('lista');
+  if (!habilidades || habilidades.length === 0) {
+    cont.innerHTML = '<div class="empty-msg">Sin resultados. Probá otra búsqueda.</div>';
+    return;
+  }
+  cont.innerHTML = '';
+  habilidades.forEach(h => {
+    const item = document.createElement('label');
+    item.className = 'hab-item';
+    const checked = seleccionadas.some(s => s.id === h.id);
+    item.innerHTML = `<input type="checkbox"${checked ? ' checked' : ''}><span class="hab-id">${h.id}</span><span class="hab-texto">${h.texto}</span>`;
+    const cb = item.querySelector('input');
+    cb.addEventListener('change', e => {
+      e.stopPropagation();
+      if (e.target.checked) {
+        if (!seleccionadas.some(s => s.id === h.id)) seleccionadas.push({ id: h.id, texto: h.texto });
+      } else {
+        quitarHabilidad(h.id);
+        return;
+      }
+      renderSeleccionadas();
+    });
+    item.addEventListener('click', e => { if (e.target.tagName !== 'INPUT') { cb.checked = !cb.checked; cb.dispatchEvent(new Event('change')); } });
+    cont.appendChild(item);
+  });
+}
+
+function renderSeleccionadas() {
+  const cont  = document.getElementById('seleccionadas');
+  const badge = document.getElementById('sel-count');
+  badge.textContent = `${seleccionadas.length} seleccionada${seleccionadas.length !== 1 ? 's' : ''}`;
+  if (seleccionadas.length === 0) {
+    cont.innerHTML = '<span class="sel-empty">Ninguna seleccionada aún</span>';
+    return;
+  }
+  cont.innerHTML = '';
+  seleccionadas.forEach(h => {
+    const chip = document.createElement('div');
+    chip.className = 'sel-chip';
+    chip.innerHTML = `<span>${h.id}</span><button title="Quitar">×</button>`;
+    chip.querySelector('button').addEventListener('click', e => { e.stopPropagation(); quitarHabilidad(h.id); });
+    cont.appendChild(chip);
+  });
+  document.getElementById('num1').classList.add('done');
+  document.getElementById('num1').textContent = '✓';
+}
+
+function quitarHabilidad(id) {
+  seleccionadas = seleccionadas.filter(h => h.id !== id);
+  document.querySelectorAll('#lista input[type="checkbox"]').forEach(cb => {
+    const hi = cb.closest('.hab-item');
+    if (hi && hi.querySelector('.hab-id')?.textContent === id) cb.checked = false;
+  });
+  renderSeleccionadas();
+}
+
+function limpiarSeleccion() {
+  seleccionadas = [];
+  document.querySelectorAll('#lista input[type="checkbox"]').forEach(cb => cb.checked = false);
+  renderSeleccionadas();
+}
+
+function buscar() {
+  const q = document.getElementById('buscador').value.toLowerCase().trim();
+  const base = filtradas.length > 0 ? filtradas : todasHabilidades;
+  if (!q) { renderLista(base.slice(0, 80)); document.getElementById('lista-info').textContent = `${base.length} habilidades · mostrando 80`; return; }
+  const res = base.filter(h => h.texto.toLowerCase().includes(q) || h.id.toLowerCase().includes(q));
+  renderLista(res.slice(0, 60));
+  document.getElementById('lista-info').textContent = `${res.length} resultado${res.length !== 1 ? 's' : ''} para "${q}"`;
+}
+
+function selectTipo(el) {
+  document.querySelectorAll('.tipo-chip').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  tipoRubrica = el.dataset.tipo;
+}
+
+// ─── Generador de prompt ───────────────────────────────────
+function generarPrompt() {
+  if (seleccionadas.length === 0) {
+    const hint = document.getElementById('hintMsg');
+    hint.textContent = '⚠️ Seleccioná al menos una habilidad en el Paso 1.';
+    hint.style.display = 'block';
+    return;
+  }
+  document.getElementById('hintMsg').style.display = 'none';
+
+  const escala    = document.getElementById('sel_escala').value;
+  const nivelEdu  = document.getElementById('sel_nivel_rubrica').value;
+  const ctx       = document.getElementById('ctx_rubrica').value.trim();
+
+  const nivelesMap = {
+    '3': ['Inicial','Intermedio','Avanzado'],
+    '4': ['Inicial','En proceso','Logrado','Avanzado'],
+    '5': ['Inicial','En proceso','Logrado','Avanzado','Sobresaliente'],
+  };
+  const niveles = nivelesMap[escala] || nivelesMap['3'];
+
+  const schemaFila = {
+    indicador_id:   'string — código MEP de la habilidad',
+    indicador_texto:'string — habilidad redactada como indicador de aprendizaje esperado (verbo observable)',
+    niveles:        Object.fromEntries(niveles.map(n => [n.toLowerCase().replace(/ /g,'_'), 'string — descripción concreta del desempeño en este nivel']))
+  };
+
+  const schema = JSON.stringify({
+    tipo_rubrica: tipoRubrica,
+    niveles_escala: niveles,
+    filas: [schemaFila, '... (una fila por cada habilidad)']
+  }, null, 2);
+
+  const habTexto = seleccionadas.map(h => `• [${h.id}] ${h.texto}`).join('\n');
+  const tipoDesc = { holistica: 'Holística — evalúa el desempeño global', analitica: 'Analítica — evalúa cada criterio por separado', simple: 'Lista de cotejo — presencia/ausencia de indicadores' }[tipoRubrica];
+
+  const prompt = `════════════════════════════════════════════════════════
+MODO: DOBLE FASE — leé todo antes de responder
+════════════════════════════════════════════════════════
+
+ROL
+Sos un experto en evaluación educativa según el programa oficial de Matemática del MEP de Costa Rica. Especialista en diseño de rúbricas alineadas a habilidades e indicadores de logro MEP.
+
+════════════════════════════════════════════
+FASE 1 — PARSEO Y VALIDACIÓN (ejecutar ahora)
+════════════════════════════════════════════
+Leé los datos a continuación y devolvé ÚNICAMENTE un objeto JSON con esta estructura. Sin texto antes ni después.
+
+SCHEMA DE FASE 1:
+${schema}
+
+REGLAS DE FASE 1:
+1. Devolver SOLO el JSON. Nada más.
+2. Una fila por cada habilidad listada — sin omitir ninguna.
+3. El campo "indicador_texto" debe reformular la habilidad MEP como un indicador observable con verbo de acción (ej: "Resuelve...", "Aplica...", "Construye...").
+4. Cada nivel debe describir un desempeño CONCRETO, medible y diferenciado del nivel anterior.
+5. El nivel Inicial describe dominio menor al 50% con dificultades notorias.
+6. El nivel ${niveles[Math.floor(niveles.length/2)]} describe dominio parcial (50–79%) con algunos errores.
+7. El nivel Avanzado describe dominio total (80–100%) con comprensión profunda y precisa.
+8. Lenguaje claro, directo, apropiado para docentes MEP.
+
+Cuando el docente revise el JSON y responda "ejecutar" o "aceptar", pasás a FASE 2.
+
+════════════════════════════════════════════
+FASE 2 — GENERACIÓN (solo cuando el docente confirme)
+════════════════════════════════════════════
+Con el JSON validado, generá la rúbrica completa en formato tabla lista para usar:
+
+- Encabezado con título, materia, ciclo/nivel educativo
+- Tabla con columnas: Indicadores del aprendizaje esperado | ${niveles.join(' | ')}
+- Cada celda de nivel debe incluir descripción + espacio para marcar ( )
+- Nota pedagógica al pie sobre el uso de la rúbrica
+- Tipo: ${tipoDesc}
+
+════════════════════════════════════════════
+DATOS
+════════════════════════════════════════════
+Tipo de rúbrica: ${tipoDesc}
+Escala: ${niveles.join(' → ')}
+Nivel educativo: ${nivelEdu}
+${ctx ? 'Contexto: ' + ctx : ''}
+
+HABILIDADES MEP A EVALUAR:
+${habTexto}
+
+════════════════════════════════════════════
+Comenzá ahora con FASE 1 — devolvé el JSON:`;
+
+  const textarea = document.getElementById('promptText');
+  const output   = document.getElementById('promptOutput');
+  const stats    = document.getElementById('promptStats');
+
+  textarea.value = prompt;
+  output.classList.add('visible');
+  document.getElementById('btnCopy').style.display = 'inline-flex';
+  document.getElementById('btnPreview').style.display = 'inline-flex';
+
+  const words = prompt.split(/\s+/).length;
+  stats.textContent = `${words} palabras · ${seleccionadas.length} habilidades`;
+
+  document.getElementById('num2').classList.add('done');
+  document.getElementById('num2').textContent = '✓';
+  document.getElementById('num3').classList.add('done');
+  document.getElementById('num3').textContent = '✓';
+
+  output.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copiarPrompt() {
+  const text = document.getElementById('promptText').value;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('btnCopy');
+    btn.textContent = '✅ Copiado';
+    setTimeout(() => btn.innerHTML = '📋 Copiar prompt', 1800);
+  });
+}
+
+// ─── Vista previa de la tabla ──────────────────────────────
+function verPreview() {
+  const escala   = document.getElementById('sel_escala').value;
+  const nivelesMap = { '3':['Inicial','Intermedio','Avanzado'], '4':['Inicial','En proceso','Logrado','Avanzado'], '5':['Inicial','En proceso','Logrado','Avanzado','Sobresaliente'] };
+  const niveles = nivelesMap[escala] || nivelesMap['3'];
+  const clases  = ['badge-inicial','badge-intermedio','badge-avanzado','badge-avanzado','badge-avanzado'];
+
+  const table  = document.getElementById('rubricTable');
+  const preview = document.getElementById('rubricPreview');
+
+  let thead = `<thead><tr><th class="th-indicator">Indicadores del aprendizaje esperado</th>`;
+  niveles.forEach((n, i) => thead += `<th class="th-${n.toLowerCase().replace(/ /g,'')}">${n}</th>`);
+  thead += '</tr></thead>';
+
+  let tbody = '<tbody>';
+  seleccionadas.forEach(h => {
+    tbody += `<tr><td class="td-indicator"><span class="td-id">${h.id}</span>${h.texto}</td>`;
+    niveles.forEach((n, i) => {
+      tbody += `<td class="td-nivel"><span class="nivel-badge ${clases[i]}">${n}</span><br><span style="color:var(--muted);font-size:12px;font-style:italic">Claude completará aquí el descriptor de desempeño</span><span class="td-check">( )</span></td>`;
+    });
+    tbody += '</tr>';
+  });
+  tbody += '</tbody>';
+
+  table.innerHTML = thead + tbody;
+  preview.classList.toggle('visible');
+  if (preview.classList.contains('visible')) {
+    document.getElementById('btnPreview').textContent = '🙈 Ocultar tabla';
+    preview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    document.getElementById('btnPreview').textContent = '👁 Vista previa tabla';
+  }
+}
+
+// ─── UI helpers ────────────────────────────────────────────
+function toggleStep(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+// ─── Init ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  cargarDatos();
+  document.getElementById('buscador').addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(buscar, 300);
+  });
+});
+</script>
+</body>
+</html>
