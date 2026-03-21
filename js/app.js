@@ -420,15 +420,17 @@ function generatePrompt() {
     showError('⚠️ Selecciona ciclo, nivel y área en el Paso 1.'); return;
   }
 
-  let skill      = areaName ? `Área: ${areaName}` : 'No especificada';
+  let skill      = '— Selecciona una habilidad específica en el Paso 1 —';
+  let skillId    = '';
   let indicators = [];
 
   if (habOpt?.dataset.skill) {
     const skillObj = JSON.parse(habOpt.dataset.skill);
-    skill          = skillObj.code
-                       ? `${skillObj.code}. ${skillObj.description}`
-                       : skillObj.description;
-    indicators     = skillObj.indicators || [];
+    skill          = skillObj.description || '';
+    skillId        = skillObj.code        || '';
+    indicators     = skillObj.indicators  || [];
+  } else if (areaName) {
+    skill = `Área de ${areaName} — habilidad no seleccionada`;
   }
 
   const levelLabels = {
@@ -450,6 +452,7 @@ function generatePrompt() {
     level:        `${levelLabels[nivelName] || nivelName} — ${cicloLabels[cicloName] || cicloName}`,
     subject:      `${materia?.nombre?.replace(/📐|🔬|📚/g,'').trim() || 'Matemáticas'} — ${areaName || 'Área no especificada'}`,
     skill,
+    skillId,
     indicators,
     nee:          AppState.selectedNEE,
     neeType:      adecuacion,
