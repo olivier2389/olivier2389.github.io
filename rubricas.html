@@ -328,21 +328,16 @@ let searchTimeout    = null;
 let CICLOS_MAP = {};
 
 // ─── Carga de datos ────────────────────────────────────────
-// Reutiliza el pipeline de app.js (mismo JSON, misma caché)
 async function cargarDatos() {
-  let intentos = 0;
-  while (true) {
-    if (typeof AppState !== 'undefined' && AppState.curriculumData) {
-      inicializarConData(AppState.curriculumData);
-      return;
-    }
-    if (intentos > 80) {
-      document.getElementById('loadingText').textContent =
-        'Error cargando datos. Abrí la página desde GitHub Pages o Live Server.';
-      return;
-    }
-    await new Promise(r => setTimeout(r, 100));
-    intentos++;
+  try {
+    const res = await fetch('data/curriculo_matematica.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    inicializarConData(data);
+  } catch(e) {
+    console.error(e);
+    document.getElementById('loadingText').textContent =
+      'Error cargando datos. Verificá la ruta del JSON.';
   }
 }
 
@@ -359,17 +354,17 @@ function inicializarConData(data) {
       'CICLO_DIVERSIFICADO': 'Ciclo Diversificado (10°–11°)',
     };
     data.cycles.forEach(c => {
-      const key = c.name || c.ciclo || '';
+      const key = c.ciclo || c.name || '';   // ✅ c.ciclo es el campo real
       const areas = [], anios = [];
-      (c.levels || c.niveles || []).forEach(n => {
-        const niv = n.name || n.nivel || '';
+      (c.niveles || c.levels || []).forEach(n => {
+        const niv = n.nivel || n.name || '';  // ✅ n.nivel es el campo real
         if (niv && !anios.includes(niv)) anios.push(niv);
         (n.areas || []).forEach(a => {
-          const nombre = a.name || a.nombre || '';
+          const nombre = a.nombre || a.name || '';  // ✅ a.nombre es el campo real
           if (nombre && !areas.includes(nombre)) areas.push(nombre);
         });
       });
-      CICLOS_MAP[key] = { label: cicloLabels[key] || key, areas, anios };
+      if (key) CICLOS_MAP[key] = { label: cicloLabels[key] || key, areas, anios };
     });
   }
   poblarCiclos();
@@ -383,11 +378,11 @@ function normalizarHabilidades(data) {
   const r = [];
   if (data && data.cycles) {
     data.cycles.forEach(c => {
-      const ciclo = c.name || c.ciclo || '';
-      (c.levels || c.niveles || []).forEach(n => {
-        const nivel = n.name || n.nivel || '';
+      const ciclo = c.ciclo || c.name || '';
+      (c.niveles || c.levels || []).forEach(n => {
+        const nivel = n.nivel || n.name || '';
         (n.areas || []).forEach(a => {
-          const area = a.name || a.nombre || '';
+          const area = a.nombre || a.name || '';
           (a.habilidades || []).forEach(h => {
             if (h.id) r.push({ id: h.id, texto: h.descripcion || h.habilidad || '', ciclo, area, nivel });
           });
@@ -678,10 +673,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-<!-- Reutiliza el motor de app.js para cargar curriculo_matematica.json -->
-<script src="js/templateRegistry.js"></script>
-<script src="js/metaPromptEngine.js"></script>
-<script src="js/metaEngine.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>
