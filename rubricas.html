@@ -163,7 +163,7 @@ footer{text-align:center;padding:20px;font-family:var(--mono);font-size:.7rem;co
 
   <div class="steps">
 
-    <!-- ══ PASO 1: SELECCIONAR HABILIDADES ══ -->
+    <!-- == PASO 1: SELECCIONAR HABILIDADES == -->
     <div class="step open active" id="step1">
       <div class="step-header" onclick="toggleStep('step1')">
         <div class="step-num" id="num1">1</div>
@@ -216,7 +216,7 @@ footer{text-align:center;padding:20px;font-family:var(--mono);font-size:.7rem;co
       </div>
     </div>
 
-    <!-- ══ PASO 2: CONFIGURAR RÚBRICA ══ -->
+    <!-- == PASO 2: CONFIGURAR RÚBRICA == -->
     <div class="step" id="step2">
       <div class="step-header" onclick="toggleStep('step2')">
         <div class="step-num" id="num2">2</div>
@@ -264,7 +264,7 @@ footer{text-align:center;padding:20px;font-family:var(--mono);font-size:.7rem;co
       </div>
     </div>
 
-    <!-- ══ PASO 3: GENERAR ══ -->
+    <!-- == PASO 3: GENERAR == -->
     <div class="step" id="step3">
       <div class="step-header" onclick="toggleStep('step3')">
         <div class="step-num" id="num3">3</div>
@@ -554,16 +554,16 @@ function generarPrompt() {
   const habTexto = seleccionadas.map(h => `• [${h.id}] ${h.texto}`).join('\n');
   const tipoDesc = { holistica: 'Holística — evalúa el desempeño global', analitica: 'Analítica — evalúa cada criterio por separado', simple: 'Lista de cotejo — presencia/ausencia de indicadores' }[tipoRubrica];
 
-  const prompt = `════════════════════════════════════════════════════════
+  const prompt = `========================================================
 MODO: DOBLE FASE — leé todo antes de responder
-════════════════════════════════════════════════════════
+========================================================
 
 ROL
 Sos un experto en evaluación educativa según el programa oficial de Matemática del MEP de Costa Rica. Especialista en diseño de rúbricas alineadas a habilidades e indicadores de logro MEP.
 
-════════════════════════════════════════════
+============================================
 FASE 1 — PARSEO Y VALIDACIÓN (ejecutar ahora)
-════════════════════════════════════════════
+============================================
 Leé los datos a continuación y devolvé ÚNICAMENTE un objeto JSON con esta estructura. Sin texto antes ni después.
 
 SCHEMA DE FASE 1:
@@ -581,9 +581,9 @@ REGLAS DE FASE 1:
 
 Cuando el docente revise el JSON y responda "ejecutar" o "aceptar", pasás a FASE 2.
 
-════════════════════════════════════════════
+============================================
 FASE 2 — GENERACIÓN (solo cuando el docente confirme)
-════════════════════════════════════════════
+============================================
 Con el JSON validado, generá la rúbrica completa en formato tabla lista para usar:
 
 - Encabezado con título, materia, ciclo/nivel educativo
@@ -592,9 +592,9 @@ Con el JSON validado, generá la rúbrica completa en formato tabla lista para u
 - Nota pedagógica al pie sobre el uso de la rúbrica
 - Tipo: ${tipoDesc}
 
-════════════════════════════════════════════
+============================================
 DATOS
-════════════════════════════════════════════
+============================================
 Tipo de rúbrica: ${tipoDesc}
 Escala: ${niveles.join(' → ')}
 Nivel educativo: ${nivelEdu}
@@ -603,7 +603,7 @@ ${ctx ? 'Contexto: ' + ctx : ''}
 HABILIDADES MEP A EVALUAR:
 ${habTexto}
 
-════════════════════════════════════════════
+============================================
 Comenzá ahora con FASE 1 — devolvé el JSON:`;
 
   const textarea = document.getElementById('promptText');
