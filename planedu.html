@@ -421,52 +421,88 @@ Generá una sección PEI completa que incluya:
 • Criterios de evaluación adaptados a sus capacidades reales
 • Materiales o apoyos específicos necesarios
 `:"";
-return`Sos un experto en planificación didáctica según el programa oficial de Matemática del MEP de Costa Rica (Programa de Matemáticas 2012, reformulado 2013).
+// ── SCHEMA FASE 1 ──────────────────────────────────────────
+const schemaFase1=JSON.stringify({
+  encabezado:{
+    direccion_regional:"string",
+    centro_educativo:"string",
+    docente:"string",
+    asignatura:"string — ej: Matemática — Geometría",
+    ciclo:"string",
+    anio_escolar:"string",
+    mes:"string",
+    semanas:"number",
+    tipo_planeamiento:"string"
+  },
+  habilidades:[{id:"string — ej: MAT-TC-7-GEO-H004",texto:"string — texto completo de la habilidad"}],
+  dua:["string — estrategia DUA seleccionada"],
+  contexto_curricular:{
+    introduccion:"string",
+    proposito:"string",
+    orientaciones_metodologicas:"string",
+    evaluacion:"string"
+  },
+  situacion_problema:{
+    activa:"boolean",
+    contexto:"string — vacío si no aplica",
+    organizacion:"string",
+    recursos:"string"
+  },
+  pei:{
+    activo:"boolean",
+    tipo:"string — vacío si no aplica",
+    area_nee:"string — vacío si no aplica",
+    observacion:"string"
+  }
+},null,2);
 
-Generá un planeamiento mensual COMPLETO, específico y directamente utilizable por el docente sin modificaciones.
+return`════════════════════════════════════════════════════════
+MODO: DOBLE FASE — leé todo antes de responder
+════════════════════════════════════════════════════════
 
-════ DATOS GENERALES ════
-Dirección Regional: ${dirReg}
-Centro Educativo: ${centro}
-Docente: ${docente}
-Asignatura: Matemática — ${area}
-Ciclo: ${ciclo.replace(/_/g," ")}
-Año escolar: ${anio}
-Mes: ${mes} (${semanas} semanas)
-Tipo de planeamiento: ${tipoPlan}
+ROL
+Sos un experto en planificación didáctica según el programa oficial de Matemática del MEP de Costa Rica (Programa de Matemáticas 2012, reformulado 2013). Especialista en DUA, Situación Problema y adecuaciones curriculares PEI.
 
-════ CONTEXTO CURRICULAR MEP ════
-Introducción del área: ${introduccion}
-Propósito de la enseñanza: ${proposito}
-Habilidades generales del área: ${habGenerales}
-Orientaciones metodológicas generales: ${metGenerales}
-Orientaciones metodológicas para ${anio}: ${metAnio}
-Orientaciones de evaluación: ${evaluacion}
+════════════════════════════════════════════
+FASE 1 — PARSEO Y VALIDACIÓN (ejecutar ahora)
+════════════════════════════════════════════
+Leé los datos del formulario a continuación y devolvé ÚNICAMENTE un objeto JSON con la siguiente estructura. Sin texto antes ni después. Sin bloques de código ni comillas de markdown.
 
-════ HABILIDADES SELECCIONADAS PARA EL MES ════
-${habilidadesTexto||"(Inferí las habilidades más apropiadas para este mes, ciclo y área según el programa MEP)"}
+SCHEMA DE FASE 1:
+${schemaFase1}
 
-════ ESTRATEGIAS DUA ════
-${estrategiasDUA||"- Representación visual\n- Expresión oral\n- Motivación por contexto real"}
-${spBloque}${peiBloque}
+REGLAS DE FASE 1:
+1. Devolver SOLO el JSON. Nada más.
+2. Todos los campos string deben tener contenido real, nunca vacíos (usá "—" si no hay dato).
+3. El array "habilidades" debe incluir TODAS las habilidades listadas en los datos, con id y texto completo.
+4. El array "dua" debe listar cada estrategia exactamente como aparece en los datos.
+5. "situacion_problema.activa" y "pei.activo" son booleanos: true o false.
+6. NO generes el planeamiento todavía. Solo el JSON de parseo.
 
-════ ESTRUCTURA REQUERIDA DEL PLANEAMIENTO ════
+Cuando el docente revise el JSON y responda "ejecutar" o "aceptar", pasás a FASE 2.
+
+════════════════════════════════════════════
+FASE 2 — GENERACIÓN (solo cuando el docente confirme)
+════════════════════════════════════════════
+Usando EXACTAMENTE los datos del JSON que devolviste en Fase 1, generá el planeamiento mensual COMPLETO, específico y directamente utilizable sin modificaciones.
+
+ESTRUCTURA REQUERIDA EN FASE 2:
 
 1. ENCABEZADO INSTITUCIONAL
    Tabla con todos los datos generales.
 
 2. TABLA SEMANAL (exactamente ${semanas} filas)
    Columnas: Semana | Período | Aprendizajes esperados | Estrategias metodológicas | Indicadores de evaluación
-   — Progresión pedagógica: exploración → conceptualización → aplicación → consolidación
+   — Progresión: exploración → conceptualización → aplicación → consolidación
    — Estrategias que integran los principios DUA seleccionados
-   ${spActivo?"— Al menos una semana desarrolla la situación problema con las 2 etapas y 4 momentos MEP":""}
+   ${spActivo?"— Al menos una semana desarrolla la Situación Problema con las 2 etapas y 4 momentos MEP":""}
    — Indicadores observables y medibles
 
 3. SECCIÓN DUA
    Cómo se implementa concretamente cada principio DUA durante este mes.
 
 ${spActivo?`4. DESARROLLO COMPLETO DE LA SITUACIÓN PROBLEMA
-   Guía detallada para el docente: guión, preguntas clave por momento, criterios de observación, tiempo estimado.
+   Guía detallada: guión, preguntas clave por momento, criterios de observación, tiempo estimado.
 
 5. MEDIACIÓN PEDAGÓGICA
    Metodología general, recursos y estrategias del mes.
@@ -475,7 +511,46 @@ ${spActivo?`4. DESARROLLO COMPLETO DE LA SITUACIÓN PROBLEMA
 `}${peiSi?`${spActivo?"6":"5"}. SECCIÓN PEI / ADECUACIÓN CURRICULAR
    Detalle completo de adecuaciones para el estudiante con ${peiArea}.
 `:""}
-Usá lenguaje técnico-pedagógico del MEP costarricense. El planeamiento debe poder entregarse a la dirección sin ninguna modificación.`;}
+Usá lenguaje técnico-pedagógico del MEP costarricense. El planeamiento debe poder entregarse a la dirección sin ninguna modificación.
+
+════════════════════════════════════════════
+DATOS DEL FORMULARIO
+════════════════════════════════════════════
+Dirección Regional: ${dirReg||"—"}
+Centro Educativo: ${centro||"—"}
+Docente: ${docente||"—"}
+Asignatura: Matemática — ${area}
+Ciclo: ${ciclo.replace(/_/g," ")}
+Año escolar: ${anio}
+Mes: ${mes} (${semanas} semanas)
+Tipo de planeamiento: ${tipoPlan}
+
+HABILIDADES SELECCIONADAS:
+${habilidadesTexto||"(Ninguna seleccionada — inferí las más apropiadas para este mes, ciclo y área)"}
+
+ESTRATEGIAS DUA:
+${estrategiasDUA||"- Representación visual\n- Expresión oral\n- Motivación por contexto real"}
+
+CONTEXTO CURRICULAR MEP:
+- Introducción: ${introduccion||"—"}
+- Propósito: ${proposito||"—"}
+- Orientaciones metodológicas generales: ${metGenerales||"—"}
+- Orientaciones metodológicas para ${anio}: ${metAnio||"—"}
+- Evaluación: ${evaluacion||"—"}
+${spActivo?`
+SITUACIÓN PROBLEMA: ACTIVA
+- Contexto: ${spContexto||"(auténtico, de la comunidad o vida cotidiana)"}
+- Organización: ${spOrg}
+- Recursos: ${spRecursos||"materiales didácticos apropiados"}
+`:"SITUACIÓN PROBLEMA: NO activa"}
+${peiSi?`
+PEI / ADECUACIÓN CURRICULAR: SÍ
+- Tipo: ${peiTipo||"—"}
+- Área de NEE: ${peiArea||"—"}
+${peiObs?"- Nota: "+peiObs:""}
+`:"PEI / ADECUACIÓN CURRICULAR: NO"}
+════════════════════════════════════════════
+Comenzá ahora con FASE 1 — devolvé el JSON:`;}
 async function generarPlaneamiento(){const btn=document.getElementById("btn-generar"),rs=document.getElementById("resultado-section"),rc=document.getElementById("resultado-content");btn.disabled=true;btn.innerHTML='<div class="spinner"></div> Ensamblando prompt...';const prompt=ensamblarPrompt();rs.classList.add("visible");rc.textContent=prompt;rc.scrollIntoView({behavior:"smooth",block:"start"});btn.disabled=false;btn.innerHTML=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Regenerar prompt`;}
 function copiarTexto(){navigator.clipboard.writeText(document.getElementById("resultado-content").textContent).then(()=>{const btn=event.target.closest("button"),orig=btn.innerHTML;btn.innerHTML="✓ ¡Copiado!";setTimeout(()=>btn.innerHTML=orig,2000);});}
 function exportarTxt(){const texto=document.getElementById("resultado-content").textContent;const ciclo=document.getElementById("ciclo").value,mes=document.getElementById("mes").value;const blob=new Blob([texto],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`prompt_planeamiento_${ciclo}_${mes}.txt`;a.click();URL.revokeObjectURL(url);}
