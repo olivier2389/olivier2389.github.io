@@ -332,22 +332,32 @@ const CICLOS_MAP = {
 };
 
 // ─── Carga de datos ────────────────────────────────────────
+// Reutiliza el pipeline de app.js (mismo JSON, misma caché)
 async function cargarDatos() {
-  try {
-    const [r1] = await Promise.all([
-      fetch('data/curriculo_matematica.json')
-    ]);
-    const data = await r1.json();
-    todasHabilidades = normalizarHabilidades(data);
-    filtradas = [...todasHabilidades];
-    poblarCiclos();
-    renderLista(filtradas.slice(0, 80));
-    document.getElementById('lista-info').textContent = `${todasHabilidades.length} habilidades · mostrando 80`;
-    document.getElementById('loadingScreen').classList.add('hidden');
-  } catch(e) {
-    document.getElementById('loadingText').textContent = 'Error cargando datos. Verificá la ruta del JSON.';
-    console.error(e);
+  let intentos = 0;
+  while (true) {
+    if (typeof AppState !== 'undefined' && AppState.curriculumData) {
+      inicializarConData(AppState.curriculumData);
+      return;
+    }
+    if (intentos > 80) {
+      document.getElementById('loadingText').textContent =
+        'Error cargando datos. Abrí la página desde GitHub Pages o Live Server.';
+      return;
+    }
+    await new Promise(r => setTimeout(r, 100));
+    intentos++;
   }
+}
+
+function inicializarConData(data) {
+  todasHabilidades = normalizarHabilidades(data);
+  filtradas = [...todasHabilidades];
+  poblarCiclos();
+  renderLista(filtradas.slice(0, 80));
+  document.getElementById('lista-info').textContent =
+    todasHabilidades.length + ' habilidades · mostrando 80';
+  document.getElementById('loadingScreen').classList.add('hidden');
 }
 
 function normalizarHabilidades(data) {
@@ -649,5 +659,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<!-- Reutiliza el motor de app.js para cargar curriculo_matematica.json -->
+<script src="js/templateRegistry.js"></script>
+<script src="js/metaPromptEngine.js"></script>
+<script src="js/metaEngine.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
